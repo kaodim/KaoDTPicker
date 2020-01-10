@@ -1,16 +1,16 @@
 var path = require('path')
 
 module.exports = {
-  entry: './src/index.js',
-  // entry: {
-  //   index: './src/index.js',
-  //   MiniCal: './src/MiniCal.js'
-  // },
+  // entry: './src/index.js',
+  entry: {
+    index: './src/index.js',
+    app: './src/app.js'
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'index.js',
-    // filename: '[name].js',
-    libraryTarget: 'commonjs2'
+    // filename: 'index.js',
+    filename: '[name].js',
+    // libraryTarget: 'commonjs2'
   },
   module: {
     rules: [
@@ -41,7 +41,10 @@ module.exports = {
       // }
     ]
   },
-  externals: {
-    react: 'commonjs react'
+  // externals: {
+  //   react: 'commonjs react'
+  // },
+  devServer: {
+    contentBase: path.join(__dirname,'dist')
   }
 }
