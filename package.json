@@ -1,0 +1,19 @@
+{
+  "name": "kao-dtpicker",
+  "version": "1.0.0",
+  "description": "React DateTime Picker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaodim/KaoDTPicker.git"
+  },
+  "author": "Thein Htut",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kaodim/KaoDTPicker/issues"
+  },
+  "homepage": "https://github.com/kaodim/KaoDTPicker#readme"
+}
