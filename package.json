@@ -4,7 +4,7 @@
   "description": "React DateTime Picker",
   "main": "dist/index.js",
   "scripts": {
-    "build-babel": "babel src/index.js --out-file=dist/index.js",
+    "build-babel": "babel src/ -d dist/",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --watch",
     "build": "webpack"
@@ -28,6 +28,7 @@
     "babel-cli": "6.26.0",
     "babel-core": "6.26.3",
     "babel-loader": "7.1.5",
+    "babel-plugin-inline-react-svg": "0.5.4",
     "babel-plugin-transform-class-properties": "6.24.1",
     "babel-preset-env": "1.7.0",
     "babel-preset-react": "6.24.1",

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Button } from 'react-bootstrap'
+import MiniCal from './components/MiniCal'
 import './styles/styles.scss'
 
 class Kaolendar extends Component {
@@ -12,7 +13,7 @@ class Kaolendar extends Component {
       <article>
         <section>
           <input className='kld__inputs' />
-          <img src='./icons/ic-minical.svg' />
+          <MiniCal />
         </section>
       </article>
     )

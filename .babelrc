@@ -1,4 +1,9 @@
 {
   "presets": ["env", "react"],
-  "plugins": ["transform-class-properties"]
+  "plugins": [
+    ["inline-react-svg", {
+      "svgo": false
+    }],
+    "transform-class-properties"
+  ]
 }

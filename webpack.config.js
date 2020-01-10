@@ -2,9 +2,14 @@ var path = require('path')
 
 module.exports = {
   entry: './src/index.js',
+  // entry: {
+  //   index: './src/index.js',
+  //   MiniCal: './src/MiniCal.js'
+  // },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'index.js',
+    // filename: '[name].js',
     libraryTarget: 'commonjs2'
   },
   module: {
@@ -28,6 +33,12 @@ module.exports = {
           'sass-loader'
         ]
       }
+      // {
+      //   test: /\.(png|svg|jpg|gif)$/,
+      //   use: [
+      //     'file-loader'
+      //   ]
+      // }
     ]
   },
   externals: {
