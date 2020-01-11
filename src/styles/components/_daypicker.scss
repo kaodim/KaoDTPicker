@@ -27,3 +27,27 @@
   padding-right: $s;
   width: $xl;
 }
+
+.kld-daypicker__month {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: $l;
+}
+
+.kld-daypicker__month-name {
+  color: #6a6a6a;
+  font-size: $l;
+  font-weight: 500;
+}
+
+.kld-daypicker__month-chevron {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  // height: $xl !important;
+  margin: 0;
+  padding: 0;
+  // width: $xl !important;
+}
