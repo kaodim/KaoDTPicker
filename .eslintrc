@@ -1,10 +1,12 @@
 {
   "parser": "babel-eslint",
   "plugins": ["react", "prettier"],
+  "extends": "eslint:recommended",
   "env": {
     "browser": true
   },
   "rules": {
+    "no-console": "error",
     "handle-callback-err": "warn",
     "key-spacing": 0,
     "max-len": ["warn", 200],
@@ -12,10 +14,12 @@
     "no-labels": "warn",
     "no-unused-vars": "warn",
     "object-curly-spacing": [2, "always"],
-    "prettier/prettier": "warm",
-    "react/jsx-uses-react": "warm",
-    "react/jsx-uses-vars": "warm",
+    "prettier/prettier": "warn",
+    "semi": ["error", "never"],
+    "react/jsx-uses-react": "warn",
     "react/prop-types": "warn"
+    // "react/jsx-key": "warn",
+    // "react/jsx-uses-vars": "warn",
     // "jsx-quotes": [2, "prefer-single"],
     // "react/jsx-no-bind": "warn",
     // "react/jsx-no-duplicate-props": "warn",
