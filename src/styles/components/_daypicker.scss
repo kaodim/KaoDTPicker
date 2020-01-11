@@ -1,0 +1,28 @@
+.kld-daypicker {
+  display: flex;
+  flex-direction: column;
+  border: solid 1px blueviolet;
+}
+
+.kld-daypicker__header {
+  align-items: center;
+  border-bottom: 1px solid $light-grey;
+  display: flex;
+}
+
+.kld-daypicker__header-title {
+  color: $dark-grey;
+  display: flex;
+  flex-grow: 1;
+  font-size: $f-m;
+  font-weight: 600;
+  justify-content: center;
+  padding: $l 0;
+}
+
+.kld-daypicker__header-close {
+  cursor: pointer;
+  height: $xl;
+  padding-right: $s;
+  width: $xl;
+}

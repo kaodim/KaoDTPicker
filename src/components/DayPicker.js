@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 
+import HeaderClose from './HeaderClose'
+
 class DayPicker extends Component {
   constructor(props) {
     super(props)
@@ -7,9 +9,17 @@ class DayPicker extends Component {
   }
   render() {
     return (
-      <div>
-        <h5>This is daypicker</h5>
-      </div>
+      <section className="kld-test">
+        <div className="kld-daypicker">
+          <div className="kld-daypicker__header">
+            <label className="kld-daypicker__header-title">Select Date</label>
+            <HeaderClose className="kld-daypicker__header-close" />
+          </div>
+          <div>
+            <span>another</span>
+          </div>
+        </div>
+      </section>
     )
   }
 }
