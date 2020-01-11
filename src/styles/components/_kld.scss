@@ -1,3 +1,8 @@
+.kld-test {
+  height: auto;
+  width: 390px; 
+}
+
 .kld {
   align-items: center;
   display: flex;
@@ -12,6 +17,8 @@
 }
 
 .kld__icon {
-  padding-left: 0.5em;
+  height: $xl;
+  padding-left: $s;
   position: absolute;
+  width: $xl;
 }

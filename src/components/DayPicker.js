@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 
 import HeaderClose from './HeaderClose'
+import SurchargeBanner from './SurchargeBanner'
 
 class DayPicker extends Component {
   constructor(props) {
@@ -16,7 +17,7 @@ class DayPicker extends Component {
             <HeaderClose className="kld-daypicker__header-close" />
           </div>
           <div>
-            <span>another</span>
+            <SurchargeBanner label={'sdfasdf asdfasdf'} />
           </div>
         </div>
       </section>

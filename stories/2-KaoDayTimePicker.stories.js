@@ -1,15 +1,20 @@
-import React from 'react';
+import React from 'react'
 
 import Test from '../src/components/Test'
 import Kaolendar from '../src/index'
+import SurchargeBanner from '../src/components/SurchargeBanner'
+
+import { calendarMonths, metaCalendarMonths } from '../src/constants/mock'
 
 export default {
-  title: 'Home'
+  title: 'Kao-DayTimePicker'
 }
 
 export const test = () => <Test />
 
-export const kaolendar = () => <Kaolendar />
+export const dayTimePicker = () => <Kaolendar calendarMonths={calendarMonths} />
+
+export const surchargeBanner = () => <SurchargeBanner label={'This is surcharge banner'}/>
 
 // import Kaolendar from '../src/index'
 
