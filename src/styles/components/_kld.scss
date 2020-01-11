@@ -1,3 +1,14 @@
-.kld__inputs {
-  padding: 1em;
+.kld {
+  align-items: center;
+  display: flex;
+  position: relative;
+}
+
+.kld__input {
+  padding: 1em 1em 1em 3em;
+}
+
+.kld__icon {
+  padding-left: 0.5em;
+  position: absolute;
 }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Button } from 'react-bootstrap'
 import MiniCal from './components/MiniCal'
-import { calendarMonths, metaCalendarMonths } from './constants/mock'
+// import { calendarMonths, metaCalendarMonths } from './constants/mock'
 import './styles/styles.scss'
 
 class Kaolendar extends Component {
@@ -13,12 +13,14 @@ class Kaolendar extends Component {
     return (
       <article>
         <section>
-          <input className="kld__inputs" />
-          <MiniCal />
+          <div className='kld'>
+            <input className="kld__input" />
+            <MiniCal className='kld__icon'/>
+          </div>
         </section>
-        {calendarMonths.map((cm) => {
+        {/* {calendarMonths.map((cm) => {
           return <p>{cm.month}</p>
-        })}
+        })} */}
       </article>
     )
   }
