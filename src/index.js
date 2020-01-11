@@ -1,29 +1,58 @@
-import React, { Component } from 'react'
-import { Button } from 'react-bootstrap'
+import React, { Component, PropTypes } from 'react'
+import moment from 'moment'
+
 import MiniCal from './components/MiniCal'
-// import { calendarMonths, metaCalendarMonths } from './constants/mock'
+import DayPicker from './components/DayPicker'
+
 import './styles/styles.scss'
 
 class Kaolendar extends Component {
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = {
+      isDayPickerOpen: false
+    }
+  }
+  handleInputClick = () => {
+    console.log('handleInputClick called')
+    // this.setState({ isDayPickerOpen: true })
   }
   render() {
+    const dateText = 'adsfsdf'
+    // const dateText = () => {
+    //   userSelectedDate ? moment(userSelectedDate).format('ddd, DD MMM YYYY, h:mm A') : ''
+    //   let dText = ''
+    //   if (hasTimePicker) {
+    //     userSelectedDate && (dText = moment(userSelectedDate).format('ddd, DD MMM YYYY, h:mm A'))
+    //   } else {
+    //     selectedDate && (dText = moment(selectedDate).format('ddd, DD MMM YYYY'))
+    //   }
+    //   return dText
+    // }
+    const { isDayPickerOpen } = this.state
+    const { calendarMonths } = this.props
     return (
       <article>
         <section>
-          <div className='kld'>
-            <input className="kld__input" />
-            <MiniCal className='kld__icon'/>
+          <div className="kld">
+            <input className="kld__input" onClick={this.handleInputClick} value={dateText} />
+            <MiniCal className="kld__icon" />
           </div>
         </section>
-        {/* {calendarMonths.map((cm) => {
-          return <p>{cm.month}</p>
-        })} */}
+        <DayPicker calendarMonths={calendarMonths} />
       </article>
     )
   }
+}
+
+Kaolendar.defaultProps = {
+  calendarMonths: [],
+  hasTimePicker: false
+}
+
+Kaolendar.propTypes = {
+  calendarMonths: PropTypes.array,
+  hasTimePicker: PropTypes.bool
 }
 
 export default Kaolendar

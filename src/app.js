@@ -1,5 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Kaolendar from './index';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import Kaolendar from './index'
 
-ReactDOM.render(<Kaolendar />, document.getElementById('app'));
+ReactDOM.render(<Kaolendar />, document.getElementById('app'))

@@ -5,6 +5,9 @@
 }
 
 .kld__input {
+  border-radius: $xs;
+  border: solid 1px #dddddd;
+  flex-grow: 1;
   padding: 1em 1em 1em 3em;
 }
 

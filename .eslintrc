@@ -17,9 +17,9 @@
     "prettier/prettier": "warn",
     "semi": ["error", "never"],
     "react/jsx-uses-react": "warn",
+    "react/jsx-uses-vars": "warn",
     "react/prop-types": "warn"
     // "react/jsx-key": "warn",
-    // "react/jsx-uses-vars": "warn",
     // "jsx-quotes": [2, "prefer-single"],
     // "react/jsx-no-bind": "warn",
     // "react/jsx-no-duplicate-props": "warn",
