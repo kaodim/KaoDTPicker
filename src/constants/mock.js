@@ -1240,3 +1240,338 @@ export const calendarMonths = [
 ]
 
 export const metaCalendarMonths = { surchargable: true }
+
+export const calTimeslots = [
+  {
+    value: '2020-01-17T07:00:00.000+08:00',
+    available: true,
+    price: 0,
+    localized_total_price: 'RM50',
+    human_readable_price: '',
+    show_price: false,
+    surchargable: false,
+    total_price: 50
+  },
+  {
+    value: '2020-01-17T07:30:00.000+08:00',
+    available: true,
+    price: 0,
+    localized_total_price: 'RM50',
+    human_readable_price: '',
+    show_price: false,
+    surchargable: false,
+    total_price: 50
+  },
+  {
+    value: '2020-01-17T08:00:00.000+08:00',
+    available: true,
+    price: 0,
+    localized_total_price: 'RM50',
+    human_readable_price: '',
+    show_price: false,
+    surchargable: false,
+    total_price: 50
+  },
+  {
+    value: '2020-01-17T08:30:00.000+08:00',
+    available: true,
+    price: 0,
+    localized_total_price: 'RM50',
+    human_readable_price: '',
+    show_price: false,
+    surchargable: false,
+    total_price: 50
+  },
+  {
+    value: '2020-01-17T09:00:00.000+08:00',
+    available: true,
+    price: 0,
+    localized_total_price: 'RM50',
+    human_readable_price: '',
+    show_price: false,
+    surchargable: false,
+    total_price: 50
+  },
+  {
+    value: '2020-01-17T09:30:00.000+08:00',
+    available: true,
+    price: 0,
+    localized_total_price: 'RM50',
+    human_readable_price: '',
+    show_price: false,
+    surchargable: false,
+    total_price: 50
+  },
+  {
+    value: '2020-01-17T10:00:00.000+08:00',
+    available: true,
+    price: 0,
+    localized_total_price: 'RM50',
+    human_readable_price: '',
+    show_price: false,
+    surchargable: false,
+    total_price: 50
+  },
+  {
+    value: '2020-01-17T10:30:00.000+08:00',
+    available: true,
+    price: 0,
+    localized_total_price: 'RM50',
+    human_readable_price: '',
+    show_price: false,
+    surchargable: false,
+    total_price: 50
+  },
+  {
+    value: '2020-01-17T11:00:00.000+08:00',
+    available: true,
+    price: 0,
+    localized_total_price: 'RM50',
+    human_readable_price: '',
+    show_price: false,
+    surchargable: false,
+    total_price: 50
+  },
+  {
+    value: '2020-01-17T11:30:00.000+08:00',
+    available: true,
+    price: 0,
+    localized_total_price: 'RM50',
+    human_readable_price: '',
+    show_price: false,
+    surchargable: false,
+    total_price: 50
+  },
+  {
+    value: '2020-01-17T12:00:00.000+08:00',
+    available: true,
+    price: 0,
+    localized_total_price: 'RM50',
+    human_readable_price: '',
+    show_price: false,
+    surchargable: false,
+    total_price: 50
+  },
+  {
+    value: '2020-01-17T12:30:00.000+08:00',
+    available: true,
+    price: 0,
+    localized_total_price: 'RM50',
+    human_readable_price: '',
+    show_price: false,
+    surchargable: false,
+    total_price: 50
+  },
+  {
+    value: '2020-01-17T13:00:00.000+08:00',
+    available: true,
+    price: 0,
+    localized_total_price: 'RM50',
+    human_readable_price: '',
+    show_price: false,
+    surchargable: false,
+    total_price: 50
+  },
+  {
+    value: '2020-01-17T13:30:00.000+08:00',
+    available: true,
+    price: 0,
+    localized_total_price: 'RM50',
+    human_readable_price: '',
+    show_price: false,
+    surchargable: false,
+    total_price: 50
+  },
+  {
+    value: '2020-01-17T14:00:00.000+08:00',
+    available: true,
+    price: 0,
+    localized_total_price: 'RM50',
+    human_readable_price: '',
+    show_price: false,
+    surchargable: false,
+    total_price: 50
+  },
+  {
+    value: '2020-01-17T14:30:00.000+08:00',
+    available: true,
+    price: 0,
+    localized_total_price: 'RM50',
+    human_readable_price: '',
+    show_price: false,
+    surchargable: false,
+    total_price: 50
+  },
+  {
+    value: '2020-01-17T15:00:00.000+08:00',
+    available: true,
+    price: 0,
+    localized_total_price: 'RM50',
+    human_readable_price: '',
+    show_price: false,
+    surchargable: false,
+    total_price: 50
+  },
+  {
+    value: '2020-01-17T15:30:00.000+08:00',
+    available: true,
+    price: 0,
+    localized_total_price: 'RM50',
+    human_readable_price: '',
+    show_price: false,
+    surchargable: false,
+    total_price: 50
+  },
+  {
+    value: '2020-01-17T16:00:00.000+08:00',
+    available: true,
+    price: 0,
+    localized_total_price: 'RM50',
+    human_readable_price: '',
+    show_price: false,
+    surchargable: false,
+    total_price: 50
+  },
+  {
+    value: '2020-01-17T16:30:00.000+08:00',
+    available: true,
+    price: 0,
+    localized_total_price: 'RM50',
+    human_readable_price: '',
+    show_price: false,
+    surchargable: false,
+    total_price: 50
+  },
+  {
+    value: '2020-01-17T17:00:00.000+08:00',
+    available: true,
+    price: 0,
+    localized_total_price: 'RM50',
+    human_readable_price: '',
+    show_price: false,
+    surchargable: false,
+    total_price: 50
+  },
+  {
+    value: '2020-01-17T17:30:00.000+08:00',
+    available: true,
+    price: 0,
+    localized_total_price: 'RM50',
+    human_readable_price: '',
+    show_price: false,
+    surchargable: false,
+    total_price: 50
+  },
+  {
+    value: '2020-01-17T18:00:00.000+08:00',
+    available: true,
+    price: 0,
+    localized_total_price: 'RM50',
+    human_readable_price: '',
+    show_price: false,
+    surchargable: false,
+    total_price: 50
+  },
+  {
+    value: '2020-01-17T18:30:00.000+08:00',
+    available: true,
+    price: 0,
+    localized_total_price: 'RM50',
+    human_readable_price: '',
+    show_price: false,
+    surchargable: false,
+    total_price: 50
+  },
+  {
+    value: '2020-01-17T19:00:00.000+08:00',
+    available: true,
+    price: 0,
+    localized_total_price: 'RM50',
+    human_readable_price: '',
+    show_price: false,
+    surchargable: false,
+    total_price: 50
+  },
+  {
+    value: '2020-01-17T19:30:00.000+08:00',
+    available: true,
+    price: 0,
+    localized_total_price: 'RM50',
+    human_readable_price: '',
+    show_price: false,
+    surchargable: false,
+    total_price: 50
+  },
+  {
+    value: '2020-01-17T20:00:00.000+08:00',
+    available: true,
+    price: 0,
+    localized_total_price: 'RM50',
+    human_readable_price: '',
+    show_price: false,
+    surchargable: false,
+    total_price: 50
+  },
+  {
+    value: '2020-01-17T20:30:00.000+08:00',
+    available: true,
+    price: 0,
+    localized_total_price: 'RM50',
+    human_readable_price: '',
+    show_price: false,
+    surchargable: false,
+    total_price: 50
+  },
+  {
+    value: '2020-01-17T21:00:00.000+08:00',
+    available: true,
+    price: 0,
+    localized_total_price: 'RM50',
+    human_readable_price: '',
+    show_price: false,
+    surchargable: false,
+    total_price: 50
+  },
+  {
+    value: '2020-01-17T21:30:00.000+08:00',
+    available: true,
+    price: 0,
+    localized_total_price: 'RM50',
+    human_readable_price: '',
+    show_price: false,
+    surchargable: false,
+    total_price: 50
+  },
+  {
+    value: '2020-01-17T22:00:00.000+08:00',
+    available: true,
+    price: 0,
+    localized_total_price: 'RM50',
+    human_readable_price: '',
+    show_price: false,
+    surchargable: false,
+    total_price: 50
+  },
+  {
+    value: '2020-01-17T22:30:00.000+08:00',
+    available: true,
+    price: 0,
+    localized_total_price: 'RM50',
+    human_readable_price: '',
+    show_price: false,
+    surchargable: false,
+    total_price: 50
+  },
+  {
+    value: '2020-01-17T23:00:00.000+08:00',
+    available: true,
+    price: 0,
+    localized_total_price: 'RM50',
+    human_readable_price: '',
+    show_price: false,
+    surchargable: false,
+    total_price: 50
+  }
+]
+
+export const metaCalTimeslots = { surchargable: false }

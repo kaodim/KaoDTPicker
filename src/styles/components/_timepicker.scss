@@ -1,0 +1,63 @@
+.kld-timepicker {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.kld-timepicker__header {
+  align-items: center;
+  border-bottom: 1px solid $bg-light-grey;
+  display: flex;
+}
+
+.kld-timepicker__header-title {
+  color: $dark-grey;
+  display: flex;
+  flex-grow: 1;
+  font-size: $f-m;
+  font-weight: 600;
+  justify-content: center;
+  padding: $l 0;
+}
+
+.kld-timepicker__header-close {
+  cursor: pointer;
+  height: $xl;
+  padding-right: $s;
+  width: $xl;
+}
+
+.kld-timepicker__banner {
+  padding: 0 9em;
+}
+
+.kld-timepicker__footer {
+  border-top: solid 1px $bg-light-grey;
+  display: flex;
+  justify-content: space-between;
+  padding: $xl;
+}
+
+.kld-timepicker__footer-btn {
+  background: transparent;
+  border: none;
+  border-radius: $xs;
+  font-size: $l;
+  font-weight: 600;
+  padding: $m 3em;
+
+  &-back {
+    @extend .kld-timepicker__footer-btn;
+    background-color: $bg-light-grey;
+    color: $mild-grey;
+  }
+  &-done {
+    @extend .kld-timepicker__footer-btn;
+    background-color: $kaodim-brand;
+    color: white;
+    &:disabled {
+      background-color: $kaodim-red-40;
+      cursor: not-allowed;
+    }
+  }
+}

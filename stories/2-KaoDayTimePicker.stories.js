@@ -4,7 +4,7 @@ import Test from '../src/components/Test'
 import Kaolendar from '../src/index'
 import SurchargeBanner from '../src/components/SurchargeBanner'
 
-import { calendarMonths, metaCalendarMonths } from '../src/constants/mock'
+import { calendarMonths, calTimeslots } from '../src/constants/mock'
 
 export default {
   title: 'Kao-DayTimePicker'
@@ -12,9 +12,11 @@ export default {
 
 export const test = () => <Test />
 
-export const dayTimePicker = () => <Kaolendar calendarMonths={calendarMonths} />
+export const dayTimePicker = () => (
+  <Kaolendar calendarMonths={calendarMonths} timeslots={calTimeslots} />
+)
 
-export const surchargeBanner = () => <SurchargeBanner label={'This is surcharge banner'}/>
+export const surchargeBanner = () => <SurchargeBanner label={'This is surcharge banner'} />
 
 // import Kaolendar from '../src/index'
 
@@ -23,8 +25,6 @@ export const surchargeBanner = () => <SurchargeBanner label={'This is surcharge 
 // dt.story = {
 //   name: 'with Kaolendar',
 // };
-
-
 
 // import React from 'react';
 

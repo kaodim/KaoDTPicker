@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react'
-import moment from 'moment'
 
 import MiniCal from './components/MiniCal'
 import DayPicker from './components/DayPicker'
+import TimePicker from './components/TimePicker'
 
 import './styles/styles.scss'
 
@@ -49,8 +49,8 @@ class Kaolendar extends Component {
     //   }
     //   return dText
     // }
-    const { isDayPickerOpen, selectedDate } = this.state
-    const { calendarMonths, surchargeGif } = this.props
+    const { daySurchargeLabel, isDayPickerOpen, selectedDate } = this.state
+    const { calendarMonths, surchargeGif, timeslots } = this.props
     return (
       <article>
         <section>
@@ -65,6 +65,12 @@ class Kaolendar extends Component {
           selectedDate={selectedDate}
           surchargeGif={surchargeGif}
         />
+        <TimePicker
+          bannerPrice={daySurchargeLabel}
+          selectedDate={selectedDate}
+          surchargeGif={surchargeGif}
+          timeslots={timeslots}
+        />
       </article>
     )
   }
@@ -75,6 +81,7 @@ Kaolendar.defaultProps = {
   hasTimePicker: false,
   onChange: () => {},
   surchargeGif: '',
+  timeslots: [],
   value: ''
 }
 
@@ -83,6 +90,7 @@ Kaolendar.propTypes = {
   hasTimePicker: PropTypes.bool,
   onChange: PropTypes.func,
   surchargeGif: PropTypes.string,
+  timeslots: PropTypes.array,
   value: PropTypes.string
 }
 
