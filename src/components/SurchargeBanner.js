@@ -1,9 +1,14 @@
 import React, { PropTypes } from 'react'
 import SurchargeArrow from './SurchargeArrow'
 
-const SurchargeBanner = ({ label }) => (
+const SurchargeBanner = ({ label, surchargeGif }) => (
   <section className="kld-surcharge">
-    <SurchargeArrow className="kld-surcharge__icon" />
+    {surchargeGif ? (
+      <img src={surchargeGif} className="kld-surcharge__icon" />
+    ) : (
+      <SurchargeArrow className="kld-surcharge__icon" />
+    )}
+
     <span className="kld-surcharge__label">{label}</span>
   </section>
   // <section className='d-flex flex-row warning-box-sidebar pl-s pr-m pv-m'>
@@ -13,11 +18,13 @@ const SurchargeBanner = ({ label }) => (
 )
 
 SurchargeBanner.defaultProps = {
-  label: ''
+  label: '',
+  surchargeGif: ''
 }
 
 SurchargeBanner.propTypes = {
-  label: PropTypes.string
+  label: PropTypes.string,
+  surchargeGif: PropTypes.string
 }
 
 export default SurchargeBanner

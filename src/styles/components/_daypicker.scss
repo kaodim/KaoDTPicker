@@ -72,3 +72,46 @@
   font-weight: 600;
   justify-content: center;
 }
+
+.kld-daypicker__date {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 $l;
+}
+
+.kld-daypicker__date-item {
+  align-items: center;
+  background: transparent;
+  border: none;
+  color: black;
+  cursor: pointer;
+  display: flex;
+  flex-basis: 14%;
+  flex-direction: column;
+  font-size: $l;
+  font-weight: 500;
+  justify-content: flex-start;
+  min-height: 3em;
+  line-height: inherit;
+  
+  &-unavailable {
+    @extend .kld-daypicker__date-item;
+    color: $light-grey;
+  }
+}
+
+.kld-daypicker__date-surcharge {
+  display: flex;
+  align-items: center;
+}
+
+.kld-daypicker__date-surcharge-icon {
+  height: $s;
+  width: $s;
+}
+
+.kld-daypicker__date-surcharge-price {
+  font-size: 11px;
+  color: #6a6a6a;
+  padding-left: $xs;
+}

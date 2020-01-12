@@ -6,6 +6,7 @@ import HeaderClose from './HeaderClose'
 import SurchargeBanner from './SurchargeBanner'
 import ChevronRight from './ChevronRight'
 import ChevronLeft from './ChevronLeft'
+import SurchargeArrow from './SurchargeArrow'
 
 class DayPicker extends Component {
   constructor(props) {
@@ -45,7 +46,7 @@ class DayPicker extends Component {
 
   render() {
     const { currentIndex } = this.state
-    const { calendarMonths } = this.props
+    const { calendarMonths, surchargeGif } = this.props
     const calendarLength = calendarMonths.length
     const weekdayShort = moment.weekdaysShort()
     const curMonth = calendarMonths && calendarMonths[currentIndex]
@@ -67,7 +68,10 @@ class DayPicker extends Component {
           </div>
           {curMonth.surchargable && (
             <div>
-              <SurchargeBanner label={'Indicates high demand fee (RM)'} />
+              <SurchargeBanner
+                label={'Indicates high demand fee (RM)'}
+                surchargeGif={surchargeGif}
+              />
             </div>
           )}
           {/* ========== Calendar Month Header ========== */}
@@ -91,7 +95,8 @@ class DayPicker extends Component {
             </button>
           </div>
           {dayNameOfWeek(weekdayShort)}
-          <span>asdfsadf</span>
+          {/* ========== Day Items List ========== */}
+          {dateItem(curMonth.days)}
         </div>
       </section>
     )
@@ -101,17 +106,50 @@ class DayPicker extends Component {
 const dayNameOfWeek = (dayName) => (
   <div className="kld-daypicker__dow">
     {dayName.map((day, index) => (
-      <div className="kld-daypicker__dow-item" key={index}>{day.charAt(0)}</div>
+      <div className="kld-daypicker__dow-item" key={index}>
+        {day.charAt(0)}
+      </div>
     ))}
   </div>
 )
 
+const dateItem = (dates, selectedDate, handleDateSelect) => {
+  let firstDayOfMonth = new Date(dates[0].value) // Check first day of the month to fill empty
+  let emptyDays = Array(firstDayOfMonth.getDay()).fill('')
+  let concatDays = emptyDays.concat(dates)
+  let colorStyle = (available) => {
+    return available ? 'kld-daypicker__date-item' : 'kld-daypicker__date-item-unavailable'
+  }
+  return (
+    <div className="kld-daypicker__date">
+      {concatDays.map((d, index) => {
+        const cd = d ? new Date(d.value) : ''
+        return (
+          <button className={colorStyle(d.available)} key={index}>
+            <span>{cd && cd.getDate()}</span>
+            {d.show_price && (
+              <div className="kld-daypicker__date-surcharge">
+                <SurchargeArrow className="kld-daypicker__date-surcharge-icon" />
+                <span className="kld-daypicker__date-surcharge-price">
+                  {d.human_readable_price}
+                </span>
+              </div>
+            )}
+          </button>
+        )
+      })}
+    </div>
+  )
+}
+
 DayPicker.defaultProps = {
-  calendarMonths: []
+  calendarMonths: [],
+  surchargeGif: ''
 }
 
 DayPicker.propTypes = {
-  calendarMonths: PropTypes.array
+  calendarMonths: PropTypes.array,
+  surchargeGif: PropTypes.string
 }
 
 export default DayPicker

@@ -30,7 +30,7 @@ class Kaolendar extends Component {
     //   return dText
     // }
     const { isDayPickerOpen } = this.state
-    const { calendarMonths } = this.props
+    const { calendarMonths, surchargeGif } = this.props
     return (
       <article>
         <section>
@@ -39,7 +39,7 @@ class Kaolendar extends Component {
             <MiniCal className="kld__icon" />
           </div>
         </section>
-        <DayPicker calendarMonths={calendarMonths} />
+        <DayPicker calendarMonths={calendarMonths} surchargeGif={surchargeGif} />
       </article>
     )
   }
@@ -47,12 +47,14 @@ class Kaolendar extends Component {
 
 Kaolendar.defaultProps = {
   calendarMonths: [],
-  hasTimePicker: false
+  hasTimePicker: false,
+  surchargeGif: ''
 }
 
 Kaolendar.propTypes = {
   calendarMonths: PropTypes.array,
-  hasTimePicker: PropTypes.bool
+  hasTimePicker: PropTypes.bool,
+  surchargeGif: PropTypes.string
 }
 
 export default Kaolendar
