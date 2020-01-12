@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react'
+import moment from 'moment'
 
 import MiniCal from './components/MiniCal'
 import DayPicker from './components/DayPicker'
@@ -30,6 +31,13 @@ class Kaolendar extends Component {
     this.setState({ isTimePickerOpen: false })
   }
 
+  handleTPBack = () => {
+    this.setState({
+      isDayPickerOpen: true,
+      isTimePickerOpen: false
+    })
+  }
+
   handleSelectDay = (selectedObj) => {
     console.log(selectedObj.date)
     const hasTimePicker = this.props.hasTimePicker
@@ -40,32 +48,53 @@ class Kaolendar extends Component {
       selectedDate: selectedObj.date
     })
     // Check hasTimePicker flag to complete user select day and time journey
-    if (hasTimePicker) {
-      this.fetchTimeslots(selectedObj.date)
-    } else {
-      this.setState({ userSelectedDate: selectedObj.date })
-      this.props.onChange(selectedObj)
-    }
-  }
-  render() {
-    const dateText = 'adsfsdf'
-    // const dateText = () => {
-    //   userSelectedDate ? moment(userSelectedDate).format('ddd, DD MMM YYYY, h:mm A') : ''
-    //   let dText = ''
-    //   if (hasTimePicker) {
-    //     userSelectedDate && (dText = moment(userSelectedDate).format('ddd, DD MMM YYYY, h:mm A'))
-    //   } else {
-    //     selectedDate && (dText = moment(selectedDate).format('ddd, DD MMM YYYY'))
-    //   }
-    //   return dText
+    this.props.onChange(selectedObj)
+    // if (hasTimePicker) {
+    //   // this.fetchTimeslots(selectedObj.date)
+    // } else {
+    //   this.setState({ userSelectedDate: selectedObj.date })
+    //   this.props.onChange(selectedObj)
     // }
-    const { daySurchargeLabel, isDayPickerOpen, selectedDate } = this.state
-    const { calendarMonths, surchargeGif, timeslots } = this.props
+  }
+
+  handleSelectTime = (dateObj) => {
+    this.setState({
+      isDayPickerOpen: false,
+      isTimePickerOpen: false,
+      selectedDate: dateObj.date
+    })
+    this.props.onChange(dateObj)
+  }
+
+  render() {
+    // const dateText = 'adsfsdf'
+    const { daySurchargeLabel, isDayPickerOpen, isTimePickerOpen, selectedDate } = this.state
+    const { calendarMonths, hasTimePicker, surchargeGif, timeslots } = this.props
+    const dateText = () => {
+      // selectedDate ? moment(selectedDate).format('ddd, DD MMM YYYY, h:mm A') : ''
+      let dText = ''
+      selectedDate &&
+        (dText = moment(selectedDate).format(
+          hasTimePicker ? 'ddd, DD MMM YYYY, h:mm A' : 'ddd, DD MMM YYYY'
+        ))
+      // if (hasTimePicker) {
+      //   selectedDate && (dText = moment(selectedDate).format('ddd, DD MMM YYYY, h:mm A'))
+      // } else {
+      //   selectedDate && (dText = moment(selectedDate).format('ddd, DD MMM YYYY'))
+      // }
+      return dText
+    }
     return (
       <article>
         <section>
           <div className="kld">
-            <input className="kld__input" onClick={this.handleInputClick} value={dateText} />
+            <input
+              className="kld__input"
+              onChange={() => {}}
+              onClick={this.handleInputClick}
+              placeholder={'Select a date'}
+              value={dateText()}
+            />
             <MiniCal className="kld__icon" />
           </div>
         </section>
@@ -78,13 +107,17 @@ class Kaolendar extends Component {
             surchargeGif={surchargeGif}
           />
         )}
-        <TimePicker
-          bannerPrice={daySurchargeLabel}
-          closeTP={this.handleTPClose}
-          selectedDate={selectedDate}
-          surchargeGif={surchargeGif}
-          timeslots={timeslots}
-        />
+        {hasTimePicker && isTimePickerOpen && (
+          <TimePicker
+            backTP={this.handleTPBack}
+            bannerPrice={daySurchargeLabel}
+            closeTP={this.handleTPClose}
+            onChange={this.handleSelectTime}
+            selectedDate={selectedDate}
+            surchargeGif={surchargeGif}
+            timeslots={timeslots}
+          />
+        )}
       </article>
     )
   }

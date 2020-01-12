@@ -8,16 +8,24 @@ import HourList from './HourList'
 class TimePicker extends Component {
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = { selectedTime: '' }
   }
 
   handleHourChange = (hour) => {
     this.setState({ selectedTime: hour })
   }
 
+  handleDoneClick = () => {
+    const timeObj = {
+      date: this.state.selectedTime,
+      locTotalPrice: this.props.bannerPrice
+    }
+    this.props.onChange(timeObj)
+  }
+
   render() {
     const { selectedTime } = this.state
-    const { bannerPrice, selectedDate, surchargeGif, timeslots } = this.props
+    const { backTP, bannerPrice, selectedDate, surchargeGif, timeslots } = this.props
     const bannerText = `${moment(selectedDate).format(
       'DD MMM (ddd)'
     )} has a surcharge of ${bannerPrice}`
@@ -43,8 +51,13 @@ class TimePicker extends Component {
           />
         </div>
         <div className="kld-timepicker__footer">
-          <button className="kld-timepicker__footer-btn-back">Back</button>
-          <button className="kld-timepicker__footer-btn-done" disabled={!selectedTime}>
+          <button className="kld-timepicker__footer-btn-back" onClick={backTP}>
+            Back
+          </button>
+          <button
+            className="kld-timepicker__footer-btn-done"
+            disabled={!selectedTime}
+            onClick={this.handleDoneClick}>
             Done
           </button>
         </div>
@@ -54,14 +67,18 @@ class TimePicker extends Component {
 }
 
 TimePicker.defaultProps = {
+  backTP: () => {},
   bannerPrice: '',
+  onChange: () => {},
   selectedDate: '',
   surchargeGif: '',
   timeslots: []
 }
 
 TimePicker.propTypes = {
+  backTP: PropTypes.func,
   bannerPrice: PropTypes.string,
+  onChange: PropTypes.func,
   selectedDate: PropTypes.string,
   surchargeGif: PropTypes.string,
   timeslots: PropTypes.array

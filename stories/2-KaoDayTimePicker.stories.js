@@ -5,6 +5,7 @@ import Kaolendar from '../src/index'
 import SurchargeBanner from '../src/components/SurchargeBanner'
 
 import { calendarMonths, calTimeslots } from '../src/constants/mock'
+import DayPicker from '../src/components/DayPicker'
 
 export default {
   title: 'Kao-DayTimePicker'
@@ -13,7 +14,7 @@ export default {
 export const test = () => <Test />
 
 export const dayTimePicker = () => (
-  <Kaolendar calendarMonths={calendarMonths} timeslots={calTimeslots} />
+  <Kaolendar calendarMonths={calendarMonths} hasTimePicker timeslots={calTimeslots} />
 )
 
 export const surchargeBanner = () => <SurchargeBanner label={'This is surcharge banner'} />
