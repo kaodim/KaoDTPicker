@@ -42,9 +42,10 @@
   background: transparent;
   border: none;
   border-radius: $xs;
+  flex-basis: 25%;
   font-size: $l;
   font-weight: 600;
-  padding: $m 3em;
+  padding: $m $m;
 
   &-back {
     @extend .kld-timepicker__footer-btn;

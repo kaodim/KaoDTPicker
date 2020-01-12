@@ -2,6 +2,9 @@ import React, { PropTypes } from 'react'
 import moment from 'moment'
 
 const HourListItem = ({ timeslots, label, onChangeTime, selectedTime }) => {
+  const btnStyle = (date) => {
+    return selectedTime === date ? 'kld-hli__timeslot-item-selected' : 'kld-hli__timeslot-item'
+  }
   return (
     <div className="kld-hli">
       <span className="kld-hli__zone">{label}</span>
@@ -10,10 +13,10 @@ const HourListItem = ({ timeslots, label, onChangeTime, selectedTime }) => {
           const date = tsItem.value
           return (
             <button
-              className="kld-hli__timeslot-item"
+              className={btnStyle(date)}
               disabled={!tsItem.available}
               key={index}
-              onClick={onChangeTime}>
+              onClick={() => onChangeTime(date)}>
               {moment(date).format('hh:mmA')}
             </button>
           )

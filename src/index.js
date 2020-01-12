@@ -17,9 +17,19 @@ class Kaolendar extends Component {
     }
   }
   handleInputClick = () => {
-    console.log('handleInputClick called')
-    // this.setState({ isDayPickerOpen: true })
+    this.setState({ isDayPickerOpen: true })
   }
+
+  handleInputChange = () => {}
+
+  handleDPClose = () => {
+    this.setState({ isDayPickerOpen: false })
+  }
+
+  handleTPClose = () => {
+    this.setState({ isTimePickerOpen: false })
+  }
+
   handleSelectDay = (selectedObj) => {
     console.log(selectedObj.date)
     const hasTimePicker = this.props.hasTimePicker
@@ -59,14 +69,18 @@ class Kaolendar extends Component {
             <MiniCal className="kld__icon" />
           </div>
         </section>
-        <DayPicker
-          calendarMonths={calendarMonths}
-          onChange={this.handleSelectDay}
-          selectedDate={selectedDate}
-          surchargeGif={surchargeGif}
-        />
+        {isDayPickerOpen && (
+          <DayPicker
+            calendarMonths={calendarMonths}
+            closeDP={this.handleDPClose}
+            onChange={this.handleSelectDay}
+            selectedDate={selectedDate}
+            surchargeGif={surchargeGif}
+          />
+        )}
         <TimePicker
           bannerPrice={daySurchargeLabel}
+          closeTP={this.handleTPClose}
           selectedDate={selectedDate}
           surchargeGif={surchargeGif}
           timeslots={timeslots}

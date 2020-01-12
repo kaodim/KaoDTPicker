@@ -56,7 +56,7 @@ class DayPicker extends Component {
   }
   render() {
     const { currentIndex } = this.state
-    const { calendarMonths, selectedDate, surchargeGif } = this.props
+    const { calendarMonths, closeDP, selectedDate, surchargeGif } = this.props
     const calendarLength = calendarMonths.length
     const weekdayShort = moment.weekdaysShort()
     const curMonth = calendarMonths && calendarMonths[currentIndex]
@@ -74,7 +74,7 @@ class DayPicker extends Component {
         <div className="kld-daypicker">
           <div className="kld-daypicker__header">
             <label className="kld-daypicker__header-title">Select Date</label>
-            <HeaderClose className="kld-daypicker__header-close" />
+            <HeaderClose className="kld-daypicker__header-close" onClick={closeDP} />
           </div>
           {curMonth.surchargable && (
             <div>
@@ -172,6 +172,7 @@ const dateItem = (dates, selectedDate, handleDateSelect) => {
 
 DayPicker.defaultProps = {
   calendarMonths: [],
+  closeDP: () => {},
   onChange: () => {},
   selectedDate: '',
   surchargeGif: ''
@@ -179,6 +180,7 @@ DayPicker.defaultProps = {
 
 DayPicker.propTypes = {
   calendarMonths: PropTypes.array,
+  closeDP: PropTypes.func,
   onChange: PropTypes.func,
   selectedDate: PropTypes.string,
   surchargeGif: PropTypes.string

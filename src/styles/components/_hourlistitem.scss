@@ -34,12 +34,13 @@
   margin-bottom: $s;
   margin-right: $s;
   padding: $s $xs;
-  // &:disabled{
-  //   color: #e0e0e0;
-  // }
-  // &-selected {
-  //   background-color: map-get($colors, kaodim-red) !important;
-  //   border: none;
-  //   color: white !important;
-  // }
+  &:disabled{
+    color: #e0e0e0;
+  }
+  &-selected {
+    @extend .kld-hli__timeslot-item;
+    background-color: $kaodim-brand;
+    border: none;
+    color: white !important;
+  }
 }

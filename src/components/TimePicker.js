@@ -8,12 +8,11 @@ import HourList from './HourList'
 class TimePicker extends Component {
   constructor(props) {
     super(props)
-    this.state = { selectedTime: '' }
+    this.state = {}
   }
 
-  handleHourChange() {
-    console.log('handleHourChange called')
-    // this.setState({ selectedTime: hour })
+  handleHourChange = (hour) => {
+    this.setState({ selectedTime: hour })
   }
 
   render() {
@@ -45,7 +44,9 @@ class TimePicker extends Component {
         </div>
         <div className="kld-timepicker__footer">
           <button className="kld-timepicker__footer-btn-back">Back</button>
-          <button className="kld-timepicker__footer-btn-done">Done</button>
+          <button className="kld-timepicker__footer-btn-done" disabled={!selectedTime}>
+            Done
+          </button>
         </div>
       </section>
     )
