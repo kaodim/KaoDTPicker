@@ -93,10 +93,21 @@
   justify-content: flex-start;
   min-height: 3em;
   line-height: inherit;
+  padding: $s;
   
   &-unavailable {
     @extend .kld-daypicker__date-item;
     color: $light-grey;
+  }
+
+  &-selected {
+    @extend .kld-daypicker__date-item;
+    background: $kaodim-brand;
+    border-radius: $s;
+    color: white;
+    .kld-daypicker__date-surcharge-price {
+      color: #ffd4e2;
+    }
   }
 }
 

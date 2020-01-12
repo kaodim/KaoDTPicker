@@ -10,12 +10,32 @@ class Kaolendar extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      isDayPickerOpen: false
+      daySurchargeLabel: '',
+      isDayPickerOpen: false,
+      isTimePickerOpen: false,
+      selectedDate: this.props.value
     }
   }
   handleInputClick = () => {
     console.log('handleInputClick called')
     // this.setState({ isDayPickerOpen: true })
+  }
+  handleSelectDay = (selectedObj) => {
+    console.log(selectedObj.date)
+    const hasTimePicker = this.props.hasTimePicker
+    this.setState({
+      daySurchargeLabel: selectedObj.locTotalPrice,
+      isDayPickerOpen: false,
+      isTimePickerOpen: hasTimePicker,
+      selectedDate: selectedObj.date
+    })
+    // Check hasTimePicker flag to complete user select day and time journey
+    if (hasTimePicker) {
+      this.fetchTimeslots(selectedObj.date)
+    } else {
+      this.setState({ userSelectedDate: selectedObj.date })
+      this.props.onChange(selectedObj)
+    }
   }
   render() {
     const dateText = 'adsfsdf'
@@ -29,7 +49,7 @@ class Kaolendar extends Component {
     //   }
     //   return dText
     // }
-    const { isDayPickerOpen } = this.state
+    const { isDayPickerOpen, selectedDate } = this.state
     const { calendarMonths, surchargeGif } = this.props
     return (
       <article>
@@ -39,7 +59,12 @@ class Kaolendar extends Component {
             <MiniCal className="kld__icon" />
           </div>
         </section>
-        <DayPicker calendarMonths={calendarMonths} surchargeGif={surchargeGif} />
+        <DayPicker
+          calendarMonths={calendarMonths}
+          onChange={this.handleSelectDay}
+          selectedDate={selectedDate}
+          surchargeGif={surchargeGif}
+        />
       </article>
     )
   }
@@ -48,13 +73,17 @@ class Kaolendar extends Component {
 Kaolendar.defaultProps = {
   calendarMonths: [],
   hasTimePicker: false,
-  surchargeGif: ''
+  onChange: () => {},
+  surchargeGif: '',
+  value: ''
 }
 
 Kaolendar.propTypes = {
   calendarMonths: PropTypes.array,
   hasTimePicker: PropTypes.bool,
-  surchargeGif: PropTypes.string
+  onChange: PropTypes.func,
+  surchargeGif: PropTypes.string,
+  value: PropTypes.string
 }
 
 export default Kaolendar

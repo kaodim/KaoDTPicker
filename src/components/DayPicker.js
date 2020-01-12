@@ -7,6 +7,7 @@ import SurchargeBanner from './SurchargeBanner'
 import ChevronRight from './ChevronRight'
 import ChevronLeft from './ChevronLeft'
 import SurchargeArrow from './SurchargeArrow'
+import SurchargeArrowWhite from './SurchargeArrowWhite'
 
 class DayPicker extends Component {
   constructor(props) {
@@ -16,6 +17,7 @@ class DayPicker extends Component {
       // calendarLength: this.props.calendarMonths.length,
       currentCalMonthArray: undefined,
       currentIndex: 0
+      // selectedDate: ''
     }
   }
 
@@ -29,7 +31,7 @@ class DayPicker extends Component {
     this.setState({ currentCalMonthArray: monthNowArray })
   }
 
-  handleMonthChange(condition) {
+  handleMonthChange = (condition) => {
     const checkMonthExist = this.props.calendarMonths[this.state.currentIndex]
     if (checkMonthExist) {
       if (condition === 'increase') {
@@ -44,9 +46,17 @@ class DayPicker extends Component {
     }
   }
 
+  handleDateSelect = (selectedDate, selectedLTPrice) => {
+    this.setState({ selectedDate })
+    const selectedObj = {
+      date: selectedDate,
+      locTotalPrice: selectedLTPrice
+    }
+    this.props.onChange(selectedObj)
+  }
   render() {
     const { currentIndex } = this.state
-    const { calendarMonths, surchargeGif } = this.props
+    const { calendarMonths, selectedDate, surchargeGif } = this.props
     const calendarLength = calendarMonths.length
     const weekdayShort = moment.weekdaysShort()
     const curMonth = calendarMonths && calendarMonths[currentIndex]
@@ -96,7 +106,7 @@ class DayPicker extends Component {
           </div>
           {dayNameOfWeek(weekdayShort)}
           {/* ========== Day Items List ========== */}
-          {dateItem(curMonth.days)}
+          {dateItem(curMonth.days, selectedDate, this.handleDateSelect)}
         </div>
       </section>
     )
@@ -120,16 +130,34 @@ const dateItem = (dates, selectedDate, handleDateSelect) => {
   let colorStyle = (available) => {
     return available ? 'kld-daypicker__date-item' : 'kld-daypicker__date-item-unavailable'
   }
+  let colorStyleSelected = (dateNow) => {
+    const selecteISO = new Date(selectedDate)
+    return (
+      dateNow &&
+      (dateNow.getTime() === selecteISO.getTime() ? 'kld-daypicker__date-item-selected' : '')
+    )
+  }
+  let surchargeColor = (dateNow) => {
+    return colorStyleSelected(dateNow) ? (
+      <SurchargeArrowWhite />
+    ) : (
+      <SurchargeArrow className="kld-daypicker__date-surcharge-icon" />
+    )
+  }
   return (
     <div className="kld-daypicker__date">
       {concatDays.map((d, index) => {
         const cd = d ? new Date(d.value) : ''
         return (
-          <button className={colorStyle(d.available)} key={index}>
+          <button
+            className={`${colorStyle(d.available)} ${colorStyleSelected(cd)}`}
+            disabled={!d.available}
+            key={index}
+            onClick={() => handleDateSelect(d.value, d.localized_total_price)}>
             <span>{cd && cd.getDate()}</span>
             {d.show_price && (
               <div className="kld-daypicker__date-surcharge">
-                <SurchargeArrow className="kld-daypicker__date-surcharge-icon" />
+                {surchargeColor(cd)}
                 <span className="kld-daypicker__date-surcharge-price">
                   {d.human_readable_price}
                 </span>
@@ -144,11 +172,15 @@ const dateItem = (dates, selectedDate, handleDateSelect) => {
 
 DayPicker.defaultProps = {
   calendarMonths: [],
+  onChange: () => {},
+  selectedDate: '',
   surchargeGif: ''
 }
 
 DayPicker.propTypes = {
   calendarMonths: PropTypes.array,
+  onChange: PropTypes.func,
+  selectedDate: PropTypes.string,
   surchargeGif: PropTypes.string
 }
 
