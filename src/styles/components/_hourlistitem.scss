@@ -1,0 +1,45 @@
+.kld-hli {
+  display: flex;
+  flex-direction: column;
+  padding-left: $xl;
+  padding-right: $xl;
+  padding-top: $xl;
+}
+
+.kld-hli__zone {
+  color: $light-grey;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.kld-hli__timeslot {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.kld-hli__timeslot-item {
+  background: transparent;
+  border: solid 1px #e0e0e0;
+  border-radius: $xs;
+  color: black;
+  cursor: pointer;
+  display: flex;
+  flex-basis: 13%;
+  font-size: $f-sm;
+  font-weight: 500;
+  justify-content: center;
+  min-width: 6em;
+  margin-bottom: $s;
+  margin-right: $s;
+  padding: $s $xs;
+  // &:disabled{
+  //   color: #e0e0e0;
+  // }
+  // &-selected {
+  //   background-color: map-get($colors, kaodim-red) !important;
+  //   border: none;
+  //   color: white !important;
+  // }
+}
