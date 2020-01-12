@@ -25,7 +25,7 @@ class TimePicker extends Component {
 
   render() {
     const { selectedTime } = this.state
-    const { backTP, bannerPrice, selectedDate, surchargeGif, timeslots } = this.props
+    const { backTP, bannerPrice, closeTP, selectedDate, surchargeGif, timeslots } = this.props
     const bannerText = `${moment(selectedDate).format(
       'DD MMM (ddd)'
     )} has a surcharge of ${bannerPrice}`
@@ -35,7 +35,7 @@ class TimePicker extends Component {
           <span className="kld-timepicker__header-title">{`Select time • ${moment(
             selectedDate
           ).format('DD MMM')}`}</span>
-          <HeaderClose className="kld-timepicker__header-close" />
+          <HeaderClose className="kld-timepicker__header-close" onClick={closeTP} />
         </div>
         {bannerPrice && (
           <div className="kld-timepicker__banner">
@@ -69,6 +69,7 @@ class TimePicker extends Component {
 TimePicker.defaultProps = {
   backTP: () => {},
   bannerPrice: '',
+  closeTP: () => {},
   onChange: () => {},
   selectedDate: '',
   surchargeGif: '',
@@ -78,6 +79,7 @@ TimePicker.defaultProps = {
 TimePicker.propTypes = {
   backTP: PropTypes.func,
   bannerPrice: PropTypes.string,
+  closeTP: PropTypes.func,
   onChange: PropTypes.func,
   selectedDate: PropTypes.string,
   surchargeGif: PropTypes.string,

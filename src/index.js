@@ -14,7 +14,8 @@ class Kaolendar extends Component {
       daySurchargeLabel: '',
       isDayPickerOpen: false,
       isTimePickerOpen: false,
-      selectedDate: this.props.value
+      selectedDate: this.props.value,
+      userHasCompleted: false
     }
   }
   handleInputClick = () => {
@@ -39,7 +40,6 @@ class Kaolendar extends Component {
   }
 
   handleSelectDay = (selectedObj) => {
-    console.log(selectedObj.date)
     const hasTimePicker = this.props.hasTimePicker
     this.setState({
       daySurchargeLabel: selectedObj.locTotalPrice,
@@ -49,26 +49,32 @@ class Kaolendar extends Component {
     })
     // Check hasTimePicker flag to complete user select day and time journey
     this.props.onChange(selectedObj)
-    // if (hasTimePicker) {
-    //   // this.fetchTimeslots(selectedObj.date)
-    // } else {
-    //   this.setState({ userSelectedDate: selectedObj.date })
-    //   this.props.onChange(selectedObj)
-    // }
+    if (hasTimePicker) {
+      this.setState({ userHasCompleted: false })
+    } else {
+      this.setState({ userHasCompleted: true })
+    }
   }
 
   handleSelectTime = (dateObj) => {
     this.setState({
       isDayPickerOpen: false,
       isTimePickerOpen: false,
-      selectedDate: dateObj.date
+      selectedDate: dateObj.date,
+      userHasCompleted: true
     })
     this.props.onChange(dateObj)
   }
 
   render() {
     // const dateText = 'adsfsdf'
-    const { daySurchargeLabel, isDayPickerOpen, isTimePickerOpen, selectedDate } = this.state
+    const {
+      daySurchargeLabel,
+      isDayPickerOpen,
+      isTimePickerOpen,
+      selectedDate,
+      userHasCompleted
+    } = this.state
     const { calendarMonths, hasTimePicker, surchargeGif, timeslots } = this.props
     const dateText = () => {
       // selectedDate ? moment(selectedDate).format('ddd, DD MMM YYYY, h:mm A') : ''
@@ -77,11 +83,7 @@ class Kaolendar extends Component {
         (dText = moment(selectedDate).format(
           hasTimePicker ? 'ddd, DD MMM YYYY, h:mm A' : 'ddd, DD MMM YYYY'
         ))
-      // if (hasTimePicker) {
-      //   selectedDate && (dText = moment(selectedDate).format('ddd, DD MMM YYYY, h:mm A'))
-      // } else {
-      //   selectedDate && (dText = moment(selectedDate).format('ddd, DD MMM YYYY'))
-      // }
+      !userHasCompleted && (dText = '') // Check user has completed selection
       return dText
     }
     return (
