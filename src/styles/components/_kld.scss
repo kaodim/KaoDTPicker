@@ -13,12 +13,12 @@
   border-radius: $xs;
   border: solid 1px #dddddd;
   flex-grow: 1;
-  padding: 1em 1em 1em 3em;
+  padding: $s $s $s 3em;
 }
 
 .kld__icon {
   height: $xl;
-  padding-left: $s;
+  margin-left: $s;
   position: absolute;
   width: $xl;
 }

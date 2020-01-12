@@ -45,7 +45,7 @@ module.exports = {
   externals: {
     react: 'commonjs react'
   },
-  devtool: 'cheap-module-eval-source-map',
+  // devtool: 'cheap-module-eval-source-map',
   devServer: {
     contentBase: path.join(__dirname,'public')
   }

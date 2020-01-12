@@ -50,7 +50,7 @@ class DayPicker extends Component {
     const weekdayShort = moment.weekdaysShort()
     const curMonth = calendarMonths && calendarMonths[currentIndex]
     const checkEndOfCal = (index, arrayLength) => {
-      return index + 1 === arrayLength
+      return arrayLength === index + 1
     }
     const checkStartOfCal = (index) => {
       return index === 0
@@ -87,14 +87,24 @@ class DayPicker extends Component {
               className="kld-daypicker__month-chevron"
               disabled={checkEndOfCal(currentIndex, calendarLength)}
               onClick={this.handleMonthChange.bind(this, 'increase')}>
-              <ChevronRight className="kld-daypicker__month-chevron" />
+              <ChevronRight />
             </button>
           </div>
+          {dayNameOfWeek(weekdayShort)}
+          <span>asdfsadf</span>
         </div>
       </section>
     )
   }
 }
+
+const dayNameOfWeek = (dayName) => (
+  <div className="kld-daypicker__dow">
+    {dayName.map((day, index) => (
+      <div className="kld-daypicker__dow-item" key={index}>{day.charAt(0)}</div>
+    ))}
+  </div>
+)
 
 DayPicker.defaultProps = {
   calendarMonths: []

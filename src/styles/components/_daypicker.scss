@@ -7,7 +7,7 @@
 
 .kld-daypicker__header {
   align-items: center;
-  border-bottom: 1px solid $light-grey;
+  border-bottom: 1px solid $bg-light-grey;
   display: flex;
 }
 
@@ -50,4 +50,25 @@
   margin: 0;
   padding: 0;
   // width: $xl !important;
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.kld-daypicker__dow {
+  border-bottom: solid 1px $bg-light-grey;
+  display: flex;
+  flex-grow: 1;
+  justify-content: start;
+  margin: 0 $l;
+  padding: $l 0;
+}
+
+.kld-daypicker__dow-item {
+  color: $light-grey;
+  display: flex;
+  flex-basis: 14%;
+  font-size: $f-s;
+  font-weight: 600;
+  justify-content: center;
 }
