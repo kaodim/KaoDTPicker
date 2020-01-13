@@ -1,8 +1,26 @@
 .kld-daypicker {
   background-color: white;
+  border-radius: $s;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  border: solid 1px blueviolet;
+  max-width: 390px;
+  min-width: 330px;
+}
+
+.kld-daypicker__modal {
+  align-items: flex-start;
+  background-color: rgba(0, 0, 0, 0.3);
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  overflow: auto;
+  padding: 2em 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 99;
 }
 
 .kld-daypicker__header {
@@ -24,7 +42,7 @@
 .kld-daypicker__header-close {
   cursor: pointer;
   height: $xl;
-  padding-right: $s;
+  margin-right: $s;
   width: $xl;
 }
 
@@ -76,7 +94,7 @@
 .kld-daypicker__date {
   display: flex;
   flex-wrap: wrap;
-  padding: 0 $l;
+  padding: $s $l;
 }
 
 .kld-daypicker__date-item {

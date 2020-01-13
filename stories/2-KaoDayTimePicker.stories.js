@@ -5,7 +5,6 @@ import Kaolendar from '../src/index'
 import SurchargeBanner from '../src/components/SurchargeBanner'
 
 import { calendarMonths, calTimeslots } from '../src/constants/mock'
-import DayPicker from '../src/components/DayPicker'
 
 export default {
   title: 'Kao-DayTimePicker'

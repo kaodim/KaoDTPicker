@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import moment from 'moment'
+import { Modal } from 'react-bootstrap'
 import { monthNames } from '../modules/constants'
 
 import HeaderClose from './HeaderClose'
@@ -13,11 +14,9 @@ class DayPicker extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      // calendarMonths: this.props.calendarMonths,
-      // calendarLength: this.props.calendarMonths.length,
       currentCalMonthArray: undefined,
-      currentIndex: 0
-      // selectedDate: ''
+      currentIndex: 0,
+      selectedDate: ''
     }
   }
 
@@ -70,7 +69,7 @@ class DayPicker extends Component {
       return null
     }
     return (
-      <section className="kld-test">
+      <section className="kld-daypicker__modal">
         <div className="kld-daypicker">
           <div className="kld-daypicker__header">
             <label className="kld-daypicker__header-title">Select Date</label>

@@ -30,36 +30,38 @@ class TimePicker extends Component {
       'DD MMM (ddd)'
     )} has a surcharge of ${bannerPrice}`
     return (
-      <section className="kld-timepicker kld-test-2">
-        <div className="kld-timepicker__header">
-          <span className="kld-timepicker__header-title">{`Select time • ${moment(
-            selectedDate
-          ).format('DD MMM')}`}</span>
-          <HeaderClose className="kld-timepicker__header-close" onClick={closeTP} />
-        </div>
-        {bannerPrice && (
-          <div className="kld-timepicker__banner">
-            <SurchargeBanner label={bannerText} surchargeGif={surchargeGif} />
+      <section className="kld-daypicker__modal">
+        <div className="kld-timepicker">
+          <div className="kld-timepicker__header">
+            <span className="kld-timepicker__header-title">{`Select time • ${moment(
+              selectedDate
+            ).format('DD MMM')}`}</span>
+            <HeaderClose className="kld-timepicker__header-close" onClick={closeTP} />
           </div>
-        )}
-        {/* ========== Timeslots Selection ========== */}
-        <div>
-          <HourList
-            onChange={this.handleHourChange}
-            selectedTime={selectedTime}
-            timeslots={timeslots}
-          />
-        </div>
-        <div className="kld-timepicker__footer">
-          <button className="kld-timepicker__footer-btn-back" onClick={backTP}>
-            Back
-          </button>
-          <button
-            className="kld-timepicker__footer-btn-done"
-            disabled={!selectedTime}
-            onClick={this.handleDoneClick}>
-            Done
-          </button>
+          {bannerPrice && (
+            <div className="kld-timepicker__banner">
+              <SurchargeBanner label={bannerText} surchargeGif={surchargeGif} />
+            </div>
+          )}
+          {/* ========== Timeslots Selection ========== */}
+          <div>
+            <HourList
+              onChange={this.handleHourChange}
+              selectedTime={selectedTime}
+              timeslots={timeslots}
+            />
+          </div>
+          <div className="kld-timepicker__footer">
+            <button className="kld-timepicker__footer-btn-back" onClick={backTP}>
+              Back
+            </button>
+            <button
+              className="kld-timepicker__footer-btn-done"
+              disabled={!selectedTime}
+              onClick={this.handleDoneClick}>
+              Done
+            </button>
+          </div>
         </div>
       </section>
     )

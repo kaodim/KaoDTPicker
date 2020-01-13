@@ -1,7 +1,12 @@
 .kld-timepicker {
   background-color: white;
+  border-radius: $s;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
+  height: auto;
+  width: 740px;
+  min-width: 730px;
 }
 
 .kld-timepicker__header {
@@ -23,7 +28,7 @@
 .kld-timepicker__header-close {
   cursor: pointer;
   height: $xl;
-  padding-right: $s;
+  margin-right: $s;
   width: $xl;
 }
 
