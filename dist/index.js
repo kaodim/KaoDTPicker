@@ -34958,12 +34958,21 @@ var Kaolendar = function (_Component) {
         selectedDate: selectedObj.date
       });
       // Check hasTimePicker flag to complete user select day and time journey
-      _this.props.onChange(selectedObj);
       if (hasTimePicker) {
         _this.setState({ userHasCompleted: false });
+        selectedObj.userHasCompleted = false;
+        // this.handleOnChange(selectedObj, false)
       } else {
         _this.setState({ userHasCompleted: true });
+        _this.props.onChange(selectedObj);
+        selectedObj.userHasCompleted = true;
+        // this.handleOnChange(selectedObj, true)
       }
+      _this.props.onChange(selectedObj);
+    };
+
+    _this.handleOnChange = function (selectedObj, userSelection) {
+      userSelection && _this.props.onChange(selectedObj);
     };
 
     _this.handleSelectTime = function (dateObj) {
@@ -34973,6 +34982,7 @@ var Kaolendar = function (_Component) {
         selectedDate: dateObj.date,
         userHasCompleted: true
       });
+      dateObj.userHasCompleted = true;
       _this.props.onChange(dateObj);
     };
 

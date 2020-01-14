@@ -48,12 +48,21 @@ class Kaolendar extends Component {
       selectedDate: selectedObj.date
     })
     // Check hasTimePicker flag to complete user select day and time journey
-    this.props.onChange(selectedObj)
     if (hasTimePicker) {
       this.setState({ userHasCompleted: false })
+      selectedObj.userHasCompleted = false
+      // this.handleOnChange(selectedObj, false)
     } else {
       this.setState({ userHasCompleted: true })
+      this.props.onChange(selectedObj)
+      selectedObj.userHasCompleted = true
+      // this.handleOnChange(selectedObj, true)
     }
+    this.props.onChange(selectedObj)
+  }
+
+  handleOnChange = (selectedObj, userSelection) => {
+    userSelection && this.props.onChange(selectedObj)
   }
 
   handleSelectTime = (dateObj) => {
@@ -63,6 +72,7 @@ class Kaolendar extends Component {
       selectedDate: dateObj.date,
       userHasCompleted: true
     })
+    dateObj.userHasCompleted = true
     this.props.onChange(dateObj)
   }
 
