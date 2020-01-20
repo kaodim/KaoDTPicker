@@ -35008,7 +35008,9 @@ var Kaolendar = function (_Component) {
           userHasCompleted = _state.userHasCompleted;
       var _props = this.props,
           calendarMonths = _props.calendarMonths,
+          dpBannerText = _props.dpBannerText,
           hasTimePicker = _props.hasTimePicker,
+          metaSurchargable = _props.metaSurchargable,
           surchargeGif = _props.surchargeGif,
           timeslots = _props.timeslots;
 
@@ -35039,8 +35041,10 @@ var Kaolendar = function (_Component) {
           )
         ),
         isDayPickerOpen && _react2.default.createElement(_DayPicker2.default, {
+          bannerText: dpBannerText,
           calendarMonths: calendarMonths,
           closeDP: this.handleDPClose,
+          metaSurchargable: metaSurchargable,
           onChange: this.handleSelectDay,
           selectedDate: selectedDate,
           surchargeGif: surchargeGif
@@ -35063,7 +35067,9 @@ var Kaolendar = function (_Component) {
 
 Kaolendar.defaultProps = {
   calendarMonths: [],
+  dpBannerText: '',
   hasTimePicker: false,
+  metaSurchargable: false,
   onChange: function onChange() {},
   surchargeGif: '',
   timeslots: [],
@@ -35072,7 +35078,9 @@ Kaolendar.defaultProps = {
 
 Kaolendar.propTypes = {
   calendarMonths: _react.PropTypes.array,
+  dpBannerText: _react.PropTypes.string,
   hasTimePicker: _react.PropTypes.bool,
+  metaSurchargable: _react.PropTypes.bool,
   onChange: _react.PropTypes.func,
   surchargeGif: _react.PropTypes.string,
   timeslots: _react.PropTypes.array,
@@ -35539,8 +35547,10 @@ var DayPicker = function (_Component) {
     value: function render() {
       var currentIndex = this.state.currentIndex;
       var _props = this.props,
+          bannerText = _props.bannerText,
           calendarMonths = _props.calendarMonths,
           closeDP = _props.closeDP,
+          metaSurchargable = _props.metaSurchargable,
           selectedDate = _props.selectedDate,
           surchargeGif = _props.surchargeGif;
 
@@ -35572,13 +35582,10 @@ var DayPicker = function (_Component) {
             ),
             _react2.default.createElement(_HeaderClose2.default, { className: 'kld-daypicker__header-close', onClick: closeDP })
           ),
-          curMonth.surchargable && _react2.default.createElement(
+          metaSurchargable && _react2.default.createElement(
             'div',
             null,
-            _react2.default.createElement(_SurchargeBanner2.default, {
-              label: 'Indicates high demand fee (RM)',
-              surchargeGif: surchargeGif
-            })
+            _react2.default.createElement(_SurchargeBanner2.default, { label: bannerText, surchargeGif: surchargeGif })
           ),
           _react2.default.createElement(
             'div',
@@ -35678,16 +35685,20 @@ var dateItem = function dateItem(dates, selectedDate, handleDateSelect) {
 };
 
 DayPicker.defaultProps = {
+  bannerText: '',
   calendarMonths: [],
   closeDP: function closeDP() {},
+  metaSurchargable: false,
   onChange: function onChange() {},
   selectedDate: '',
   surchargeGif: ''
 };
 
 DayPicker.propTypes = {
+  bannerText: _react.PropTypes.string,
   calendarMonths: _react.PropTypes.array,
   closeDP: _react.PropTypes.func,
+  metaSurchargable: _react.PropTypes.bool,
   onChange: _react.PropTypes.func,
   selectedDate: _react.PropTypes.string,
   surchargeGif: _react.PropTypes.string

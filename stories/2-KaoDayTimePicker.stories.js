@@ -13,7 +13,21 @@ export default {
 export const test = () => <Test />
 
 export const dayTimePicker = () => (
-  <Kaolendar calendarMonths={calendarMonths} hasTimePicker timeslots={calTimeslots} />
+  <Kaolendar
+    calendarMonths={calendarMonths}
+    dpBannerText={'this.props.dpBannerText'}
+    hasTimePicker
+    timeslots={calTimeslots}
+  />
+)
+
+export const generateDayTimePicker = () => (
+  <Kaolendar
+    calendarMonths={calendarMonths}
+    dpBannerText={'this.props.dpBannerText'}
+    hasTimePicker
+    timeslots={calTimeslots}
+  />
 )
 
 export const surchargeBanner = () => <SurchargeBanner label={'This is surcharge banner'} />

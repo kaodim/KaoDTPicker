@@ -55,7 +55,14 @@ class DayPicker extends Component {
   }
   render() {
     const { currentIndex } = this.state
-    const { calendarMonths, closeDP, selectedDate, surchargeGif } = this.props
+    const {
+      bannerText,
+      calendarMonths,
+      closeDP,
+      metaSurchargable,
+      selectedDate,
+      surchargeGif
+    } = this.props
     const calendarLength = calendarMonths.length
     const weekdayShort = moment.weekdaysShort()
     const curMonth = calendarMonths && calendarMonths[currentIndex]
@@ -75,12 +82,9 @@ class DayPicker extends Component {
             <label className="kld-daypicker__header-title">Select Date</label>
             <HeaderClose className="kld-daypicker__header-close" onClick={closeDP} />
           </div>
-          {curMonth.surchargable && (
+          {metaSurchargable && (
             <div>
-              <SurchargeBanner
-                label={'Indicates high demand fee (RM)'}
-                surchargeGif={surchargeGif}
-              />
+              <SurchargeBanner label={bannerText} surchargeGif={surchargeGif} />
             </div>
           )}
           {/* ========== Calendar Month Header ========== */}
@@ -170,16 +174,20 @@ const dateItem = (dates, selectedDate, handleDateSelect) => {
 }
 
 DayPicker.defaultProps = {
+  bannerText: '',
   calendarMonths: [],
   closeDP: () => {},
+  metaSurchargable: false,
   onChange: () => {},
   selectedDate: '',
   surchargeGif: ''
 }
 
 DayPicker.propTypes = {
+  bannerText: PropTypes.string,
   calendarMonths: PropTypes.array,
   closeDP: PropTypes.func,
+  metaSurchargable: PropTypes.bool,
   onChange: PropTypes.func,
   selectedDate: PropTypes.string,
   surchargeGif: PropTypes.string

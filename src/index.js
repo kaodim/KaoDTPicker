@@ -85,7 +85,14 @@ class Kaolendar extends Component {
       selectedDate,
       userHasCompleted
     } = this.state
-    const { calendarMonths, hasTimePicker, surchargeGif, timeslots } = this.props
+    const {
+      calendarMonths,
+      dpBannerText,
+      hasTimePicker,
+      metaSurchargable,
+      surchargeGif,
+      timeslots
+    } = this.props
     const dateText = () => {
       // selectedDate ? moment(selectedDate).format('ddd, DD MMM YYYY, h:mm A') : ''
       let dText = ''
@@ -112,8 +119,10 @@ class Kaolendar extends Component {
         </section>
         {isDayPickerOpen && (
           <DayPicker
+            bannerText={dpBannerText}
             calendarMonths={calendarMonths}
             closeDP={this.handleDPClose}
+            metaSurchargable={metaSurchargable}
             onChange={this.handleSelectDay}
             selectedDate={selectedDate}
             surchargeGif={surchargeGif}
@@ -137,7 +146,9 @@ class Kaolendar extends Component {
 
 Kaolendar.defaultProps = {
   calendarMonths: [],
+  dpBannerText: '',
   hasTimePicker: false,
+  metaSurchargable: false,
   onChange: () => {},
   surchargeGif: '',
   timeslots: [],
@@ -146,7 +157,9 @@ Kaolendar.defaultProps = {
 
 Kaolendar.propTypes = {
   calendarMonths: PropTypes.array,
+  dpBannerText: PropTypes.string,
   hasTimePicker: PropTypes.bool,
+  metaSurchargable: PropTypes.bool,
   onChange: PropTypes.func,
   surchargeGif: PropTypes.string,
   timeslots: PropTypes.array,
