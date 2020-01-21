@@ -59,6 +59,7 @@ class DayPicker extends Component {
       bannerText,
       calendarMonths,
       closeDP,
+      disableBannerIcon,
       metaSurchargable,
       selectedDate,
       surchargeGif
@@ -84,7 +85,11 @@ class DayPicker extends Component {
           </div>
           {metaSurchargable && (
             <div>
-              <SurchargeBanner label={bannerText} surchargeGif={surchargeGif} />
+              <SurchargeBanner
+                label={bannerText}
+                surchargeGif={surchargeGif}
+                disableIcon={disableBannerIcon}
+              />
             </div>
           )}
           {/* ========== Calendar Month Header ========== */}
@@ -177,6 +182,7 @@ DayPicker.defaultProps = {
   bannerText: '',
   calendarMonths: [],
   closeDP: () => {},
+  disableBannerIcon: false,
   metaSurchargable: false,
   onChange: () => {},
   selectedDate: '',
@@ -187,6 +193,7 @@ DayPicker.propTypes = {
   bannerText: PropTypes.string,
   calendarMonths: PropTypes.array,
   closeDP: PropTypes.func,
+  disableBannerIcon: PropTypes.bool,
   metaSurchargable: PropTypes.bool,
   onChange: PropTypes.func,
   selectedDate: PropTypes.string,

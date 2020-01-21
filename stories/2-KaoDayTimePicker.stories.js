@@ -18,19 +18,26 @@ export const dayTimePicker = () => (
     dpBannerText={'this.props.dpBannerText'}
     hasTimePicker
     timeslots={calTimeslots}
+    value={'2020-01-20T07:00:00.000+08:00'}
   />
 )
 
-export const generateDayTimePicker = () => (
+export const vendorDayTimePicker = () => (
   <Kaolendar
     calendarMonths={calendarMonths}
-    dpBannerText={'this.props.dpBannerText'}
+    disableBannerIcon
+    dpBannerText={'This is for vendor but no surcharge logo'}
     hasTimePicker
+    metaSurchargable
     timeslots={calTimeslots}
   />
 )
 
 export const surchargeBanner = () => <SurchargeBanner label={'This is surcharge banner'} />
+
+export const surchargeBannerWithoutIcon = () => (
+  <SurchargeBanner disableIcon label={'This is surcharge banner without icon'} />
+)
 
 // import Kaolendar from '../src/index'
 

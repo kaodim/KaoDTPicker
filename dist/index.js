@@ -34809,31 +34809,29 @@ var _SurchargeArrow2 = _interopRequireDefault(_SurchargeArrow);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var SurchargeBanner = function SurchargeBanner(_ref) {
-  var label = _ref.label,
+  var disableIcon = _ref.disableIcon,
+      label = _ref.label,
       surchargeGif = _ref.surchargeGif;
   return _react2.default.createElement(
     'section',
     { className: 'kld-surcharge' },
-    surchargeGif ? _react2.default.createElement('img', { src: surchargeGif, className: 'kld-surcharge__icon' }) : _react2.default.createElement(_SurchargeArrow2.default, { className: 'kld-surcharge__icon' }),
+    !disableIcon && (surchargeGif ? _react2.default.createElement('img', { src: surchargeGif, className: 'kld-surcharge__icon' }) : _react2.default.createElement(_SurchargeArrow2.default, { className: 'kld-surcharge__icon' })),
     _react2.default.createElement(
       'span',
       { className: 'kld-surcharge__label' },
       label
     )
-  )
-  // <section className='d-flex flex-row warning-box-sidebar pl-s pr-m pv-m'>
-  //   <i className='icon-wrap-small icon-surcharge mh-s' />
-  //   <span className='pr-m text-sm text-warning-label'>{label}</span>
-  // </section>
-  ;
+  );
 };
 
 SurchargeBanner.defaultProps = {
+  disableIcon: false,
   label: '',
   surchargeGif: ''
 };
 
 SurchargeBanner.propTypes = {
+  disableIcon: _react.PropTypes.bool,
   label: _react.PropTypes.string,
   surchargeGif: _react.PropTypes.string
 };
@@ -34929,7 +34927,7 @@ var Kaolendar = function (_Component) {
     var _this = _possibleConstructorReturn(this, (Kaolendar.__proto__ || Object.getPrototypeOf(Kaolendar)).call(this, props));
 
     _this.handleInputClick = function () {
-      _this.setState({ isDayPickerOpen: true });
+      _this.setState({ isDayPickerOpen: true, selectedDate: '', userHasCompleted: false });
     };
 
     _this.handleInputChange = function () {};
@@ -34991,7 +34989,7 @@ var Kaolendar = function (_Component) {
       isDayPickerOpen: false,
       isTimePickerOpen: false,
       selectedDate: _this.props.value,
-      userHasCompleted: false
+      userHasCompleted: true
     };
     return _this;
   }
@@ -35008,6 +35006,7 @@ var Kaolendar = function (_Component) {
           userHasCompleted = _state.userHasCompleted;
       var _props = this.props,
           calendarMonths = _props.calendarMonths,
+          disableBannerIcon = _props.disableBannerIcon,
           dpBannerText = _props.dpBannerText,
           hasTimePicker = _props.hasTimePicker,
           metaSurchargable = _props.metaSurchargable,
@@ -35016,6 +35015,7 @@ var Kaolendar = function (_Component) {
 
       var dateText = function dateText() {
         // selectedDate ? moment(selectedDate).format('ddd, DD MMM YYYY, h:mm A') : ''
+        // TODO: To refactor this weird logic
         var dText = '';
         selectedDate && (dText = (0, _moment2.default)(selectedDate).format(hasTimePicker ? 'ddd, DD MMM YYYY, h:mm A' : 'ddd, DD MMM YYYY'));
         !userHasCompleted && (dText = ''); // Check user has completed selection
@@ -35044,6 +35044,7 @@ var Kaolendar = function (_Component) {
           bannerText: dpBannerText,
           calendarMonths: calendarMonths,
           closeDP: this.handleDPClose,
+          disableBannerIcon: disableBannerIcon,
           metaSurchargable: metaSurchargable,
           onChange: this.handleSelectDay,
           selectedDate: selectedDate,
@@ -35067,6 +35068,7 @@ var Kaolendar = function (_Component) {
 
 Kaolendar.defaultProps = {
   calendarMonths: [],
+  disableBannerIcon: false,
   dpBannerText: '',
   hasTimePicker: false,
   metaSurchargable: false,
@@ -35078,6 +35080,7 @@ Kaolendar.defaultProps = {
 
 Kaolendar.propTypes = {
   calendarMonths: _react.PropTypes.array,
+  disableBannerIcon: _react.PropTypes.bool,
   dpBannerText: _react.PropTypes.string,
   hasTimePicker: _react.PropTypes.bool,
   metaSurchargable: _react.PropTypes.bool,
@@ -35550,6 +35553,7 @@ var DayPicker = function (_Component) {
           bannerText = _props.bannerText,
           calendarMonths = _props.calendarMonths,
           closeDP = _props.closeDP,
+          disableBannerIcon = _props.disableBannerIcon,
           metaSurchargable = _props.metaSurchargable,
           selectedDate = _props.selectedDate,
           surchargeGif = _props.surchargeGif;
@@ -35585,7 +35589,11 @@ var DayPicker = function (_Component) {
           metaSurchargable && _react2.default.createElement(
             'div',
             null,
-            _react2.default.createElement(_SurchargeBanner2.default, { label: bannerText, surchargeGif: surchargeGif })
+            _react2.default.createElement(_SurchargeBanner2.default, {
+              label: bannerText,
+              surchargeGif: surchargeGif,
+              disableIcon: disableBannerIcon
+            })
           ),
           _react2.default.createElement(
             'div',
@@ -35688,6 +35696,7 @@ DayPicker.defaultProps = {
   bannerText: '',
   calendarMonths: [],
   closeDP: function closeDP() {},
+  disableBannerIcon: false,
   metaSurchargable: false,
   onChange: function onChange() {},
   selectedDate: '',
@@ -35698,6 +35707,7 @@ DayPicker.propTypes = {
   bannerText: _react.PropTypes.string,
   calendarMonths: _react.PropTypes.array,
   closeDP: _react.PropTypes.func,
+  disableBannerIcon: _react.PropTypes.bool,
   metaSurchargable: _react.PropTypes.bool,
   onChange: _react.PropTypes.func,
   selectedDate: _react.PropTypes.string,
@@ -59336,7 +59346,7 @@ module.exports = function (moduleId, list, options) {
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(597);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".kld-test {\n  height: auto;\n  width: 390px; }\n\n.kld-test-2 {\n  height: auto;\n  width: 740px;\n  border: solid 1px orange; }\n\n.kld {\n  align-items: center;\n  display: flex;\n  position: relative; }\n\n.kld__input {\n  border-radius: 0.25em;\n  border: solid 1px #dddddd;\n  flex-grow: 1;\n  padding: 0.5em 0.5em 0.5em 3em; }\n\n.kld__icon {\n  height: 1.5em;\n  margin-left: 0.5em;\n  position: absolute;\n  width: 1.5em; }\n\n.kld-daypicker {\n  background-color: white;\n  border-radius: 0.5em;\n  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);\n  display: flex;\n  flex-direction: column;\n  max-width: 390px;\n  min-width: 330px; }\n\n.kld-daypicker__modal {\n  align-items: flex-start;\n  background-color: rgba(0, 0, 0, 0.3);\n  bottom: 0;\n  display: flex;\n  justify-content: center;\n  left: 0;\n  overflow: auto;\n  padding: 2em 0;\n  position: fixed;\n  right: 0;\n  top: 0;\n  z-index: 99; }\n\n.kld-daypicker__header {\n  align-items: center;\n  border-bottom: 1px solid #f2f2f2;\n  display: flex; }\n\n.kld-daypicker__header-title {\n  color: #262626;\n  display: flex;\n  flex-grow: 1;\n  font-size: 20px;\n  font-weight: 600;\n  justify-content: center;\n  padding: 1em 0; }\n\n.kld-daypicker__header-close {\n  cursor: pointer;\n  height: 1.5em;\n  margin-right: 0.5em;\n  width: 1.5em; }\n\n.kld-daypicker__month {\n  align-items: center;\n  display: flex;\n  justify-content: space-between;\n  padding: 1em; }\n\n.kld-daypicker__month-name {\n  color: #6a6a6a;\n  font-size: 1em;\n  font-weight: 500; }\n\n.kld-daypicker__month-chevron {\n  background: transparent;\n  border: none;\n  cursor: pointer;\n  display: flex;\n  margin: 0;\n  padding: 0; }\n  .kld-daypicker__month-chevron:disabled {\n    cursor: not-allowed; }\n\n.kld-daypicker__dow {\n  border-bottom: solid 1px #f2f2f2;\n  display: flex;\n  flex-grow: 1;\n  justify-content: start;\n  margin: 0 1em;\n  padding: 1em 0; }\n\n.kld-daypicker__dow-item {\n  color: #9b9b9b;\n  display: flex;\n  flex-basis: 14%;\n  font-size: 14px;\n  font-weight: 600;\n  justify-content: center; }\n\n.kld-daypicker__date {\n  display: flex;\n  flex-wrap: wrap;\n  padding: 0.5em 1em; }\n\n.kld-daypicker__date-item, .kld-daypicker__date-item-unavailable, .kld-daypicker__date-item-selected {\n  align-items: center;\n  background: transparent;\n  border: none;\n  color: black;\n  cursor: pointer;\n  display: flex;\n  flex-basis: 14%;\n  flex-direction: column;\n  font-size: 1em;\n  font-weight: 500;\n  justify-content: flex-start;\n  min-height: 3em;\n  line-height: inherit;\n  padding: 0.5em; }\n  .kld-daypicker__date-item-unavailable {\n    color: #9b9b9b; }\n  .kld-daypicker__date-item-selected {\n    background: #ed193a;\n    border-radius: 0.5em;\n    color: white; }\n    .kld-daypicker__date-item-selected .kld-daypicker__date-surcharge-price {\n      color: #ffd4e2; }\n\n.kld-daypicker__date-surcharge {\n  display: flex;\n  align-items: center; }\n\n.kld-daypicker__date-surcharge-icon {\n  height: 0.5em;\n  width: 0.5em; }\n\n.kld-daypicker__date-surcharge-price {\n  font-size: 11px;\n  color: #6a6a6a;\n  padding-left: 0.25em; }\n\n.kld-timepicker {\n  background-color: white;\n  border-radius: 0.5em;\n  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);\n  display: flex;\n  flex-direction: column;\n  height: auto;\n  width: 740px;\n  min-width: 730px; }\n\n.kld-timepicker__header {\n  align-items: center;\n  border-bottom: 1px solid #f2f2f2;\n  display: flex; }\n\n.kld-timepicker__header-title {\n  color: #262626;\n  display: flex;\n  flex-grow: 1;\n  font-size: 20px;\n  font-weight: 600;\n  justify-content: center;\n  padding: 1em 0; }\n\n.kld-timepicker__header-close {\n  cursor: pointer;\n  height: 1.5em;\n  margin-right: 0.5em;\n  width: 1.5em; }\n\n.kld-timepicker__banner {\n  padding: 0.5em 9em; }\n\n.kld-timepicker__footer {\n  border-top: solid 1px #f2f2f2;\n  display: flex;\n  justify-content: space-between;\n  padding: 1.5em; }\n\n.kld-timepicker__footer-btn, .kld-timepicker__footer-btn-back, .kld-timepicker__footer-btn-done {\n  background: transparent;\n  border: none;\n  border-radius: 0.25em;\n  flex-basis: 25%;\n  font-size: 1em;\n  font-weight: 600;\n  padding: 0.75em 0.75em; }\n  .kld-timepicker__footer-btn-back {\n    background-color: #f2f2f2;\n    color: #4a4a4a; }\n  .kld-timepicker__footer-btn-done {\n    background-color: #ed193a;\n    color: white; }\n    .kld-timepicker__footer-btn-done:disabled {\n      background-color: #f4a3b0;\n      cursor: not-allowed; }\n\n.kld-hourlist {\n  display: flex;\n  flex-direction: column; }\n\n.kld-hli {\n  display: flex;\n  flex-direction: column;\n  padding-bottom: 1.5em;\n  padding-left: 1.5em;\n  padding-right: 1.5em; }\n\n.kld-hli__zone {\n  color: #9b9b9b;\n  font-size: 12px;\n  font-weight: 600;\n  text-transform: uppercase; }\n\n.kld-hli__timeslot {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap; }\n\n.kld-hli__timeslot-item, .kld-hli__timeslot-item-selected {\n  background: transparent;\n  border: solid 1px #e0e0e0;\n  border-radius: 0.25em;\n  color: black;\n  cursor: pointer;\n  display: flex;\n  flex-basis: 13%;\n  font-size: 15px;\n  font-weight: 500;\n  justify-content: center;\n  min-width: 6em;\n  margin-bottom: 0.5em;\n  margin-right: 0.5em;\n  padding: 0.5em 0.25em; }\n  .kld-hli__timeslot-item:disabled, .kld-hli__timeslot-item-selected:disabled {\n    color: #e0e0e0; }\n  .kld-hli__timeslot-item-selected {\n    background-color: #ed193a;\n    border: none;\n    color: white !important; }\n\n.kld-surcharge {\n  align-items: center;\n  background-color: #fef6e9;\n  border-left: solid 3px #f5a623;\n  display: flex;\n  justify-content: center;\n  margin: 0.75em 1.5em;\n  padding: 0.5em 0.5em; }\n\n.kld-surcharge__label {\n  color: #8d5c0b;\n  font-size: 15px;\n  padding-left: 0.5em; }\n\n.kld-surcharge__icon {\n  height: 1em;\n  margin-bottom: 0.25em;\n  width: 1em; }\n", ""]);
+exports.push([module.i, ".kld-test {\n  height: auto;\n  width: 390px; }\n\n.kld-test-2 {\n  height: auto;\n  width: 740px;\n  border: solid 1px orange; }\n\n.kld {\n  align-items: center;\n  display: flex;\n  position: relative; }\n\n.kld__input {\n  border-radius: 0.25em;\n  border: solid 1px #dddddd;\n  flex-grow: 1;\n  padding: 0.5em 0.5em 0.5em 3em; }\n\n.kld__icon {\n  height: 1.5em;\n  margin-left: 0.5em;\n  position: absolute;\n  width: 1.5em; }\n\n.kld-daypicker {\n  background-color: white;\n  border-radius: 0.5em;\n  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);\n  display: flex;\n  flex-direction: column;\n  max-width: 390px;\n  min-width: 330px; }\n\n.kld-daypicker__modal {\n  align-items: flex-start;\n  background-color: rgba(0, 0, 0, 0.3);\n  bottom: 0;\n  display: flex;\n  justify-content: center;\n  left: 0;\n  overflow: auto;\n  padding: 2em 0;\n  position: absolute;\n  right: 0;\n  top: 0;\n  z-index: 99; }\n\n.kld-daypicker__header {\n  align-items: center;\n  border-bottom: 1px solid #f2f2f2;\n  display: flex; }\n\n.kld-daypicker__header-title {\n  color: #262626;\n  display: flex;\n  flex-grow: 1;\n  font-size: 20px;\n  font-weight: 600;\n  justify-content: center;\n  padding: 1em 0; }\n\n.kld-daypicker__header-close {\n  cursor: pointer;\n  height: 1.5em;\n  margin-right: 0.5em;\n  width: 1.5em; }\n\n.kld-daypicker__month {\n  align-items: center;\n  display: flex;\n  justify-content: space-between;\n  padding: 1em; }\n\n.kld-daypicker__month-name {\n  color: #6a6a6a;\n  font-size: 1em;\n  font-weight: 500; }\n\n.kld-daypicker__month-chevron {\n  background: transparent;\n  border: none;\n  cursor: pointer;\n  display: flex;\n  margin: 0;\n  padding: 0; }\n  .kld-daypicker__month-chevron:disabled {\n    cursor: not-allowed; }\n\n.kld-daypicker__dow {\n  border-bottom: solid 1px #f2f2f2;\n  display: flex;\n  flex-grow: 1;\n  justify-content: start;\n  margin: 0 1em;\n  padding: 1em 0; }\n\n.kld-daypicker__dow-item {\n  color: #9b9b9b;\n  display: flex;\n  flex-basis: 14%;\n  font-size: 14px;\n  font-weight: 600;\n  justify-content: center; }\n\n.kld-daypicker__date {\n  display: flex;\n  flex-wrap: wrap;\n  padding: 0.5em 1em; }\n\n.kld-daypicker__date-item, .kld-daypicker__date-item-unavailable, .kld-daypicker__date-item-selected {\n  align-items: center;\n  background: transparent;\n  border: none;\n  color: black;\n  cursor: pointer;\n  display: flex;\n  flex-basis: 14%;\n  flex-direction: column;\n  font-size: 1em;\n  font-weight: 500;\n  justify-content: flex-start;\n  min-height: 3em;\n  line-height: inherit;\n  padding: 0.5em; }\n  .kld-daypicker__date-item-unavailable {\n    color: #9b9b9b; }\n  .kld-daypicker__date-item-selected {\n    background: #ed193a;\n    border-radius: 0.5em;\n    color: white; }\n    .kld-daypicker__date-item-selected .kld-daypicker__date-surcharge-price {\n      color: #ffd4e2; }\n\n.kld-daypicker__date-surcharge {\n  display: flex;\n  align-items: center; }\n\n.kld-daypicker__date-surcharge-icon {\n  height: 0.5em;\n  width: 0.5em; }\n\n.kld-daypicker__date-surcharge-price {\n  font-size: 11px;\n  color: #6a6a6a;\n  padding-left: 0.25em; }\n\n.kld-timepicker {\n  background-color: white;\n  border-radius: 0.5em;\n  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);\n  display: flex;\n  flex-direction: column;\n  height: auto;\n  width: 740px;\n  min-width: 730px; }\n\n.kld-timepicker__header {\n  align-items: center;\n  border-bottom: 1px solid #f2f2f2;\n  display: flex;\n  margin-bottom: 1em; }\n\n.kld-timepicker__header-title {\n  color: #262626;\n  display: flex;\n  flex-grow: 1;\n  font-size: 20px;\n  font-weight: 600;\n  justify-content: center;\n  padding: 1em 0; }\n\n.kld-timepicker__header-close {\n  cursor: pointer;\n  height: 1.5em;\n  margin-right: 0.5em;\n  width: 1.5em; }\n\n.kld-timepicker__banner {\n  padding: 0.5em 9em; }\n\n.kld-timepicker__footer {\n  border-top: solid 1px #f2f2f2;\n  display: flex;\n  justify-content: space-between;\n  padding: 1.5em; }\n\n.kld-timepicker__footer-btn, .kld-timepicker__footer-btn-back, .kld-timepicker__footer-btn-done {\n  background: transparent;\n  border: none;\n  border-radius: 0.25em;\n  flex-basis: 25%;\n  font-size: 1em;\n  font-weight: 600;\n  padding: 0.75em 0.75em; }\n  .kld-timepicker__footer-btn-back {\n    background-color: #f2f2f2;\n    color: #4a4a4a; }\n  .kld-timepicker__footer-btn-done {\n    background-color: #ed193a;\n    color: white; }\n    .kld-timepicker__footer-btn-done:disabled {\n      background-color: #f4a3b0;\n      cursor: not-allowed; }\n\n.kld-hourlist {\n  display: flex;\n  flex-direction: column; }\n\n.kld-hli {\n  display: flex;\n  flex-direction: column;\n  padding-bottom: 1.5em;\n  padding-left: 1.5em;\n  padding-right: 1.5em; }\n\n.kld-hli__zone {\n  color: #9b9b9b;\n  font-size: 12px;\n  font-weight: 600;\n  text-transform: uppercase; }\n\n.kld-hli__timeslot {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap; }\n\n.kld-hli__timeslot-item, .kld-hli__timeslot-item-selected {\n  background: transparent;\n  border: solid 1px #e0e0e0;\n  border-radius: 0.25em;\n  color: black;\n  cursor: pointer;\n  display: flex;\n  flex-basis: 13%;\n  font-size: 15px;\n  font-weight: 500;\n  justify-content: center;\n  min-width: 6em;\n  margin-bottom: 0.5em;\n  margin-right: 0.5em;\n  padding: 0.5em 0.25em; }\n  .kld-hli__timeslot-item:disabled, .kld-hli__timeslot-item-selected:disabled {\n    color: #e0e0e0; }\n  .kld-hli__timeslot-item-selected {\n    background-color: #ed193a;\n    border: none;\n    color: white !important; }\n\n.kld-surcharge {\n  align-items: center;\n  background-color: #fef6e9;\n  border-left: solid 3px #f5a623;\n  display: flex;\n  justify-content: center;\n  margin: 0.75em 1.5em;\n  padding: 0.5em 0.5em; }\n\n.kld-surcharge__label {\n  color: #8d5c0b;\n  font-size: 15px;\n  padding-left: 0.5em; }\n\n.kld-surcharge__icon {\n  height: 1em;\n  margin-bottom: 0.25em;\n  width: 1em; }\n", ""]);
 // Exports
 module.exports = exports;
 

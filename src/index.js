@@ -15,11 +15,11 @@ class Kaolendar extends Component {
       isDayPickerOpen: false,
       isTimePickerOpen: false,
       selectedDate: this.props.value,
-      userHasCompleted: false
+      userHasCompleted: true
     }
   }
   handleInputClick = () => {
-    this.setState({ isDayPickerOpen: true })
+    this.setState({ isDayPickerOpen: true, selectedDate: '', userHasCompleted: false })
   }
 
   handleInputChange = () => {}
@@ -87,6 +87,7 @@ class Kaolendar extends Component {
     } = this.state
     const {
       calendarMonths,
+      disableBannerIcon,
       dpBannerText,
       hasTimePicker,
       metaSurchargable,
@@ -95,6 +96,7 @@ class Kaolendar extends Component {
     } = this.props
     const dateText = () => {
       // selectedDate ? moment(selectedDate).format('ddd, DD MMM YYYY, h:mm A') : ''
+      // TODO: To refactor this weird logic
       let dText = ''
       selectedDate &&
         (dText = moment(selectedDate).format(
@@ -122,6 +124,7 @@ class Kaolendar extends Component {
             bannerText={dpBannerText}
             calendarMonths={calendarMonths}
             closeDP={this.handleDPClose}
+            disableBannerIcon={disableBannerIcon}
             metaSurchargable={metaSurchargable}
             onChange={this.handleSelectDay}
             selectedDate={selectedDate}
@@ -146,6 +149,7 @@ class Kaolendar extends Component {
 
 Kaolendar.defaultProps = {
   calendarMonths: [],
+  disableBannerIcon: false,
   dpBannerText: '',
   hasTimePicker: false,
   metaSurchargable: false,
@@ -157,6 +161,7 @@ Kaolendar.defaultProps = {
 
 Kaolendar.propTypes = {
   calendarMonths: PropTypes.array,
+  disableBannerIcon: PropTypes.bool,
   dpBannerText: PropTypes.string,
   hasTimePicker: PropTypes.bool,
   metaSurchargable: PropTypes.bool,
