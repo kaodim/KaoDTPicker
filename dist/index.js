@@ -58946,8 +58946,7 @@ var HourList = function HourList(_ref) {
   var slots = {
     morning: [],
     afternoon: [],
-    evening: [],
-    night: []
+    evening: []
     // Logic for spliting morning, afternoon and etc
   };timeslots.map(function (ts) {
     var time = new Date(ts.value);
@@ -58959,10 +58958,8 @@ var HourList = function HourList(_ref) {
       slots.morning.push(ts);
     } else if (timeTotal <= 17) {
       slots.afternoon.push(ts);
-    } else if (timeTotal <= 20) {
-      slots.evening.push(ts);
     } else if (timeTotal <= 23) {
-      slots.night.push(ts);
+      slots.evening.push(ts);
     }
   });
   return _react2.default.createElement(
