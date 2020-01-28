@@ -1,9 +1,10 @@
 {
   "parser": "babel-eslint",
-  "plugins": ["react", "prettier"],
+  "plugins": ["react", "prettier", "jest"],
   "extends": "eslint:recommended",
   "env": {
-    "browser": true
+    "browser": true,
+    "jest/globals": true
   },
   "rules": {
     "no-console": "error",
