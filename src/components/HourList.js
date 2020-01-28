@@ -5,8 +5,7 @@ const HourList = ({ onChange, selectedTime, timeslots }) => {
   const slots = {
     morning: [],
     afternoon: [],
-    evening: [],
-    night: []
+    evening: []
   }
   // Logic for spliting morning, afternoon and etc
   timeslots.map((ts) => {
@@ -19,10 +18,8 @@ const HourList = ({ onChange, selectedTime, timeslots }) => {
       slots.morning.push(ts)
     } else if (timeTotal <= 17) {
       slots.afternoon.push(ts)
-    } else if (timeTotal <= 20) {
-      slots.evening.push(ts)
     } else if (timeTotal <= 23) {
-      slots.night.push(ts)
+      slots.evening.push(ts)
     }
   })
   return (
