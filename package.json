@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build-babel": "babel src/ -d dist/",
-    "test": "jest",
+    "test": "jest --config=jest.config.json",
     "lint": "eslint src",
     "start": "webpack --watch",
     "build": "webpack",
@@ -17,7 +17,7 @@
     "type": "git",
     "url": "git+https://github.com/kaodim/KaoDTPicker.git"
   },
-  "author": "Thein Htut",
+  "author": "Thein Htut <theinhtut.dec@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/kaodim/KaoDTPicker/issues"
@@ -43,6 +43,8 @@
     "babel-preset-env": "1.7.0",
     "babel-preset-react": "6.24.1",
     "css-loader": "3.4.1",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-15": "^1.4.1",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.9.0",
     "eslint-plugin-jest": "^23.6.0",
@@ -51,7 +53,9 @@
     "jest": "23.6.0",
     "node-sass": "4.11.0",
     "prettier": "^1.19.1",
+    "raf": "^3.4.1",
     "react-bootstrap": "0.33.1",
+    "react-test-renderer": "15.6.2",
     "sass-loader": "7.1.0",
     "style-loader": "1.1.2",
     "webpack-dev-server": "2.5.1"
