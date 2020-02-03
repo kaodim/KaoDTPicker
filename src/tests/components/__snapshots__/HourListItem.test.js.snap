@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render HourListItem according to user interactions should call onClick when clicking on timeslot 1`] = `
+<div
+  className="kld-hli"
+>
+  <span
+    className="kld-hli__zone"
+  >
+    MORNING
+  </span>
+  <div
+    className="kld-hli__timeslot"
+  >
+    <button
+      className="kld-hli__timeslot-item"
+      disabled={false}
+      key="0"
+      onClick={[Function]}
+    >
+      07:00AM
+    </button>
+  </div>
+</div>
+`;
+
+exports[`should render HourListItem according to user interactions should set default class if props selectedtime is different 1`] = `
+<div
+  className="kld-hli"
+>
+  <span
+    className="kld-hli__zone"
+  >
+    MORNING
+  </span>
+  <div
+    className="kld-hli__timeslot"
+  >
+    <button
+      className="kld-hli__timeslot-item"
+      disabled={false}
+      key="0"
+      onClick={[Function]}
+    >
+      07:00AM
+    </button>
+  </div>
+</div>
+`;
+
+exports[`should render HourListItem according to user interactions should set selected class if props selectedtime is same 1`] = `
+<div
+  className="kld-hli"
+>
+  <span
+    className="kld-hli__zone"
+  >
+    MORNING
+  </span>
+  <div
+    className="kld-hli__timeslot"
+  >
+    <button
+      className="kld-hli__timeslot-item-selected"
+      disabled={false}
+      key="0"
+      onClick={[Function]}
+    >
+      07:00AM
+    </button>
+  </div>
+</div>
+`;
+
+exports[`should render HourListItem correctly 1`] = `
+<div
+  className="kld-hli"
+>
+  <span
+    className="kld-hli__zone"
+  />
+  <div
+    className="kld-hli__timeslot"
+  />
+</div>
+`;
