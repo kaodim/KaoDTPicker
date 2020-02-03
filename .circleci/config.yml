@@ -39,6 +39,6 @@ jobs:
           command: yarn run lint
       
       # run tests!
-      - run:
-          name: Run Jest Test
-          command: yarn test
+      # - run:
+          # name: Run Jest Test
+          # command: yarn test
