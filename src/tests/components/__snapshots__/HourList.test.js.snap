@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render HourList correctly 1`] = `
+<div
+  className="kld-hourlist"
+>
+  <HourListItem
+    key="0"
+    label="MORNING"
+    onChangeTime={[Function]}
+    selectedTime=""
+    timeslots={
+      Array [
+        Object {
+          "available": true,
+          "human_readable_price": "",
+          "localized_total_price": "RM50",
+          "price": 0,
+          "show_price": false,
+          "surchargable": false,
+          "total_price": 50,
+          "value": "2020-01-17T07:00:00.000+08:00",
+        },
+      ]
+    }
+  />
+  <HourListItem
+    key="1"
+    label="AFTERNOON"
+    onChangeTime={[Function]}
+    selectedTime=""
+    timeslots={Array []}
+  />
+  <HourListItem
+    key="2"
+    label="EVENING"
+    onChangeTime={[Function]}
+    selectedTime=""
+    timeslots={Array []}
+  />
+</div>
+`;
