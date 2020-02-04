@@ -6,7 +6,7 @@ import calTimeslots from '../fixtures/calTimeslots'
 let wrapper
 
 beforeEach(() => {
-  wrapper = shallow(<HourList timeslots={[calTimeslots[0]]} />)
+  wrapper = shallow(<HourList timeslots={calTimeslots} />)
 })
 
 test('should render HourList correctly', () => {

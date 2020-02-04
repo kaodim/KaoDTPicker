@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render TimePicker correctly should match TimePicker snapshot with selectedDate 1`] = `
+<section
+  className="kld-daypicker__modal"
+>
+  <div
+    className="kld-timepicker"
+  >
+    <div
+      className="kld-timepicker__header"
+    >
+      <span
+        className="kld-timepicker__header-title"
+      >
+        Select time • 17 Jan
+      </span>
+      <HeaderClose
+        className="kld-timepicker__header-close"
+        height="24"
+        onClick={[Function]}
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+    <div>
+      <HourList
+        onChange={[Function]}
+        selectedTime=""
+        timeslots={
+          Array [
+            Object {
+              "available": true,
+              "human_readable_price": "",
+              "localized_total_price": "RM50",
+              "price": 0,
+              "show_price": false,
+              "surchargable": false,
+              "total_price": 50,
+              "value": "2020-01-17T07:00:00.000+08:00",
+            },
+            Object {
+              "available": true,
+              "human_readable_price": "",
+              "localized_total_price": "RM50",
+              "price": 0,
+              "show_price": false,
+              "surchargable": false,
+              "total_price": 50,
+              "value": "2020-01-17T12:30:00.000+08:00",
+            },
+            Object {
+              "available": true,
+              "human_readable_price": "",
+              "localized_total_price": "RM50",
+              "price": 0,
+              "show_price": false,
+              "surchargable": false,
+              "total_price": 50,
+              "value": "2020-01-17T17:30:00.000+08:00",
+            },
+          ]
+        }
+      />
+    </div>
+    <div
+      className="kld-timepicker__footer"
+    >
+      <button
+        className="kld-timepicker__footer-btn-back"
+        onClick={[Function]}
+      >
+        Back
+      </button>
+      <button
+        className="kld-timepicker__footer-btn-done"
+        disabled={true}
+        onClick={[Function]}
+      >
+        Done
+      </button>
+    </div>
+  </div>
+</section>
+`;

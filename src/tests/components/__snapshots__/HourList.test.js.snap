@@ -29,14 +29,40 @@ exports[`should render HourList correctly 1`] = `
     label="AFTERNOON"
     onChangeTime={[Function]}
     selectedTime=""
-    timeslots={Array []}
+    timeslots={
+      Array [
+        Object {
+          "available": true,
+          "human_readable_price": "",
+          "localized_total_price": "RM50",
+          "price": 0,
+          "show_price": false,
+          "surchargable": false,
+          "total_price": 50,
+          "value": "2020-01-17T12:30:00.000+08:00",
+        },
+      ]
+    }
   />
   <HourListItem
     key="2"
     label="EVENING"
     onChangeTime={[Function]}
     selectedTime=""
-    timeslots={Array []}
+    timeslots={
+      Array [
+        Object {
+          "available": true,
+          "human_readable_price": "",
+          "localized_total_price": "RM50",
+          "price": 0,
+          "show_price": false,
+          "surchargable": false,
+          "total_price": 50,
+          "value": "2020-01-17T17:30:00.000+08:00",
+        },
+      ]
+    }
   />
 </div>
 `;
@@ -70,14 +96,40 @@ exports[`should render HourList with selected date 1`] = `
     label="AFTERNOON"
     onChangeTime={[Function]}
     selectedTime="2020-01-17T07:00:00.000+08:00"
-    timeslots={Array []}
+    timeslots={
+      Array [
+        Object {
+          "available": true,
+          "human_readable_price": "",
+          "localized_total_price": "RM50",
+          "price": 0,
+          "show_price": false,
+          "surchargable": false,
+          "total_price": 50,
+          "value": "2020-01-17T12:30:00.000+08:00",
+        },
+      ]
+    }
   />
   <HourListItem
     key="2"
     label="EVENING"
     onChangeTime={[Function]}
     selectedTime="2020-01-17T07:00:00.000+08:00"
-    timeslots={Array []}
+    timeslots={
+      Array [
+        Object {
+          "available": true,
+          "human_readable_price": "",
+          "localized_total_price": "RM50",
+          "price": 0,
+          "show_price": false,
+          "surchargable": false,
+          "total_price": 50,
+          "value": "2020-01-17T17:30:00.000+08:00",
+        },
+      ]
+    }
   />
 </div>
 `;
