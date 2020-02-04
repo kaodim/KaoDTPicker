@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render SurchargeBanner with banner text (no svg) 1`] = `
+<section
+  className="kld-surcharge"
+>
+  <span
+    className="kld-surcharge__label"
+  >
+    Hello there.
+  </span>
+</section>
+`;
+
+exports[`should render SurchargeBanner with banner text 1`] = `
+<section
+  className="kld-surcharge"
+>
+  <SurchargeArrow
+    className="kld-surcharge__icon"
+    height="16"
+    viewBox="0 0 16 16"
+    width="16"
+    xmlns="http://www.w3.org/2000/svg"
+  />
+  <span
+    className="kld-surcharge__label"
+  >
+    Hello there.
+  </span>
+</section>
+`;
