@@ -10,7 +10,7 @@ beforeEach(() => {
 })
 
 test('should render HourList correctly', () => {
-  // expect(wrapper).toMatchSnapshot()
+  expect(wrapper).toMatchSnapshot()
 })
 
 test('should render correct amount of HourListItem', () => {
