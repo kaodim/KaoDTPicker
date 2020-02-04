@@ -75,7 +75,7 @@ exports[`should render HourList with selected date 1`] = `
     key="0"
     label="MORNING"
     onChangeTime={[Function]}
-    selectedTime="1970-01-01T07:30:00+07:30"
+    selectedTime="2020-01-17T07:00:00.000+08:00"
     timeslots={
       Array [
         Object {
@@ -95,7 +95,7 @@ exports[`should render HourList with selected date 1`] = `
     key="1"
     label="AFTERNOON"
     onChangeTime={[Function]}
-    selectedTime="1970-01-01T07:30:00+07:30"
+    selectedTime="2020-01-17T07:00:00.000+08:00"
     timeslots={
       Array [
         Object {
@@ -115,7 +115,7 @@ exports[`should render HourList with selected date 1`] = `
     key="2"
     label="EVENING"
     onChangeTime={[Function]}
-    selectedTime="1970-01-01T07:30:00+07:30"
+    selectedTime="2020-01-17T07:00:00.000+08:00"
     timeslots={
       Array [
         Object {

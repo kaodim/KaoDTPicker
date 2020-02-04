@@ -1,6 +1,5 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import moment from 'moment'
 import HourList from '../../components/HourList'
 import calTimeslots from '../fixtures/calTimeslots'
 
@@ -20,7 +19,7 @@ test('should render correct amount of HourListItem', () => {
 })
 
 test('should render HourList with selected date', () => {
-  const now = moment().format()
+  const now = '2020-01-17T07:00:00.000+08:00'
   const onChangeSpy = jest.fn()
   wrapper.setProps({
     selectedTime: now,
