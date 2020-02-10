@@ -1,0 +1,21 @@
+.kld-surcharge {
+  align-items: center;
+  background-color: $kaodim-orange-10;
+  border-left: solid 3px $kaodim-orange;
+  display: flex;
+  justify-content: center;
+  margin: $m $xl;
+  padding: $s $s;
+}
+
+.kld-surcharge__label {
+  color: #8d5c0b;
+  font-size: $f-sm;
+  padding-left: $s;
+}
+
+.kld-surcharge__icon {
+  height: $l;
+  margin-bottom: $xs;
+  width: $l;
+}

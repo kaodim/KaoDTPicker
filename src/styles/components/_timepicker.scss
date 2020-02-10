@@ -1,0 +1,70 @@
+.kld-timepicker {
+  background-color: white;
+  border-radius: $s;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 740px;
+  min-width: 730px;
+}
+
+.kld-timepicker__header {
+  align-items: center;
+  border-bottom: 1px solid $bg-light-grey;
+  display: flex;
+  margin-bottom: 1em;
+}
+
+.kld-timepicker__header-title {
+  color: $dark-grey;
+  display: flex;
+  flex-grow: 1;
+  font-size: $f-m;
+  font-weight: 600;
+  justify-content: center;
+  padding: $l 0;
+}
+
+.kld-timepicker__header-close {
+  cursor: pointer;
+  height: $xl;
+  margin-right: $s;
+  width: $xl;
+}
+
+.kld-timepicker__banner {
+  padding: $s 9em;
+}
+
+.kld-timepicker__footer {
+  border-top: solid 1px $bg-light-grey;
+  display: flex;
+  justify-content: space-between;
+  padding: $xl;
+}
+
+.kld-timepicker__footer-btn {
+  background: transparent;
+  border: none;
+  border-radius: $xs;
+  flex-basis: 25%;
+  font-size: $l;
+  font-weight: 600;
+  padding: $m $m;
+
+  &-back {
+    @extend .kld-timepicker__footer-btn;
+    background-color: $bg-light-grey;
+    color: $mild-grey;
+  }
+  &-done {
+    @extend .kld-timepicker__footer-btn;
+    background-color: $kaodim-brand;
+    color: white;
+    &:disabled {
+      background-color: $kaodim-red-40;
+      cursor: not-allowed;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "parser": "babel-eslint",
+  "plugins": ["react", "prettier", "jest"],
+  "extends": "eslint:recommended",
+  "env": {
+    "browser": true,
+    "jest/globals": true
+  },
+  "rules": {
+    "no-console": "error",
+    "handle-callback-err": "warn",
+    "key-spacing": 0,
+    "max-len": ["warn", 200],
+    "no-unreachable": "warn",
+    "no-labels": "warn",
+    "no-unused-vars": "warn",
+    "object-curly-spacing": [2, "always"],
+    "prettier/prettier": "warn",
+    "semi": ["error", "never"],
+    "react/jsx-uses-react": "warn",
+    "react/jsx-uses-vars": "warn",
+    "react/prop-types": "warn"
+    // "react/jsx-key": "warn",
+    // "jsx-quotes": [2, "prefer-single"],
+    // "react/jsx-no-bind": "warn",
+    // "react/jsx-no-duplicate-props": "warn",
+    // "react/jsx-indent": ["warn", 2],
+    // "react/jsx-uses-vars": 1,
+  }
+}

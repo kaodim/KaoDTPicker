@@ -1,0 +1,146 @@
+.kld-daypicker {
+  background-color: white;
+  border-radius: $s;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  max-width: 390px;
+  min-width: 330px;
+}
+
+.kld-daypicker__modal {
+  align-items: flex-start;
+  background-color: rgba(0, 0, 0, 0.3);
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  overflow: auto;
+  padding: 2em 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 99;
+}
+
+.kld-daypicker__header {
+  align-items: center;
+  border-bottom: 1px solid $bg-light-grey;
+  display: flex;
+}
+
+.kld-daypicker__header-title {
+  color: $dark-grey;
+  display: flex;
+  flex-grow: 1;
+  font-size: $f-m;
+  font-weight: 600;
+  justify-content: center;
+  padding: $l 0;
+}
+
+.kld-daypicker__header-close {
+  cursor: pointer;
+  height: $xl;
+  margin-right: $s;
+  width: $xl;
+}
+
+.kld-daypicker__month {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: $l;
+}
+
+.kld-daypicker__month-name {
+  color: #6a6a6a;
+  font-size: $l;
+  font-weight: 500;
+}
+
+.kld-daypicker__month-chevron {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  // height: $xl !important;
+  margin: 0;
+  padding: 0;
+  // width: $xl !important;
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.kld-daypicker__dow {
+  border-bottom: solid 1px $bg-light-grey;
+  display: flex;
+  flex-grow: 1;
+  justify-content: start;
+  margin: 0 $l;
+  padding: $l 0;
+}
+
+.kld-daypicker__dow-item {
+  color: $light-grey;
+  display: flex;
+  flex-basis: 14%;
+  font-size: $f-s;
+  font-weight: 600;
+  justify-content: center;
+}
+
+.kld-daypicker__date {
+  display: flex;
+  flex-wrap: wrap;
+  padding: $s $l;
+}
+
+.kld-daypicker__date-item {
+  align-items: center;
+  background: transparent;
+  border: none;
+  color: black;
+  cursor: pointer;
+  display: flex;
+  flex-basis: 14%;
+  flex-direction: column;
+  font-size: $l;
+  font-weight: 500;
+  justify-content: flex-start;
+  min-height: 3em;
+  line-height: inherit;
+  padding: $s;
+  
+  &-unavailable {
+    @extend .kld-daypicker__date-item;
+    color: $light-grey;
+  }
+
+  &-selected {
+    @extend .kld-daypicker__date-item;
+    background: $kaodim-brand;
+    border-radius: $s;
+    color: white;
+    .kld-daypicker__date-surcharge-price {
+      color: #ffd4e2;
+    }
+  }
+}
+
+.kld-daypicker__date-surcharge {
+  display: flex;
+  align-items: center;
+}
+
+.kld-daypicker__date-surcharge-icon {
+  height: $s;
+  width: $s;
+}
+
+.kld-daypicker__date-surcharge-price {
+  font-size: 11px;
+  color: #6a6a6a;
+  padding-left: $xs;
+}

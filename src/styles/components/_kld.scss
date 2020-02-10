@@ -1,0 +1,30 @@
+.kld-test {
+  height: auto;
+  width: 390px; 
+}
+
+.kld-test-2 {
+  height: auto;
+  width: 740px;
+  border: solid 1px orange;
+}
+
+.kld {
+  align-items: center;
+  display: flex;
+  position: relative;
+}
+
+.kld__input {
+  border-radius: $xs;
+  border: solid 1px #dddddd;
+  flex-grow: 1;
+  padding: $s $s $s 3em;
+}
+
+.kld__icon {
+  height: $xl;
+  margin-left: $s;
+  position: absolute;
+  width: $xl;
+}
