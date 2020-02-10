@@ -4,14 +4,14 @@
   "description": "React DateTime Picker",
   "main": "dist/index.js",
   "scripts": {
-    "build-babel": "babel src/ -d dist/",
+    "build-storybook": "build-storybook",
+    "storybook": "start-storybook -p 6006",
     "test": "jest --config=jest.config.json",
     "lint": "eslint src",
-    "start": "webpack --watch",
+    "prebuild": "rm -rf dist",
     "build": "webpack",
-    "dev-server": "webpack-dev-server",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "start": "webpack --watch",
+    "build-babel": "babel src/ -d dist/"
   },
   "repository": {
     "type": "git",
