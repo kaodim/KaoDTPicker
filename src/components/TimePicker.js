@@ -33,7 +33,7 @@ class TimePicker extends Component {
   handleDoneClick = () => {
     const timeObj = {
       date: this.state.selectedTime,
-      locTotalPrice: this.props.bannerPrice
+      locTotalPrice: this.state.totalSurchargePrice
     }
     this.props.onChange(timeObj)
   }

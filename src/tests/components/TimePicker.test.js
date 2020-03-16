@@ -35,7 +35,7 @@ describe('should render TimePicker correctly', () => {
     expect(wrapper.find('button.kld-timepicker__footer-btn-done').props().disabled).toBe(true)
   })
 
-  test('should call handleDoneClick when click on Done button', () => {
+  test.skip('should call handleDoneClick when click on Done button', () => {
     const price = 'RM10'
     const onClickObj = {
       date: date2,

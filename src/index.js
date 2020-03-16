@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import moment from 'moment'
 
 import MiniCal from './components/MiniCal'
+import SurchargeArrow from './components/SurchargeArrow'
 import DayPicker from './components/DayPicker'
 import TimePicker from './components/TimePicker'
 
@@ -15,6 +16,7 @@ class Kaolendar extends Component {
       isDayPickerOpen: false,
       isTimePickerOpen: false,
       selectedDate: this.props.value,
+      totalSurchargeAmountText: '',
       userHasCompleted: true
     }
   }
@@ -70,6 +72,7 @@ class Kaolendar extends Component {
       isDayPickerOpen: false,
       isTimePickerOpen: false,
       selectedDate: dateObj.date,
+      totalSurchargeAmountText: dateObj.locTotalPrice,
       userHasCompleted: true
     })
     dateObj.userHasCompleted = true
@@ -83,6 +86,7 @@ class Kaolendar extends Component {
       isDayPickerOpen,
       isTimePickerOpen,
       selectedDate,
+      totalSurchargeAmountText,
       userHasCompleted
     } = this.state
     const {
@@ -107,6 +111,7 @@ class Kaolendar extends Component {
       return dText
     }
     let tpBannerText = dpBannerText
+    let showTotalSurchargeText = userHasCompleted && totalSurchargeAmountText
     return (
       <article>
         <section>
@@ -121,6 +126,12 @@ class Kaolendar extends Component {
             <MiniCal className="kld__icon" />
           </div>
         </section>
+        {showTotalSurchargeText && (
+          <section className="kld__surcharge">
+            <SurchargeArrow className="kld-surcharge__icon" />
+            <span className="kld__surcharge-text">{`${totalSurchargeAmountText} surcharge`}</span>
+          </section>
+        )}
         {isDayPickerOpen && (
           <DayPicker
             bannerText={dpBannerText}

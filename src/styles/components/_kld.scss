@@ -28,3 +28,14 @@
   position: absolute;
   width: $xl;
 }
+
+.kld__surcharge {
+  align-items: center;
+  color: $kaodim-brand;
+  display: flex;
+  font-size: $f-sm;
+}
+
+.kld__surcharge-text {
+  padding-left: $s;
+}
