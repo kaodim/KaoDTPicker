@@ -20,6 +20,7 @@
 }
 
 .kld-hli__timeslot-item {
+  align-items: center;
   background: transparent;
   border: solid 1px #e0e0e0;
   border-radius: $xs;
@@ -27,12 +28,14 @@
   cursor: pointer;
   display: flex;
   flex-basis: 13%;
+  flex-direction: column;
   font-size: $f-sm;
   font-weight: 500;
-  justify-content: center;
-  min-width: 6em;
+  justify-content: start;
   margin-bottom: $s;
   margin-right: $s;
+  min-height: 3.5em;
+  min-width: 6em;
   padding: $s $xs;
   &:disabled{
     color: #e0e0e0;
@@ -41,6 +44,16 @@
     @extend .kld-hli__timeslot-item;
     background-color: $kaodim-brand;
     border: none;
+    color: white !important;
+  }
+}
+
+.kld-hli__timeslot-surcharge {
+  font-size: 11px;
+  color: #6a6a6a;
+  padding-left: $xs;
+  &-selected {
+    @extend .kld-hli__timeslot-surcharge;
     color: white !important;
   }
 }

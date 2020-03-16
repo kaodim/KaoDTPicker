@@ -9,11 +9,25 @@ import HourList from './HourList'
 class TimePicker extends Component {
   constructor(props) {
     super(props)
-    this.state = { selectedTime: '' }
+    this.state = {
+      bannerText: this.props.bannerText,
+      selectedTime: '',
+      showPrice: false,
+      totalSurchargePrice: ''
+    }
   }
 
-  handleHourChange = (hour) => {
-    this.setState({ selectedTime: hour })
+  handleHourChange = (hour, locTotalPrice, showPrice) => {
+    this.setState({ selectedTime: hour, showPrice, totalSurchargePrice: locTotalPrice })
+    if (showPrice) {
+      this.setState({
+        bannerText: `${moment(hour).format('H:mmA')} has a surcharge of ${locTotalPrice}`
+      })
+    } else {
+      this.setState({
+        bannerText: `${moment(hour).format('DD MMM (ddd)')} has a surcharge of ${locTotalPrice}`
+      })
+    }
   }
 
   handleDoneClick = () => {
@@ -25,11 +39,16 @@ class TimePicker extends Component {
   }
 
   render() {
-    const { selectedTime } = this.state
-    const { backTP, bannerPrice, closeTP, selectedDate, surchargeGif, timeslots } = this.props
-    const bannerText = `${moment(selectedDate).format(
-      'DD MMM (ddd)'
-    )} has a surcharge of ${bannerPrice}`
+    const { bannerText, selectedTime, showPrice, totalSurchargePrice } = this.state
+    const {
+      backTP,
+      bannerPrice,
+      closeTP,
+      metaTimeSurchargable,
+      selectedDate,
+      surchargeGif,
+      timeslots
+    } = this.props
     return (
       <section className="kld-daypicker__modal">
         <div className="kld-timepicker">
@@ -39,7 +58,7 @@ class TimePicker extends Component {
             ).format('DD MMM')}`}</span>
             <HeaderClose className="kld-timepicker__header-close" onClick={closeTP} />
           </div>
-          {bannerPrice && (
+          {metaTimeSurchargable && (
             <div className="kld-timepicker__banner">
               <SurchargeBanner label={bannerText} surchargeGif={surchargeGif} />
             </div>
@@ -72,7 +91,9 @@ class TimePicker extends Component {
 TimePicker.defaultProps = {
   backTP: () => {},
   bannerPrice: '',
+  bannerText: '',
   closeTP: () => {},
+  metaTimeSurchargable: false,
   onChange: () => {},
   selectedDate: '',
   surchargeGif: '',
@@ -82,7 +103,9 @@ TimePicker.defaultProps = {
 TimePicker.propTypes = {
   backTP: PropTypes.func,
   bannerPrice: PropTypes.string,
+  bannerText: PropTypes.string,
   closeTP: PropTypes.func,
+  metaTimeSurchargable: PropTypes.bool,
   onChange: PropTypes.func,
   selectedDate: PropTypes.string,
   surchargeGif: PropTypes.string,

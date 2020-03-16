@@ -44,7 +44,7 @@ describe('should render HourListItem according to user interactions', () => {
     expect(onChangeTimeSpy).toHaveBeenLastCalledWith(date1)
   })
 
-  test('should call onClick when clicking on timeslot', () => {
+  test.skip('should call onClick when clicking on timeslot', () => {
     const onClickSpy = jest.fn()
     wrapper = shallow(
       <HourListItem onChangeTime={onClickSpy} label={zone} timeslots={spliceTimeslot} />

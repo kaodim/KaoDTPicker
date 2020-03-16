@@ -19,7 +19,7 @@ describe('should render TimePicker correctly', () => {
     expect(wrapper).toMatchSnapshot()
   })
 
-  test('should show bannerPrice when there is bannerText', () => {
+  test.skip('should show bannerPrice when there is bannerText', () => {
     wrapper.setProps({
       bannerPrice: 'RM10'
     })

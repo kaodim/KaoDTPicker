@@ -91,6 +91,7 @@ class Kaolendar extends Component {
       dpBannerText,
       hasTimePicker,
       metaSurchargable,
+      metaTimeSurchargable,
       surchargeGif,
       timeslots
     } = this.props
@@ -105,6 +106,7 @@ class Kaolendar extends Component {
       !userHasCompleted && (dText = '') // Check user has completed selection
       return dText
     }
+    let tpBannerText = dpBannerText
     return (
       <article>
         <section>
@@ -134,8 +136,10 @@ class Kaolendar extends Component {
         {hasTimePicker && isTimePickerOpen && (
           <TimePicker
             backTP={this.handleTPBack}
+            bannerText={tpBannerText}
             bannerPrice={daySurchargeLabel}
             closeTP={this.handleTPClose}
+            metaTimeSurchargable={metaTimeSurchargable}
             onChange={this.handleSelectTime}
             selectedDate={selectedDate}
             surchargeGif={surchargeGif}
@@ -153,6 +157,7 @@ Kaolendar.defaultProps = {
   dpBannerText: '',
   hasTimePicker: false,
   metaSurchargable: false,
+  metaTimeSurchargable: false,
   onChange: () => {},
   surchargeGif: '',
   timeslots: [],
@@ -165,6 +170,7 @@ Kaolendar.propTypes = {
   dpBannerText: PropTypes.string,
   hasTimePicker: PropTypes.bool,
   metaSurchargable: PropTypes.bool,
+  metaTimeSurchargable: PropTypes.bool,
   onChange: PropTypes.func,
   surchargeGif: PropTypes.string,
   timeslots: PropTypes.array,
