@@ -34998,7 +34998,8 @@ var Kaolendar = function (_Component) {
         daySurchargeLabel: selectedObj.locTotalPrice,
         isDayPickerOpen: false,
         isTimePickerOpen: hasTimePicker,
-        selectedDate: selectedObj.date
+        selectedDate: selectedObj.date,
+        totalSurchargeAmountText: selectedObj.locTotalPrice
       });
       // Check hasTimePicker flag to complete user select day and time journey
       if (hasTimePicker) {
