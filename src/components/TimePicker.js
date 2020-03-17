@@ -21,7 +21,7 @@ class TimePicker extends Component {
     this.setState({ selectedTime: hour, showPrice, totalSurchargePrice: locTotalPrice })
     if (showPrice) {
       this.setState({
-        bannerText: `${moment(hour).format('H:mmA')} has a surcharge of ${locTotalPrice}`
+        bannerText: `${moment(hour).format('hh:mmA')} has a surcharge of ${locTotalPrice}`
       })
     } else {
       this.setState({

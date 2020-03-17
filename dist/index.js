@@ -35006,7 +35006,7 @@ var Kaolendar = function (_Component) {
         selectedObj.userHasCompleted = false;
         // this.handleOnChange(selectedObj, false)
       } else {
-        _this.setState({ userHasCompleted: true });
+        _this.setState({ totalSurchargeAmountText: selectedObj.locTotalPrice, userHasCompleted: true });
         _this.props.onChange(selectedObj);
         selectedObj.userHasCompleted = true;
         // this.handleOnChange(selectedObj, true)
@@ -35044,7 +35044,6 @@ var Kaolendar = function (_Component) {
   _createClass(Kaolendar, [{
     key: 'render',
     value: function render() {
-      // const dateText = 'adsfsdf'
       var _state = this.state,
           daySurchargeLabel = _state.daySurchargeLabel,
           isDayPickerOpen = _state.isDayPickerOpen,
@@ -58851,7 +58850,7 @@ var TimePicker = function (_Component) {
       _this.setState({ selectedTime: hour, showPrice: showPrice, totalSurchargePrice: locTotalPrice });
       if (showPrice) {
         _this.setState({
-          bannerText: (0, _moment2.default)(hour).format('H:mmA') + ' has a surcharge of ' + locTotalPrice
+          bannerText: (0, _moment2.default)(hour).format('hh:mmA') + ' has a surcharge of ' + locTotalPrice
         });
       } else {
         _this.setState({

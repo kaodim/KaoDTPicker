@@ -1,6 +1,5 @@
 import React from 'react'
 
-import Test from '../src/components/Test'
 import Kaolendar from '../src/index'
 import SurchargeBanner from '../src/components/SurchargeBanner'
 
@@ -15,8 +14,6 @@ export default {
   title: 'Kao-DayTimePicker'
 }
 
-export const test = () => <Test />
-
 export const dayTimePicker = () => (
   <Kaolendar
     calendarMonths={calendarMonths}
@@ -26,6 +23,14 @@ export const dayTimePicker = () => (
     metaTimeSurchargable={metaCalTimeslots.surchargable}
     timeslots={calTimeslots}
     value={'2020-01-20T07:00:00.000+08:00'}
+  />
+)
+
+export const dayPicker = () => (
+  <Kaolendar
+    calendarMonths={calendarMonths}
+    dpBannerText={'Indicates high demand fee (RM)'}
+    metaSurchargable={metaCalendarMonths.surchargable}
   />
 )
 

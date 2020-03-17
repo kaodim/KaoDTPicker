@@ -55,7 +55,7 @@ class Kaolendar extends Component {
       selectedObj.userHasCompleted = false
       // this.handleOnChange(selectedObj, false)
     } else {
-      this.setState({ userHasCompleted: true })
+      this.setState({ totalSurchargeAmountText: selectedObj.locTotalPrice, userHasCompleted: true })
       this.props.onChange(selectedObj)
       selectedObj.userHasCompleted = true
       // this.handleOnChange(selectedObj, true)
@@ -80,7 +80,6 @@ class Kaolendar extends Component {
   }
 
   render() {
-    // const dateText = 'adsfsdf'
     const {
       daySurchargeLabel,
       isDayPickerOpen,
