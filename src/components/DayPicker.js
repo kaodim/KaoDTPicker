@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import moment from 'moment'
-import { Modal } from 'react-bootstrap'
 import { monthNames } from '../modules/constants'
 
 import HeaderClose from './HeaderClose'
