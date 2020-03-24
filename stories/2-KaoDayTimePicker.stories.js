@@ -22,7 +22,19 @@ export const dayTimePicker = () => (
     metaSurchargable={metaCalendarMonths.surchargable}
     metaTimeSurchargable={metaCalTimeslots.surchargable}
     timeslots={calTimeslots}
-    value={'2020-01-20T07:00:00.000+08:00'}
+  />
+)
+
+export const dayTimePickerPreSelected = () => (
+  <Kaolendar
+    calendarMonths={calendarMonths}
+    dpBannerText={'Indicates high demand fee (RM)'}
+    hasTimePicker
+    metaSurchargable={metaCalendarMonths.surchargable}
+    metaTimeSurchargable={metaCalTimeslots.surchargable}
+    timeslots={calTimeslots}
+    totalSurchargeAmountText={'RM33'}
+    value={'2020-03-27T07:00:00.000+08:00'}
   />
 )
 

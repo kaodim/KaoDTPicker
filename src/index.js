@@ -16,7 +16,7 @@ class Kaolendar extends Component {
       isDayPickerOpen: false,
       isTimePickerOpen: false,
       selectedDate: this.props.value,
-      totalSurchargeAmountText: '',
+      totalSurchargeAmountText: this.props.totalSurchargeAmountText,
       userHasCompleted: true
     }
   }
@@ -172,6 +172,7 @@ Kaolendar.defaultProps = {
   onChange: () => {},
   surchargeGif: '',
   timeslots: [],
+  totalSurchargeAmountText: '',
   value: ''
 }
 
@@ -185,6 +186,7 @@ Kaolendar.propTypes = {
   onChange: PropTypes.func,
   surchargeGif: PropTypes.string,
   timeslots: PropTypes.array,
+  totalSurchargeAmountText: PropTypes.string,
   value: PropTypes.string
 }
 
