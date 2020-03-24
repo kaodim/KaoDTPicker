@@ -18,7 +18,9 @@ exports[`should render HourListItem according to user interactions should call o
       key="0"
       onClick={[Function]}
     >
-      07:00AM
+      <span>
+        07:00AM
+      </span>
     </button>
   </div>
 </div>
@@ -86,5 +88,80 @@ exports[`should render HourListItem correctly 1`] = `
   <div
     className="kld-hli__timeslot"
   />
+</div>
+`;
+
+exports[`should render HourListItem(with price) according to user interactions should render correct css styling on selection 1`] = `
+<div
+  className="kld-hli"
+>
+  <span
+    className="kld-hli__zone"
+  >
+    MORNING
+  </span>
+  <div
+    className="kld-hli__timeslot"
+  >
+    <button
+      className="kld-hli__timeslot-item-selected"
+      disabled={false}
+      key="0"
+      onClick={[Function]}
+    >
+      <span>
+        05:30PM
+      </span>
+      <div>
+        <SurchargeArrowWhite
+          height="8"
+          viewBox="0 0 8 8"
+          width="8"
+          xmlns="http://www.w3.org/2000/svg"
+        />
+        <span
+          className="kld-hli__timeslot-surcharge-selected"
+        />
+      </div>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`should render HourListItem(with price) according to user interactions should render default css styling 1`] = `
+<div
+  className="kld-hli"
+>
+  <span
+    className="kld-hli__zone"
+  >
+    MORNING
+  </span>
+  <div
+    className="kld-hli__timeslot"
+  >
+    <button
+      className="kld-hli__timeslot-item"
+      disabled={false}
+      key="0"
+      onClick={[Function]}
+    >
+      <span>
+        05:30PM
+      </span>
+      <div>
+        <SurchargeArrow
+          className="kld-daypicker__date-surcharge-icon"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        />
+        <span
+          className="kld-hli__timeslot-surcharge"
+        />
+      </div>
+    </button>
+  </div>
 </div>
 `;
