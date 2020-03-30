@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import moment from 'moment'
 
 import MiniCal from './components/MiniCal'
+import SurchargeArrow from './components/SurchargeArrow'
 import DayPicker from './components/DayPicker'
 import TimePicker from './components/TimePicker'
 
@@ -15,6 +16,7 @@ class Kaolendar extends Component {
       isDayPickerOpen: false,
       isTimePickerOpen: false,
       selectedDate: this.props.value,
+      totalSurchargeAmountText: this.props.totalSurchargeAmountText,
       userHasCompleted: true
     }
   }
@@ -45,7 +47,8 @@ class Kaolendar extends Component {
       daySurchargeLabel: selectedObj.locTotalPrice,
       isDayPickerOpen: false,
       isTimePickerOpen: hasTimePicker,
-      selectedDate: selectedObj.date
+      selectedDate: selectedObj.date,
+      totalSurchargeAmountText: selectedObj.locTotalPrice
     })
     // Check hasTimePicker flag to complete user select day and time journey
     if (hasTimePicker) {
@@ -53,7 +56,7 @@ class Kaolendar extends Component {
       selectedObj.userHasCompleted = false
       // this.handleOnChange(selectedObj, false)
     } else {
-      this.setState({ userHasCompleted: true })
+      this.setState({ totalSurchargeAmountText: selectedObj.locTotalPrice, userHasCompleted: true })
       this.props.onChange(selectedObj)
       selectedObj.userHasCompleted = true
       // this.handleOnChange(selectedObj, true)
@@ -70,6 +73,7 @@ class Kaolendar extends Component {
       isDayPickerOpen: false,
       isTimePickerOpen: false,
       selectedDate: dateObj.date,
+      totalSurchargeAmountText: dateObj.locTotalPrice,
       userHasCompleted: true
     })
     dateObj.userHasCompleted = true
@@ -77,12 +81,12 @@ class Kaolendar extends Component {
   }
 
   render() {
-    // const dateText = 'adsfsdf'
     const {
       daySurchargeLabel,
       isDayPickerOpen,
       isTimePickerOpen,
       selectedDate,
+      totalSurchargeAmountText,
       userHasCompleted
     } = this.state
     const {
@@ -91,6 +95,7 @@ class Kaolendar extends Component {
       dpBannerText,
       hasTimePicker,
       metaSurchargable,
+      metaTimeSurchargable,
       surchargeGif,
       timeslots
     } = this.props
@@ -105,6 +110,8 @@ class Kaolendar extends Component {
       !userHasCompleted && (dText = '') // Check user has completed selection
       return dText
     }
+    let tpBannerText = dpBannerText
+    let showTotalSurchargeText = userHasCompleted && totalSurchargeAmountText
     return (
       <article>
         <section>
@@ -119,6 +126,12 @@ class Kaolendar extends Component {
             <MiniCal className="kld__icon" />
           </div>
         </section>
+        {showTotalSurchargeText && (
+          <section className="kld__surcharge">
+            <SurchargeArrow className="kld-surcharge__icon" />
+            <span className="kld__surcharge-text">{`${totalSurchargeAmountText} surcharge`}</span>
+          </section>
+        )}
         {isDayPickerOpen && (
           <DayPicker
             bannerText={dpBannerText}
@@ -134,8 +147,10 @@ class Kaolendar extends Component {
         {hasTimePicker && isTimePickerOpen && (
           <TimePicker
             backTP={this.handleTPBack}
+            bannerText={tpBannerText}
             bannerPrice={daySurchargeLabel}
             closeTP={this.handleTPClose}
+            metaTimeSurchargable={metaTimeSurchargable}
             onChange={this.handleSelectTime}
             selectedDate={selectedDate}
             surchargeGif={surchargeGif}
@@ -153,9 +168,11 @@ Kaolendar.defaultProps = {
   dpBannerText: '',
   hasTimePicker: false,
   metaSurchargable: false,
+  metaTimeSurchargable: false,
   onChange: () => {},
   surchargeGif: '',
   timeslots: [],
+  totalSurchargeAmountText: '',
   value: ''
 }
 
@@ -165,9 +182,11 @@ Kaolendar.propTypes = {
   dpBannerText: PropTypes.string,
   hasTimePicker: PropTypes.bool,
   metaSurchargable: PropTypes.bool,
+  metaTimeSurchargable: PropTypes.bool,
   onChange: PropTypes.func,
   surchargeGif: PropTypes.string,
   timeslots: PropTypes.array,
+  totalSurchargeAmountText: PropTypes.string,
   value: PropTypes.string
 }
 

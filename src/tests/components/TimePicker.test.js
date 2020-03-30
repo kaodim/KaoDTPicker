@@ -19,9 +19,9 @@ describe('should render TimePicker correctly', () => {
     expect(wrapper).toMatchSnapshot()
   })
 
-  test('should show bannerPrice when there is bannerText', () => {
+  test('should show bannerPrice when metaTimeSurchargable is true', () => {
     wrapper.setProps({
-      bannerPrice: 'RM10'
+      metaTimeSurchargable: true
     })
     expect(wrapper.find('SurchargeBanner').length).toBe(1)
   })
@@ -41,8 +41,7 @@ describe('should render TimePicker correctly', () => {
       date: date2,
       locTotalPrice: price
     }
-    wrapper.setState({ selectedTime: date2 })
-    wrapper.setProps({ bannerPrice: price })
+    wrapper.setState({ selectedTime: date2, totalSurchargePrice: price })
     wrapper.find('button.kld-timepicker__footer-btn-done').simulate('click')
     expect(onChangeSpy).toHaveBeenCalledWith(onClickObj)
   })

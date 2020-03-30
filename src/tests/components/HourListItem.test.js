@@ -46,15 +46,39 @@ describe('should render HourListItem according to user interactions', () => {
 
   test('should call onClick when clicking on timeslot', () => {
     const onClickSpy = jest.fn()
+    const timeslot = spliceTimeslot[0]
+    const date = timeslot.value
+    const localPrice = timeslot.localized_total_price
+    const showPrice = timeslot.show_price
+
     wrapper = shallow(
       <HourListItem onChangeTime={onClickSpy} label={zone} timeslots={spliceTimeslot} />
     )
     wrapper.find('button').simulate('click')
-    expect(onClickSpy).toHaveBeenLastCalledWith(spliceTimeslot[0].value)
+    expect(onClickSpy).toHaveBeenLastCalledWith(date, localPrice, showPrice)
     expect(wrapper).toMatchSnapshot()
   })
 
   test('should have default onChangeTime', () => {
     expect(wrapper.instance().props.onChangeTime).toBeDefined()
+  })
+})
+
+describe('should render HourListItem(with price) according to user interactions', () => {
+  let spliceTimeslot = calTimeslots.splice(1, 1)
+  let date = spliceTimeslot[0].value
+  beforeEach(() => {
+    wrapper = shallow(<HourListItem label={zone} timeslots={spliceTimeslot} />)
+  })
+
+  test('should render default css styling', () => {
+    expect(wrapper).toMatchSnapshot()
+  })
+
+  test('should render correct css styling on selection', () => {
+    wrapper.setProps({
+      selectedTime: date
+    })
+    expect(wrapper).toMatchSnapshot()
   })
 })

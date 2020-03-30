@@ -53,11 +53,11 @@ exports[`should render TimePicker correctly should match TimePicker snapshot wit
             Object {
               "available": true,
               "human_readable_price": "",
-              "localized_total_price": "RM50",
-              "price": 0,
-              "show_price": false,
-              "surchargable": false,
-              "total_price": 50,
+              "localized_total_price": "RM60",
+              "price": 10,
+              "show_price": true,
+              "surchargable": true,
+              "total_price": 60,
               "value": "2020-01-17T17:30:00.000+08:00",
             },
           ]
