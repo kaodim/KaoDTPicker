@@ -4,7 +4,7 @@ import moment from 'moment'
 import { monthNames } from '../modules/constants'
 
 import HeaderClose from './HeaderClose'
-import SurchargeBanner from './SurchargeBanner'
+import DynamicPriceBanner from './DynamicPriceBanner'
 import ChevronRight from './ChevronRight'
 import ChevronLeft from './ChevronLeft'
 import SurchargeArrow from './SurchargeArrow'
@@ -85,7 +85,7 @@ class DayPicker extends Component {
           </div>
           {metaSurchargable && (
             <div>
-              <SurchargeBanner
+              <DynamicPriceBanner
                 label={bannerText}
                 surchargeGif={surchargeGif}
                 disableIcon={disableBannerIcon}

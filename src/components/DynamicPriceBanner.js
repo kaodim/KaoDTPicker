@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import SurchargeArrow from './SurchargeArrow'
 import RebateArrow from './RebateArrow'
 
-const SurchargeBanner = ({
+const DynamicPriceBanner = ({
   disableIcon,
   isRebatable,
   isSurchargable,
@@ -69,8 +69,8 @@ RebateIcon.propTypes = {
   gif: PropTypes.string
 }
 
-// SurchargeBanner props
-SurchargeBanner.defaultProps = {
+// DynamicPriceBanner props
+DynamicPriceBanner.defaultProps = {
   disableIcon: false,
   isRebatable: false,
   isSurchargable: false,
@@ -80,7 +80,7 @@ SurchargeBanner.defaultProps = {
   surchargeLabel: ''
 }
 
-SurchargeBanner.propTypes = {
+DynamicPriceBanner.propTypes = {
   disableIcon: PropTypes.bool,
   isRebatable: PropTypes.bool,
   isSurchargable: PropTypes.bool,
@@ -90,4 +90,4 @@ SurchargeBanner.propTypes = {
   surchargeLabel: PropTypes.string
 }
 
-export default SurchargeBanner
+export default DynamicPriceBanner

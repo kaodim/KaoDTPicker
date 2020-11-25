@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import moment from 'moment'
 
 import HeaderClose from './HeaderClose'
-import SurchargeBanner from './SurchargeBanner'
+import DynamicPriceBanner from './DynamicPriceBanner'
 import HourList from './HourList'
 
 class TimePicker extends Component {
@@ -60,7 +60,7 @@ class TimePicker extends Component {
           </div>
           {metaTimeSurchargable && (
             <div className="kld-timepicker__banner">
-              <SurchargeBanner label={bannerText} surchargeGif={surchargeGif} />
+              <DynamicPriceBanner label={bannerText} surchargeGif={surchargeGif} />
             </div>
           )}
           {/* ========== Timeslots Selection ========== */}

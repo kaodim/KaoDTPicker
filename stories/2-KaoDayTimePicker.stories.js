@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Kaolendar from '../src/index'
-import SurchargeBanner from '../src/components/SurchargeBanner'
+import DynamicPriceBanner from '../src/components/DynamicPriceBanner'
 
 import {
   calendarMonths,
@@ -58,15 +58,15 @@ export const vendorDayTimePicker = () => (
 )
 
 export const surchargeBanner = () => (
-  <SurchargeBanner surchargeLabel={'This is surcharge banner'} isSurchargable />
+  <DynamicPriceBanner surchargeLabel={'This is surcharge banner'} isSurchargable />
 )
 
 export const rebateBanner = () => (
-  <SurchargeBanner rebateLabel={'This is rebate banner'} isRebatable />
+  <DynamicPriceBanner rebateLabel={'This is rebate banner'} isRebatable />
 )
 
 export const bothSurchageAndRebateBanner = () => (
-  <SurchargeBanner
+  <DynamicPriceBanner
     isRebatable
     isSurchargable
     rebateLabel={'Also have rebate amount'}
@@ -74,8 +74,8 @@ export const bothSurchageAndRebateBanner = () => (
   />
 )
 
-export const surchargeBannerWithoutIcon = () => (
-  <SurchargeBanner disableIcon label={'This is surcharge banner without icon'} />
+export const DynamicPriceBannerWithoutIcon = () => (
+  <DynamicPriceBanner disableIcon label={'This is surcharge banner without icon'} />
 )
 
 // import Kaolendar from '../src/index'
