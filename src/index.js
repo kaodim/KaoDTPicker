@@ -92,8 +92,11 @@ class Kaolendar extends Component {
     const {
       calendarMonths,
       disableBannerIcon,
+      dpBannerRebateText,
+      dpBannerSurchargeText,
       dpBannerText,
       hasTimePicker,
+      metaRebatable,
       metaSurchargable,
       metaTimeSurchargable,
       surchargeGif,
@@ -135,9 +138,12 @@ class Kaolendar extends Component {
         {isDayPickerOpen && (
           <DayPicker
             bannerText={dpBannerText}
+            bannerRebateText={dpBannerRebateText}
+            bannerSurchargeText={dpBannerSurchargeText}
             calendarMonths={calendarMonths}
             closeDP={this.handleDPClose}
             disableBannerIcon={disableBannerIcon}
+            metaRebatable={metaRebatable}
             metaSurchargable={metaSurchargable}
             onChange={this.handleSelectDay}
             selectedDate={selectedDate}
@@ -165,8 +171,11 @@ class Kaolendar extends Component {
 Kaolendar.defaultProps = {
   calendarMonths: [],
   disableBannerIcon: false,
+  dpBannerRebateText: '',
+  dpBannerSurchargeText: '',
   dpBannerText: '',
   hasTimePicker: false,
+  metaRebatable: false,
   metaSurchargable: false,
   metaTimeSurchargable: false,
   onChange: () => {},
@@ -179,8 +188,11 @@ Kaolendar.defaultProps = {
 Kaolendar.propTypes = {
   calendarMonths: PropTypes.array,
   disableBannerIcon: PropTypes.bool,
+  dpBannerRebateText: PropTypes.string,
+  dpBannerSurchargeText: PropTypes.string,
   dpBannerText: PropTypes.string,
   hasTimePicker: PropTypes.bool,
+  metaRebatable: PropTypes.bool,
   metaSurchargable: PropTypes.bool,
   metaTimeSurchargable: PropTypes.bool,
   onChange: PropTypes.func,

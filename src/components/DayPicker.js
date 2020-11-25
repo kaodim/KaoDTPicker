@@ -57,9 +57,12 @@ class DayPicker extends Component {
     const { currentIndex } = this.state
     const {
       bannerText,
+      bannerRebateText,
+      bannerSurchargeText,
       calendarMonths,
       closeDP,
       disableBannerIcon,
+      metaRebatable,
       metaSurchargable,
       selectedDate,
       surchargeGif
@@ -83,10 +86,14 @@ class DayPicker extends Component {
             <label className="kld-daypicker__header-title">Select Date</label>
             <HeaderClose className="kld-daypicker__header-close" onClick={closeDP} />
           </div>
-          {metaSurchargable && (
+          {(metaSurchargable || metaRebatable) && (
             <div>
               <DynamicPriceBanner
+                isSurchargable={metaSurchargable}
+                isRebatable={metaRebatable}
                 label={bannerText}
+                rebateLabel={bannerRebateText}
+                surchargeLabel={bannerSurchargeText}
                 surchargeGif={surchargeGif}
                 disableIcon={disableBannerIcon}
               />
@@ -180,9 +187,12 @@ const dateItem = (dates, selectedDate, handleDateSelect) => {
 
 DayPicker.defaultProps = {
   bannerText: '',
+  bannerRebateText: '',
+  bannerSurchargeText: '',
   calendarMonths: [],
   closeDP: () => {},
   disableBannerIcon: false,
+  metaRebatable: false,
   metaSurchargable: false,
   onChange: () => {},
   selectedDate: '',
@@ -191,9 +201,12 @@ DayPicker.defaultProps = {
 
 DayPicker.propTypes = {
   bannerText: PropTypes.string,
+  bannerRebateText: PropTypes.string,
+  bannerSurchargeText: PropTypes.string,
   calendarMonths: PropTypes.array,
   closeDP: PropTypes.func,
   disableBannerIcon: PropTypes.bool,
+  metaRebatable: PropTypes.bool,
   metaSurchargable: PropTypes.bool,
   onChange: PropTypes.func,
   selectedDate: PropTypes.string,

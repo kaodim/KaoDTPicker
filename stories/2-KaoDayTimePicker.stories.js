@@ -17,9 +17,12 @@ export default {
 export const dayTimePicker = () => (
   <Kaolendar
     calendarMonths={calendarMonths}
-    dpBannerText={'Indicates high demand fee (RM)'}
+    dpBannerRebateText={'Rebate indication message'}
+    dpBannerSurchargeText={'Surcharge indication message'}
+    dpBannerText={'General message'}
     hasTimePicker
     metaSurchargable={metaCalendarMonths.surchargable}
+    metaRebatable={metaCalendarMonths.rebatable}
     metaTimeSurchargable={metaCalTimeslots.surchargable}
     timeslots={calTimeslots}
   />
@@ -28,8 +31,11 @@ export const dayTimePicker = () => (
 export const dayTimePickerPreSelected = () => (
   <Kaolendar
     calendarMonths={calendarMonths}
-    dpBannerText={'Indicates high demand fee (RM)'}
+    dpBannerRebateText={'Rebate indication message'}
+    dpBannerSurchargeText={'Surcharge indication message'}
+    dpBannerText={'General message'}
     hasTimePicker
+    metaRebatable={metaCalendarMonths.rebatable}
     metaSurchargable={metaCalendarMonths.surchargable}
     metaTimeSurchargable={metaCalTimeslots.surchargable}
     timeslots={calTimeslots}
@@ -41,7 +47,10 @@ export const dayTimePickerPreSelected = () => (
 export const dayPicker = () => (
   <Kaolendar
     calendarMonths={calendarMonths}
-    dpBannerText={'Indicates high demand fee (RM)'}
+    dpBannerRebateText={'Rebate indication message'}
+    dpBannerSurchargeText={'Surcharge indication message'}
+    dpBannerText={'General message'}
+    metaRebatable={metaCalendarMonths.rebatable}
     metaSurchargable={metaCalendarMonths.surchargable}
   />
 )
