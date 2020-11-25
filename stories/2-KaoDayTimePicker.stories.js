@@ -57,7 +57,22 @@ export const vendorDayTimePicker = () => (
   />
 )
 
-export const surchargeBanner = () => <SurchargeBanner label={'This is surcharge banner'} />
+export const surchargeBanner = () => (
+  <SurchargeBanner surchargeLabel={'This is surcharge banner'} isSurchargable />
+)
+
+export const rebateBanner = () => (
+  <SurchargeBanner rebateLabel={'This is rebate banner'} isRebatable />
+)
+
+export const bothSurchageAndRebateBanner = () => (
+  <SurchargeBanner
+    isRebatable
+    isSurchargable
+    rebateLabel={'Also have rebate amount'}
+    surchargeLabel={'This is surchage amount &'}
+  />
+)
 
 export const surchargeBannerWithoutIcon = () => (
   <SurchargeBanner disableIcon label={'This is surcharge banner without icon'} />
