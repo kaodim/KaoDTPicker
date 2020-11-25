@@ -2,18 +2,25 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import SurchargeArrow from './SurchargeArrow'
 
-const SurchargeBanner = ({ disableIcon, label, surchargeGif }) => (
-  <section className="kld-surcharge">
-    {!disableIcon &&
-      (surchargeGif ? (
+const SurchargeBanner = ({ disableIcon, label, surchargeGif }) => {
+  if (disableIcon) {
+    return (
+      <section className="kld-surcharge">
+        <span className="kld-surcharge__label">{label}</span>
+      </section>
+    )
+  }
+  return (
+    <section className="kld-surcharge">
+      {surchargeGif ? (
         <img src={surchargeGif} className="kld-surcharge__icon" />
       ) : (
         <SurchargeArrow className="kld-surcharge__icon" />
-      ))}
-
-    <span className="kld-surcharge__label">{label}</span>
-  </section>
-)
+      )}
+      <span className="kld-surcharge__label">{label}</span>
+    </section>
+  )
+}
 
 SurchargeBanner.defaultProps = {
   disableIcon: false,
