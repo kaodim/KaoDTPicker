@@ -9,6 +9,8 @@ import ChevronRight from './ChevronRight'
 import ChevronLeft from './ChevronLeft'
 import SurchargeArrow from './SurchargeArrow'
 import SurchargeArrowWhite from './SurchargeArrowWhite'
+import RebateArrow from './RebateArrow'
+import RebateArrowWhite from './RebateArrowWhite'
 
 class DayPicker extends Component {
   constructor(props) {
@@ -159,6 +161,13 @@ const dateItem = (dates, selectedDate, handleDateSelect) => {
       <SurchargeArrow className="kld-daypicker__date-surcharge-icon" />
     )
   }
+  let rebateColor = (dateNow) => {
+    return colorStyleSelected(dateNow) ? (
+      <RebateArrowWhite />
+    ) : (
+      <RebateArrow className="kld-daypicker__date-surcharge-icon" />
+    )
+  }
   return (
     <div className="kld-daypicker__date">
       {concatDays.map((d, index) => {
@@ -172,7 +181,8 @@ const dateItem = (dates, selectedDate, handleDateSelect) => {
             <span>{cd && cd.getDate()}</span>
             {d.show_price && (
               <div className="kld-daypicker__date-surcharge">
-                {surchargeColor(cd)}
+                {d.surchargable && surchargeColor(cd)}
+                {d.rebatable && rebateColor(cd)}
                 <span className="kld-daypicker__date-surcharge-price">
                   {d.human_readable_price}
                 </span>
