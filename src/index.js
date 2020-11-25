@@ -98,7 +98,9 @@ class Kaolendar extends Component {
       hasTimePicker,
       metaRebatable,
       metaSurchargable,
+      metaTimeRebatable,
       metaTimeSurchargable,
+      rebateGif,
       surchargeGif,
       timeslots
     } = this.props
@@ -146,6 +148,7 @@ class Kaolendar extends Component {
             metaRebatable={metaRebatable}
             metaSurchargable={metaSurchargable}
             onChange={this.handleSelectDay}
+            rebateGif={rebateGif}
             selectedDate={selectedDate}
             surchargeGif={surchargeGif}
           />
@@ -156,8 +159,10 @@ class Kaolendar extends Component {
             bannerText={tpBannerText}
             bannerPrice={daySurchargeLabel}
             closeTP={this.handleTPClose}
+            metaTimeRebatable={metaTimeRebatable}
             metaTimeSurchargable={metaTimeSurchargable}
             onChange={this.handleSelectTime}
+            rebateGif={rebateGif}
             selectedDate={selectedDate}
             surchargeGif={surchargeGif}
             timeslots={timeslots}
@@ -177,8 +182,10 @@ Kaolendar.defaultProps = {
   hasTimePicker: false,
   metaRebatable: false,
   metaSurchargable: false,
+  metaTimeRebatable: false,
   metaTimeSurchargable: false,
   onChange: () => {},
+  rebateGif: '',
   surchargeGif: '',
   timeslots: [],
   totalSurchargeAmountText: '',
@@ -194,8 +201,10 @@ Kaolendar.propTypes = {
   hasTimePicker: PropTypes.bool,
   metaRebatable: PropTypes.bool,
   metaSurchargable: PropTypes.bool,
+  metaTimeRebatable: PropTypes.bool,
   metaTimeSurchargable: PropTypes.bool,
   onChange: PropTypes.func,
+  rebateGif: PropTypes.string,
   surchargeGif: PropTypes.string,
   timeslots: PropTypes.array,
   totalSurchargeAmountText: PropTypes.string,

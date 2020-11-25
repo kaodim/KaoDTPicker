@@ -4,6 +4,8 @@ import moment from 'moment'
 
 import SurchargeArrow from './SurchargeArrow'
 import SurchargeArrowWhite from './SurchargeArrowWhite'
+import RebateArrow from './RebateArrow'
+import RebateArrowWhite from './RebateArrowWhite'
 
 const HourListItem = ({ timeslots, label, onChangeTime, selectedTime }) => {
   const btnStyle = (date) => {
@@ -21,6 +23,13 @@ const HourListItem = ({ timeslots, label, onChangeTime, selectedTime }) => {
       <SurchargeArrow className="kld-daypicker__date-surcharge-icon" />
     )
   }
+  let rebateArrowStyle = (date) => {
+    return selectedTime === date ? (
+      <RebateArrowWhite />
+    ) : (
+      <RebateArrow className="kld-daypicker__date-surcharge-icon" />
+    )
+  }
   return (
     <div className="kld-hli">
       <span className="kld-hli__zone">{label}</span>
@@ -29,16 +38,21 @@ const HourListItem = ({ timeslots, label, onChangeTime, selectedTime }) => {
           const date = tsItem.value
           const localTotalPrice = tsItem.localized_total_price
           const showPrice = tsItem.show_price
+          const isRebatable = tsItem.rebatable
+          const isSurchargable = tsItem.surchargable
           return (
             <button
               className={btnStyle(date)}
               disabled={!tsItem.available}
               key={index}
-              onClick={() => onChangeTime(date, localTotalPrice, showPrice)}>
+              onClick={() =>
+                onChangeTime(date, localTotalPrice, showPrice, isRebatable, isSurchargable)
+              }>
               <span>{moment(date).format('hh:mmA')}</span>
-              {tsItem.surchargable && tsItem.show_price && (
+              {tsItem.show_price && (
                 <div>
-                  {surchargeArrowStyle(date)}
+                  {tsItem.surchargable && surchargeArrowStyle(date)}
+                  {tsItem.rebatable && rebateArrowStyle(date)}
                   <span className={surchargeTextStyle(date)}>{tsItem.human_readable_price}</span>
                 </div>
               )}

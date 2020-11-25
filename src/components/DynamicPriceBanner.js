@@ -8,6 +8,7 @@ const DynamicPriceBanner = ({
   isRebatable,
   isSurchargable,
   label,
+  rebateGif,
   rebateLabel,
   surchargeGif,
   surchargeLabel
@@ -29,7 +30,7 @@ const DynamicPriceBanner = ({
       )}
       {isRebatable && (
         <div className="kld-surcharge__body">
-          <RebateIcon gif={surchargeGif} />
+          <RebateIcon gif={rebateGif} />
           <span className="kld-surcharge__label">{rebateLabel}</span>
         </div>
       )}
@@ -75,6 +76,7 @@ DynamicPriceBanner.defaultProps = {
   isRebatable: false,
   isSurchargable: false,
   label: '',
+  rebateGif: '',
   rebateLabel: '',
   surchargeGif: '',
   surchargeLabel: ''
@@ -85,6 +87,7 @@ DynamicPriceBanner.propTypes = {
   isRebatable: PropTypes.bool,
   isSurchargable: PropTypes.bool,
   label: PropTypes.string,
+  rebateGif: PropTypes.string,
   rebateLabel: PropTypes.string,
   surchargeGif: PropTypes.string,
   surchargeLabel: PropTypes.string

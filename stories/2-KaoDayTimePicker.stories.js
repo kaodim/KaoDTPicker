@@ -23,6 +23,7 @@ export const dayTimePicker = () => (
     hasTimePicker
     metaSurchargable={metaCalendarMonths.surchargable}
     metaRebatable={metaCalendarMonths.rebatable}
+    metaTimeRebatable={metaCalTimeslots.rebatable}
     metaTimeSurchargable={metaCalTimeslots.surchargable}
     timeslots={calTimeslots}
   />
@@ -37,6 +38,7 @@ export const dayTimePickerPreSelected = () => (
     hasTimePicker
     metaRebatable={metaCalendarMonths.rebatable}
     metaSurchargable={metaCalendarMonths.surchargable}
+    metaTimeRebatable={metaCalTimeslots.rebatable}
     metaTimeSurchargable={metaCalTimeslots.surchargable}
     timeslots={calTimeslots}
     totalSurchargeAmountText={'RM33'}

@@ -11,21 +11,44 @@ class TimePicker extends Component {
     super(props)
     this.state = {
       bannerText: this.props.bannerText,
+      isRebatable: this.props.metaTimeRebatable,
+      isSurchargable: this.props.metaTimeSurchargable,
       selectedTime: '',
       showPrice: false,
       totalSurchargePrice: ''
     }
   }
 
-  handleHourChange = (hour, locTotalPrice, showPrice) => {
-    this.setState({ selectedTime: hour, showPrice, totalSurchargePrice: locTotalPrice })
+  handleHourChange = (
+    hour,
+    locTotalPrice,
+    showPrice,
+    isRebatable = false,
+    isSurchargable = false
+  ) => {
+    // Check dynamic price type (surcharge/rebate)
+    let dynamicPriceType = ''
+    if (isSurchargable) {
+      dynamicPriceType = 'surcharge'
+    } else if (isRebatable) {
+      dynamicPriceType = 'rebate'
+    }
+    this.setState({
+      isRebatable,
+      isSurchargable,
+      selectedTime: hour,
+      showPrice,
+      totalSurchargePrice: locTotalPrice
+    })
     if (showPrice) {
       this.setState({
-        bannerText: `${moment(hour).format('hh:mmA')} has a surcharge of ${locTotalPrice}`
+        bannerText: `${moment(hour).format('hh:mmA')} has a ${dynamicPriceType} of ${locTotalPrice}`
       })
     } else {
       this.setState({
-        bannerText: `${moment(hour).format('DD MMM (ddd)')} has a surcharge of ${locTotalPrice}`
+        bannerText: `${moment(hour).format(
+          'DD MMM (ddd)'
+        )} has a ${dynamicPriceType} of ${locTotalPrice}`
       })
     }
   }
@@ -39,16 +62,24 @@ class TimePicker extends Component {
   }
 
   render() {
-    const { bannerText, selectedTime, showPrice, totalSurchargePrice } = this.state
+    const {
+      bannerText,
+      isRebatable,
+      isSurchargable,
+      selectedTime,
+      showPrice,
+      totalSurchargePrice
+    } = this.state
     const {
       backTP,
       bannerPrice,
       closeTP,
-      metaTimeSurchargable,
+      rebateGif,
       selectedDate,
       surchargeGif,
       timeslots
     } = this.props
+    // const dynamicBannerText = (!isRebatable && !isSurchargable) ? this.props.bannerText : this.state.bannerText
     return (
       <section className="kld-daypicker__modal">
         <div className="kld-timepicker">
@@ -58,9 +89,17 @@ class TimePicker extends Component {
             ).format('DD MMM')}`}</span>
             <HeaderClose className="kld-timepicker__header-close" onClick={closeTP} />
           </div>
-          {metaTimeSurchargable && (
+          {(isRebatable || isSurchargable) && (
             <div className="kld-timepicker__banner">
-              <DynamicPriceBanner label={bannerText} surchargeGif={surchargeGif} />
+              <DynamicPriceBanner
+                isRebatable={isRebatable}
+                isSurchargable={isSurchargable}
+                label={bannerText}
+                rebateGif={rebateGif}
+                rebateLabel={bannerText}
+                surchargeGif={surchargeGif}
+                surchargeLabel={bannerText}
+              />
             </div>
           )}
           {/* ========== Timeslots Selection ========== */}
@@ -93,6 +132,7 @@ TimePicker.defaultProps = {
   bannerPrice: '',
   bannerText: '',
   closeTP: () => {},
+  metaTimeRebatable: false,
   metaTimeSurchargable: false,
   onChange: () => {},
   selectedDate: '',
@@ -105,6 +145,7 @@ TimePicker.propTypes = {
   bannerPrice: PropTypes.string,
   bannerText: PropTypes.string,
   closeTP: PropTypes.func,
+  metaTimeRebatable: PropTypes.bool,
   metaTimeSurchargable: PropTypes.bool,
   onChange: PropTypes.func,
   selectedDate: PropTypes.string,
