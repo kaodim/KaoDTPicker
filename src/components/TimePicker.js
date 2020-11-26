@@ -10,9 +10,9 @@ class TimePicker extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      bannerText: this.props.bannerText,
-      isRebatable: this.props.metaTimeRebatable,
-      isSurchargable: this.props.metaTimeSurchargable,
+      bannerText: '',
+      isRebatable: false,
+      isSurchargable: false,
       selectedTime: '',
       showPrice: false,
       totalPrice: 0,
@@ -76,7 +76,6 @@ class TimePicker extends Component {
       surchargeGif,
       timeslots
     } = this.props
-    // const dynamicBannerText = (!isRebatable && !isSurchargable) ? this.props.bannerText : this.state.bannerText
     return (
       <section className="kld-daypicker__modal">
         <div className="kld-timepicker">

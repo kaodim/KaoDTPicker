@@ -61,7 +61,7 @@ module.exports =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 137);
+/******/ 	return __webpack_require__(__webpack_require__.s = 139);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -1920,7 +1920,7 @@ module.exports =
             try {
                 oldLocale = globalLocale._abbr;
                 var aliasedRequire = require;
-                __webpack_require__(139)("./" + name);
+                __webpack_require__(141)("./" + name);
                 getSetGlobalLocale(oldLocale);
             } catch (e) {}
         }
@@ -4671,7 +4671,7 @@ module.exports =
 
 })));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(138)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(140)(module)))
 
 /***/ }),
 /* 1 */
@@ -4683,6 +4683,43 @@ module.exports = require("react");
 /* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var SurchargeArrow = function SurchargeArrow(props) {
+  return _react2.default.createElement(
+    'svg',
+    props,
+    _react2.default.createElement('path', {
+      fill: '#ED193A',
+      fillRule: 'nonzero',
+      d: 'M7.172 7.992a1.203 1.203 0 0 1 1.645 0l5.355 5.1a1.07 1.07 0 0 1 0 1.566 1.203 1.203 0 0 1-1.645 0L8 10.348l-4.527 4.31c-.455.434-1.201.423-1.656 0a1.07 1.07 0 0 1 0-1.566zm0-6.203a1.203 1.203 0 0 1 1.645 0l5.355 5.1a1.07 1.07 0 0 1 0 1.567 1.203 1.203 0 0 1-1.645 0L8 4.144 3.473 8.456c-.455.433-1.201.422-1.656 0a1.07 1.07 0 0 1 0-1.567z'
+    })
+  );
+};
+
+SurchargeArrow.defaultProps = {
+  xmlns: 'http://www.w3.org/2000/svg',
+  width: '16',
+  height: '16',
+  viewBox: '0 0 16 16'
+};
+exports.default = SurchargeArrow;
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
 /* WEBPACK VAR INJECTION */(function(process) {/**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -4691,22 +4728,22 @@ module.exports = require("react");
  */
 
 if (process.env.NODE_ENV !== 'production') {
-  var ReactIs = __webpack_require__(133);
+  var ReactIs = __webpack_require__(134);
 
   // By explicitly using `prop-types` you are opting into new development behavior.
   // http://fb.me/prop-types-in-prod
   var throwOnDirectAccess = true;
-  module.exports = __webpack_require__(144)(ReactIs.isElement, throwOnDirectAccess);
+  module.exports = __webpack_require__(146)(ReactIs.isElement, throwOnDirectAccess);
 } else {
   // By explicitly using `prop-types` you are opting into new production behavior.
   // http://fb.me/prop-types-in-prod
-  module.exports = __webpack_require__(147)();
+  module.exports = __webpack_require__(149)();
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -4896,7 +4933,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4912,28 +4949,53 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var SurchargeArrow = function SurchargeArrow(props) {
+var RebateArrow = function RebateArrow(props) {
   return _react2.default.createElement(
     'svg',
     props,
-    _react2.default.createElement('path', {
-      fill: '#ED193A',
-      fillRule: 'nonzero',
-      d: 'M7.172 7.992a1.203 1.203 0 0 1 1.645 0l5.355 5.1a1.07 1.07 0 0 1 0 1.566 1.203 1.203 0 0 1-1.645 0L8 10.348l-4.527 4.31c-.455.434-1.201.423-1.656 0a1.07 1.07 0 0 1 0-1.566zm0-6.203a1.203 1.203 0 0 1 1.645 0l5.355 5.1a1.07 1.07 0 0 1 0 1.567 1.203 1.203 0 0 1-1.645 0L8 4.144 3.473 8.456c-.455.433-1.201.422-1.656 0a1.07 1.07 0 0 1 0-1.567z'
-    })
+    _react2.default.createElement(
+      'g',
+      {
+        fill: 'none',
+        fillRule: 'evenodd'
+      },
+      _react2.default.createElement(
+        'g',
+        {
+          fill: '#11B958',
+          fillRule: 'nonzero'
+        },
+        _react2.default.createElement(
+          'g',
+          null,
+          _react2.default.createElement(
+            'g',
+            null,
+            _react2.default.createElement(
+              'g',
+              null,
+              _react2.default.createElement('path', {
+                d: 'M7.172 7.992c.455-.434 1.19-.434 1.645 0l5.355 5.1c.455.433.455 1.133 0 1.566-.455.434-1.19.434-1.645 0L8 10.348l-4.527 4.31c-.455.434-1.201.423-1.656 0-.455-.433-.455-1.133 0-1.566zm0-6.203c.455-.433 1.19-.433 1.645 0l5.355 5.1c.455.433.455 1.133 0 1.567-.455.433-1.19.433-1.645 0L8 4.144 3.473 8.456c-.455.433-1.201.422-1.656 0-.455-.434-.455-1.134 0-1.567z',
+                transform: 'translate(-457 -624) translate(418 492) translate(24 97) translate(15 35) matrix(1 0 0 -1 0 16.447)'
+              })
+            )
+          )
+        )
+      )
+    )
   );
 };
 
-SurchargeArrow.defaultProps = {
+RebateArrow.defaultProps = {
   xmlns: 'http://www.w3.org/2000/svg',
   width: '16',
   height: '16',
   viewBox: '0 0 16 16'
 };
-exports.default = SurchargeArrow;
+exports.default = RebateArrow;
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4952,7 +5014,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -5029,7 +5091,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -5168,7 +5230,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -5231,7 +5293,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -5294,7 +5356,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -5420,7 +5482,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -5483,7 +5545,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -5591,7 +5653,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -5654,7 +5716,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -5763,7 +5825,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -5899,7 +5961,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -5993,7 +6055,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -6055,7 +6117,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -6178,7 +6240,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -6301,7 +6363,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -6413,7 +6475,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -6568,7 +6630,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -6660,7 +6722,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -6836,7 +6898,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -6903,7 +6965,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -6987,7 +7049,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -7051,7 +7113,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -7131,7 +7193,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -7211,7 +7273,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -7291,7 +7353,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -7394,7 +7456,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -7498,7 +7560,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -7569,7 +7631,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -7640,7 +7702,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -7707,7 +7769,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -7778,7 +7840,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -7849,7 +7911,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -7915,7 +7977,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -7986,7 +8048,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -8061,7 +8123,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -8157,7 +8219,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -8253,7 +8315,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -8349,7 +8411,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -8433,7 +8495,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -8503,7 +8565,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -8613,7 +8675,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 46 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -8726,7 +8788,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 47 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -8790,7 +8852,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 48 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -8877,7 +8939,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 49 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -8955,7 +9017,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 50 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -9037,7 +9099,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 51 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -9116,7 +9178,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 52 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -9197,7 +9259,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 53 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -9277,7 +9339,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 54 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -9358,7 +9420,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 55 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -9485,7 +9547,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 56 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -9613,7 +9675,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 57 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -9714,7 +9776,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 58 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -9842,7 +9904,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 59 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -10000,7 +10062,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 60 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -10114,7 +10176,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 61 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -10213,7 +10275,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 62 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -10299,7 +10361,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 63 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -10435,7 +10497,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 64 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -10508,7 +10570,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 65 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -10581,7 +10643,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 66 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -10677,7 +10739,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 67 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -10763,7 +10825,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 68 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -10856,7 +10918,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 69 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -10947,7 +11009,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 70 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -11061,7 +11123,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 71 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -11191,7 +11253,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 72 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -11276,7 +11338,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 73 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -11399,7 +11461,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 74 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -11490,7 +11552,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 75 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -11630,7 +11692,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 76 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -11704,7 +11766,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 77 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -11826,7 +11888,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 78 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -11927,7 +11989,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 79 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -12043,7 +12105,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 80 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -12111,7 +12173,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 81 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -12205,7 +12267,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 82 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -12290,7 +12352,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 83 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -12398,7 +12460,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 84 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -12562,7 +12624,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 85 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -12648,7 +12710,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 86 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -12734,7 +12796,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 87 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -12798,7 +12860,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 88 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -12895,7 +12957,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 89 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -12961,7 +13023,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 90 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -13088,7 +13150,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 91 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -13179,7 +13241,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 92 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -13270,7 +13332,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 93 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -13334,7 +13396,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 94 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -13462,7 +13524,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 95 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -13592,7 +13654,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 96 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -13661,7 +13723,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 97 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -13726,7 +13788,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 98 */
+/* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -13805,7 +13867,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 99 */
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -13991,7 +14053,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 100 */
+/* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -14093,7 +14155,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 101 */
+/* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -14157,7 +14219,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 102 */
+/* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -14232,7 +14294,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 103 */
+/* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -14392,7 +14454,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 104 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -14569,7 +14631,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 105 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -14641,7 +14703,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 106 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -14756,7 +14818,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 107 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -14871,7 +14933,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 108 */
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -14963,7 +15025,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 109 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -15036,7 +15098,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 110 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -15099,7 +15161,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 111 */
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -15232,7 +15294,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 112 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -15325,7 +15387,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 113 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -15396,7 +15458,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 114 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -15516,7 +15578,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 115 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -15587,7 +15649,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 116 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -15653,7 +15715,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 117 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -15779,7 +15841,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 118 */
+/* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -15877,7 +15939,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 119 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -15972,7 +16034,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 120 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16034,7 +16096,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 121 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16096,7 +16158,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 122 */
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js language configuration
@@ -16219,7 +16281,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 123 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16377,7 +16439,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 124 */
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16479,7 +16541,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 125 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16541,7 +16603,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 126 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16603,7 +16665,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 127 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16686,7 +16748,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 128 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16758,7 +16820,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 129 */
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16822,7 +16884,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 130 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16936,7 +16998,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 131 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -17043,7 +17105,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 132 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -17150,22 +17212,22 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 133 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(142);
+  module.exports = __webpack_require__(144);
 } else {
-  module.exports = __webpack_require__(143);
+  module.exports = __webpack_require__(145);
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ }),
-/* 134 */
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17211,7 +17273,7 @@ HeaderClose.defaultProps = {
 exports.default = HeaderClose;
 
 /***/ }),
-/* 135 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17225,48 +17287,128 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(2);
+var _propTypes = __webpack_require__(3);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _SurchargeArrow = __webpack_require__(4);
+var _SurchargeArrow = __webpack_require__(2);
 
 var _SurchargeArrow2 = _interopRequireDefault(_SurchargeArrow);
 
+var _RebateArrow = __webpack_require__(5);
+
+var _RebateArrow2 = _interopRequireDefault(_RebateArrow);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var SurchargeBanner = function SurchargeBanner(_ref) {
+var DynamicPriceBanner = function DynamicPriceBanner(_ref) {
   var disableIcon = _ref.disableIcon,
+      isRebatable = _ref.isRebatable,
+      isSurchargable = _ref.isSurchargable,
       label = _ref.label,
-      surchargeGif = _ref.surchargeGif;
+      rebateGif = _ref.rebateGif,
+      rebateLabel = _ref.rebateLabel,
+      surchargeGif = _ref.surchargeGif,
+      surchargeLabel = _ref.surchargeLabel;
+
+  if (disableIcon) {
+    return _react2.default.createElement(
+      'section',
+      { className: 'kld-surcharge' },
+      _react2.default.createElement(
+        'span',
+        { className: 'kld-surcharge__label' },
+        label
+      )
+    );
+  }
   return _react2.default.createElement(
     'section',
     { className: 'kld-surcharge' },
-    !disableIcon && (surchargeGif ? _react2.default.createElement('img', { src: surchargeGif, className: 'kld-surcharge__icon' }) : _react2.default.createElement(_SurchargeArrow2.default, { className: 'kld-surcharge__icon' })),
-    _react2.default.createElement(
-      'span',
-      { className: 'kld-surcharge__label' },
-      label
+    isSurchargable && _react2.default.createElement(
+      'div',
+      { className: 'kld-surcharge__body' },
+      _react2.default.createElement(SurchargeIcon, { gif: surchargeGif }),
+      _react2.default.createElement(
+        'span',
+        { className: 'kld-surcharge__label' },
+        surchargeLabel
+      )
+    ),
+    isRebatable && _react2.default.createElement(
+      'div',
+      { className: 'kld-surcharge__body' },
+      _react2.default.createElement(RebateIcon, { gif: rebateGif }),
+      _react2.default.createElement(
+        'span',
+        { className: 'kld-surcharge__label' },
+        rebateLabel
+      )
     )
   );
 };
 
-SurchargeBanner.defaultProps = {
+var SurchargeIcon = function SurchargeIcon(_ref2) {
+  var gif = _ref2.gif;
+
+  if (!gif) {
+    return _react2.default.createElement(_SurchargeArrow2.default, { className: 'kld-surcharge__icon' });
+  }
+  return _react2.default.createElement('img', { src: gif, className: 'kld-surcharge__icon' });
+};
+
+var RebateIcon = function RebateIcon(_ref3) {
+  var gif = _ref3.gif;
+
+  if (!gif) {
+    return _react2.default.createElement(_RebateArrow2.default, { className: 'kld-surcharge__icon' });
+  }
+  return _react2.default.createElement('img', { src: gif, className: 'kld-surcharge__icon' });
+};
+
+// SurchargeIcon props
+SurchargeIcon.defaultProps = {
+  gif: ''
+};
+
+SurchargeIcon.propTypes = {
+  gif: _propTypes2.default.string
+
+  // RebateIcon props
+};RebateIcon.defaultProps = {
+  gif: ''
+};
+
+RebateIcon.propTypes = {
+  gif: _propTypes2.default.string
+
+  // DynamicPriceBanner props
+};DynamicPriceBanner.defaultProps = {
   disableIcon: false,
+  isRebatable: false,
+  isSurchargable: false,
   label: '',
-  surchargeGif: ''
+  rebateGif: '',
+  rebateLabel: '',
+  surchargeGif: '',
+  surchargeLabel: ''
 };
 
-SurchargeBanner.propTypes = {
+DynamicPriceBanner.propTypes = {
   disableIcon: _propTypes2.default.bool,
+  isRebatable: _propTypes2.default.bool,
+  isSurchargable: _propTypes2.default.bool,
   label: _propTypes2.default.string,
-  surchargeGif: _propTypes2.default.string
+  rebateGif: _propTypes2.default.string,
+  rebateLabel: _propTypes2.default.string,
+  surchargeGif: _propTypes2.default.string,
+  surchargeLabel: _propTypes2.default.string
 };
 
-exports.default = SurchargeBanner;
+exports.default = DynamicPriceBanner;
 
 /***/ }),
-/* 136 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17303,7 +17445,102 @@ SurchargeArrowWhite.defaultProps = {
 exports.default = SurchargeArrowWhite;
 
 /***/ }),
-/* 137 */
+/* 138 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var RebateArrowWhite = function RebateArrowWhite(props) {
+  return _react2.default.createElement(
+    'svg',
+    props,
+    _react2.default.createElement(
+      'defs',
+      null,
+      _react2.default.createElement(
+        'filter',
+        {
+          id: 'qei6prabwa'
+        },
+        _react2.default.createElement('feColorMatrix', {
+          'in': 'SourceGraphic',
+          values: '0 0 0 0 1.000000 0 0 0 0 0.831373 0 0 0 0 0.886275 0 0 0 1.000000 0'
+        })
+      )
+    ),
+    _react2.default.createElement(
+      'g',
+      {
+        fill: 'none',
+        fillRule: 'evenodd'
+      },
+      _react2.default.createElement(
+        'g',
+        null,
+        _react2.default.createElement(
+          'g',
+          null,
+          _react2.default.createElement(
+            'g',
+            null,
+            _react2.default.createElement(
+              'g',
+              null,
+              _react2.default.createElement(
+                'g',
+                null,
+                _react2.default.createElement(
+                  'g',
+                  null,
+                  _react2.default.createElement(
+                    'g',
+                    {
+                      filter: 'url(#qei6prabwa)',
+                      transform: 'translate(-577 -881) translate(418 492) translate(24 167) translate(127 91) translate(0 51) translate(0 51) translate(8.5 23)'
+                    },
+                    _react2.default.createElement(
+                      'g',
+                      {
+                        fill: '#FFD4E2',
+                        fillRule: 'nonzero'
+                      },
+                      _react2.default.createElement('path', {
+                        d: 'M3.586 3.996c.227-.217.595-.217.822 0l2.678 2.55c.227.216.227.566 0 .783-.228.217-.595.217-.823 0L4 5.174 1.737 7.329c-.228.217-.601.211-.829 0-.227-.216-.227-.566 0-.783zm0-3.102c.227-.216.595-.216.822 0l2.678 2.55c.227.217.227.567 0 .784-.228.216-.595.216-.823 0L4 2.072 1.737 4.228c-.228.216-.601.21-.829 0-.227-.217-.227-.567 0-.784z',
+                        transform: 'translate(0 6) matrix(1 0 0 -1 0 8.224)'
+                      })
+                    )
+                  )
+                )
+              )
+            )
+          )
+        )
+      )
+    )
+  );
+};
+
+RebateArrowWhite.defaultProps = {
+  xmlns: 'http://www.w3.org/2000/svg',
+  width: '9',
+  height: '8',
+  viewBox: '0 0 9 8'
+};
+exports.default = RebateArrowWhite;
+
+/***/ }),
+/* 139 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17323,23 +17560,27 @@ var _moment = __webpack_require__(0);
 
 var _moment2 = _interopRequireDefault(_moment);
 
-var _MiniCal = __webpack_require__(140);
+var _MiniCal = __webpack_require__(142);
 
 var _MiniCal2 = _interopRequireDefault(_MiniCal);
 
-var _SurchargeArrow = __webpack_require__(4);
+var _SurchargeArrow = __webpack_require__(2);
 
 var _SurchargeArrow2 = _interopRequireDefault(_SurchargeArrow);
 
-var _DayPicker = __webpack_require__(141);
+var _DayPicker = __webpack_require__(143);
 
 var _DayPicker2 = _interopRequireDefault(_DayPicker);
 
-var _TimePicker = __webpack_require__(151);
+var _TimePicker = __webpack_require__(153);
 
 var _TimePicker2 = _interopRequireDefault(_TimePicker);
 
-__webpack_require__(154);
+var _DynamicPriceLabel = __webpack_require__(156);
+
+var _DynamicPriceLabel2 = _interopRequireDefault(_DynamicPriceLabel);
+
+__webpack_require__(157);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -17393,7 +17634,11 @@ var Kaolendar = function (_Component) {
         selectedObj.userHasCompleted = false;
         // this.handleOnChange(selectedObj, false)
       } else {
-        _this.setState({ totalSurchargeAmountText: selectedObj.locTotalPrice, userHasCompleted: true });
+        _this.setState({
+          totalPrice: selectedObj.totalPrice,
+          totalSurchargeAmountText: selectedObj.locTotalPrice,
+          userHasCompleted: true
+        });
         _this.props.onChange(selectedObj);
         selectedObj.userHasCompleted = true;
         // this.handleOnChange(selectedObj, true)
@@ -17410,6 +17655,7 @@ var Kaolendar = function (_Component) {
         isDayPickerOpen: false,
         isTimePickerOpen: false,
         selectedDate: dateObj.date,
+        totalPrice: dateObj.totalPrice,
         totalSurchargeAmountText: dateObj.locTotalPrice,
         userHasCompleted: true
       });
@@ -17422,6 +17668,7 @@ var Kaolendar = function (_Component) {
       isDayPickerOpen: false,
       isTimePickerOpen: false,
       selectedDate: _this.props.value,
+      totalPrice: _this.props.totalPrice,
       totalSurchargeAmountText: _this.props.totalSurchargeAmountText,
       userHasCompleted: true
     };
@@ -17436,15 +17683,21 @@ var Kaolendar = function (_Component) {
           isDayPickerOpen = _state.isDayPickerOpen,
           isTimePickerOpen = _state.isTimePickerOpen,
           selectedDate = _state.selectedDate,
+          totalPrice = _state.totalPrice,
           totalSurchargeAmountText = _state.totalSurchargeAmountText,
           userHasCompleted = _state.userHasCompleted;
       var _props = this.props,
           calendarMonths = _props.calendarMonths,
           disableBannerIcon = _props.disableBannerIcon,
+          dpBannerRebateText = _props.dpBannerRebateText,
+          dpBannerSurchargeText = _props.dpBannerSurchargeText,
           dpBannerText = _props.dpBannerText,
           hasTimePicker = _props.hasTimePicker,
+          metaRebatable = _props.metaRebatable,
           metaSurchargable = _props.metaSurchargable,
+          metaTimeRebatable = _props.metaTimeRebatable,
           metaTimeSurchargable = _props.metaTimeSurchargable,
+          rebateGif = _props.rebateGif,
           surchargeGif = _props.surchargeGif,
           timeslots = _props.timeslots;
 
@@ -17456,8 +17709,13 @@ var Kaolendar = function (_Component) {
         !userHasCompleted && (dText = ''); // Check user has completed selection
         return dText;
       };
-      var tpBannerText = dpBannerText;
-      var showTotalSurchargeText = userHasCompleted && totalSurchargeAmountText;
+      var tpBannerText = '';
+      if (metaTimeRebatable && !metaTimeSurchargable) {
+        tpBannerText = dpBannerRebateText;
+      } else if (!metaTimeRebatable && metaTimeSurchargable) {
+        tpBannerText = dpBannerSurchargeText;
+      }
+      var showTotalPriceText = userHasCompleted && !!(totalSurchargeAmountText || totalPrice);
       return _react2.default.createElement(
         'article',
         null,
@@ -17477,23 +17735,18 @@ var Kaolendar = function (_Component) {
             _react2.default.createElement(_MiniCal2.default, { className: 'kld__icon' })
           )
         ),
-        showTotalSurchargeText && _react2.default.createElement(
-          'section',
-          { className: 'kld__surcharge' },
-          _react2.default.createElement(_SurchargeArrow2.default, { className: 'kld-surcharge__icon' }),
-          _react2.default.createElement(
-            'span',
-            { className: 'kld__surcharge-text' },
-            totalSurchargeAmountText + ' surcharge'
-          )
-        ),
+        showTotalPriceText && _react2.default.createElement(_DynamicPriceLabel2.default, { amount: totalPrice, locAmount: totalSurchargeAmountText }),
         isDayPickerOpen && _react2.default.createElement(_DayPicker2.default, {
           bannerText: dpBannerText,
+          bannerRebateText: dpBannerRebateText,
+          bannerSurchargeText: dpBannerSurchargeText,
           calendarMonths: calendarMonths,
           closeDP: this.handleDPClose,
           disableBannerIcon: disableBannerIcon,
+          metaRebatable: metaRebatable,
           metaSurchargable: metaSurchargable,
           onChange: this.handleSelectDay,
+          rebateGif: rebateGif,
           selectedDate: selectedDate,
           surchargeGif: surchargeGif
         }),
@@ -17502,8 +17755,10 @@ var Kaolendar = function (_Component) {
           bannerText: tpBannerText,
           bannerPrice: daySurchargeLabel,
           closeTP: this.handleTPClose,
+          metaTimeRebatable: metaTimeRebatable,
           metaTimeSurchargable: metaTimeSurchargable,
           onChange: this.handleSelectTime,
+          rebateGif: rebateGif,
           selectedDate: selectedDate,
           surchargeGif: surchargeGif,
           timeslots: timeslots
@@ -17518,13 +17773,19 @@ var Kaolendar = function (_Component) {
 Kaolendar.defaultProps = {
   calendarMonths: [],
   disableBannerIcon: false,
+  dpBannerRebateText: '',
+  dpBannerSurchargeText: '',
   dpBannerText: '',
   hasTimePicker: false,
+  metaRebatable: false,
   metaSurchargable: false,
+  metaTimeRebatable: false,
   metaTimeSurchargable: false,
   onChange: function onChange() {},
+  rebateGif: '',
   surchargeGif: '',
   timeslots: [],
+  totalPrice: 0,
   totalSurchargeAmountText: '',
   value: ''
 };
@@ -17532,13 +17793,19 @@ Kaolendar.defaultProps = {
 Kaolendar.propTypes = {
   calendarMonths: _react.PropTypes.array,
   disableBannerIcon: _react.PropTypes.bool,
+  dpBannerRebateText: _react.PropTypes.string,
+  dpBannerSurchargeText: _react.PropTypes.string,
   dpBannerText: _react.PropTypes.string,
   hasTimePicker: _react.PropTypes.bool,
+  metaRebatable: _react.PropTypes.bool,
   metaSurchargable: _react.PropTypes.bool,
+  metaTimeRebatable: _react.PropTypes.bool,
   metaTimeSurchargable: _react.PropTypes.bool,
   onChange: _react.PropTypes.func,
+  rebateGif: _react.PropTypes.string,
   surchargeGif: _react.PropTypes.string,
   timeslots: _react.PropTypes.array,
+  totalPrice: _react.PropTypes.number,
   totalSurchargeAmountText: _react.PropTypes.string,
   value: _react.PropTypes.string
 };
@@ -17546,7 +17813,7 @@ Kaolendar.propTypes = {
 exports.default = Kaolendar;
 
 /***/ }),
-/* 138 */
+/* 140 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -17574,264 +17841,264 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 139 */
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./af": 6,
-	"./af.js": 6,
-	"./ar": 7,
-	"./ar-dz": 8,
-	"./ar-dz.js": 8,
-	"./ar-kw": 9,
-	"./ar-kw.js": 9,
-	"./ar-ly": 10,
-	"./ar-ly.js": 10,
-	"./ar-ma": 11,
-	"./ar-ma.js": 11,
-	"./ar-sa": 12,
-	"./ar-sa.js": 12,
-	"./ar-tn": 13,
-	"./ar-tn.js": 13,
-	"./ar.js": 7,
-	"./az": 14,
-	"./az.js": 14,
-	"./be": 15,
-	"./be.js": 15,
-	"./bg": 16,
-	"./bg.js": 16,
-	"./bm": 17,
-	"./bm.js": 17,
-	"./bn": 18,
-	"./bn.js": 18,
-	"./bo": 19,
-	"./bo.js": 19,
-	"./br": 20,
-	"./br.js": 20,
-	"./bs": 21,
-	"./bs.js": 21,
-	"./ca": 22,
-	"./ca.js": 22,
-	"./cs": 23,
-	"./cs.js": 23,
-	"./cv": 24,
-	"./cv.js": 24,
-	"./cy": 25,
-	"./cy.js": 25,
-	"./da": 26,
-	"./da.js": 26,
-	"./de": 27,
-	"./de-at": 28,
-	"./de-at.js": 28,
-	"./de-ch": 29,
-	"./de-ch.js": 29,
-	"./de.js": 27,
-	"./dv": 30,
-	"./dv.js": 30,
-	"./el": 31,
-	"./el.js": 31,
-	"./en-SG": 32,
-	"./en-SG.js": 32,
-	"./en-au": 33,
-	"./en-au.js": 33,
-	"./en-ca": 34,
-	"./en-ca.js": 34,
-	"./en-gb": 35,
-	"./en-gb.js": 35,
-	"./en-ie": 36,
-	"./en-ie.js": 36,
-	"./en-il": 37,
-	"./en-il.js": 37,
-	"./en-nz": 38,
-	"./en-nz.js": 38,
-	"./eo": 39,
-	"./eo.js": 39,
-	"./es": 40,
-	"./es-do": 41,
-	"./es-do.js": 41,
-	"./es-us": 42,
-	"./es-us.js": 42,
-	"./es.js": 40,
-	"./et": 43,
-	"./et.js": 43,
-	"./eu": 44,
-	"./eu.js": 44,
-	"./fa": 45,
-	"./fa.js": 45,
-	"./fi": 46,
-	"./fi.js": 46,
-	"./fo": 47,
-	"./fo.js": 47,
-	"./fr": 48,
-	"./fr-ca": 49,
-	"./fr-ca.js": 49,
-	"./fr-ch": 50,
-	"./fr-ch.js": 50,
-	"./fr.js": 48,
-	"./fy": 51,
-	"./fy.js": 51,
-	"./ga": 52,
-	"./ga.js": 52,
-	"./gd": 53,
-	"./gd.js": 53,
-	"./gl": 54,
-	"./gl.js": 54,
-	"./gom-latn": 55,
-	"./gom-latn.js": 55,
-	"./gu": 56,
-	"./gu.js": 56,
-	"./he": 57,
-	"./he.js": 57,
-	"./hi": 58,
-	"./hi.js": 58,
-	"./hr": 59,
-	"./hr.js": 59,
-	"./hu": 60,
-	"./hu.js": 60,
-	"./hy-am": 61,
-	"./hy-am.js": 61,
-	"./id": 62,
-	"./id.js": 62,
-	"./is": 63,
-	"./is.js": 63,
-	"./it": 64,
-	"./it-ch": 65,
-	"./it-ch.js": 65,
-	"./it.js": 64,
-	"./ja": 66,
-	"./ja.js": 66,
-	"./jv": 67,
-	"./jv.js": 67,
-	"./ka": 68,
-	"./ka.js": 68,
-	"./kk": 69,
-	"./kk.js": 69,
-	"./km": 70,
-	"./km.js": 70,
-	"./kn": 71,
-	"./kn.js": 71,
-	"./ko": 72,
-	"./ko.js": 72,
-	"./ku": 73,
-	"./ku.js": 73,
-	"./ky": 74,
-	"./ky.js": 74,
-	"./lb": 75,
-	"./lb.js": 75,
-	"./lo": 76,
-	"./lo.js": 76,
-	"./lt": 77,
-	"./lt.js": 77,
-	"./lv": 78,
-	"./lv.js": 78,
-	"./me": 79,
-	"./me.js": 79,
-	"./mi": 80,
-	"./mi.js": 80,
-	"./mk": 81,
-	"./mk.js": 81,
-	"./ml": 82,
-	"./ml.js": 82,
-	"./mn": 83,
-	"./mn.js": 83,
-	"./mr": 84,
-	"./mr.js": 84,
-	"./ms": 85,
-	"./ms-my": 86,
-	"./ms-my.js": 86,
-	"./ms.js": 85,
-	"./mt": 87,
-	"./mt.js": 87,
-	"./my": 88,
-	"./my.js": 88,
-	"./nb": 89,
-	"./nb.js": 89,
-	"./ne": 90,
-	"./ne.js": 90,
-	"./nl": 91,
-	"./nl-be": 92,
-	"./nl-be.js": 92,
-	"./nl.js": 91,
-	"./nn": 93,
-	"./nn.js": 93,
-	"./pa-in": 94,
-	"./pa-in.js": 94,
-	"./pl": 95,
-	"./pl.js": 95,
-	"./pt": 96,
-	"./pt-br": 97,
-	"./pt-br.js": 97,
-	"./pt.js": 96,
-	"./ro": 98,
-	"./ro.js": 98,
-	"./ru": 99,
-	"./ru.js": 99,
-	"./sd": 100,
-	"./sd.js": 100,
-	"./se": 101,
-	"./se.js": 101,
-	"./si": 102,
-	"./si.js": 102,
-	"./sk": 103,
-	"./sk.js": 103,
-	"./sl": 104,
-	"./sl.js": 104,
-	"./sq": 105,
-	"./sq.js": 105,
-	"./sr": 106,
-	"./sr-cyrl": 107,
-	"./sr-cyrl.js": 107,
-	"./sr.js": 106,
-	"./ss": 108,
-	"./ss.js": 108,
-	"./sv": 109,
-	"./sv.js": 109,
-	"./sw": 110,
-	"./sw.js": 110,
-	"./ta": 111,
-	"./ta.js": 111,
-	"./te": 112,
-	"./te.js": 112,
-	"./tet": 113,
-	"./tet.js": 113,
-	"./tg": 114,
-	"./tg.js": 114,
-	"./th": 115,
-	"./th.js": 115,
-	"./tl-ph": 116,
-	"./tl-ph.js": 116,
-	"./tlh": 117,
-	"./tlh.js": 117,
-	"./tr": 118,
-	"./tr.js": 118,
-	"./tzl": 119,
-	"./tzl.js": 119,
-	"./tzm": 120,
-	"./tzm-latn": 121,
-	"./tzm-latn.js": 121,
-	"./tzm.js": 120,
-	"./ug-cn": 122,
-	"./ug-cn.js": 122,
-	"./uk": 123,
-	"./uk.js": 123,
-	"./ur": 124,
-	"./ur.js": 124,
-	"./uz": 125,
-	"./uz-latn": 126,
-	"./uz-latn.js": 126,
-	"./uz.js": 125,
-	"./vi": 127,
-	"./vi.js": 127,
-	"./x-pseudo": 128,
-	"./x-pseudo.js": 128,
-	"./yo": 129,
-	"./yo.js": 129,
-	"./zh-cn": 130,
-	"./zh-cn.js": 130,
-	"./zh-hk": 131,
-	"./zh-hk.js": 131,
-	"./zh-tw": 132,
-	"./zh-tw.js": 132
+	"./af": 7,
+	"./af.js": 7,
+	"./ar": 8,
+	"./ar-dz": 9,
+	"./ar-dz.js": 9,
+	"./ar-kw": 10,
+	"./ar-kw.js": 10,
+	"./ar-ly": 11,
+	"./ar-ly.js": 11,
+	"./ar-ma": 12,
+	"./ar-ma.js": 12,
+	"./ar-sa": 13,
+	"./ar-sa.js": 13,
+	"./ar-tn": 14,
+	"./ar-tn.js": 14,
+	"./ar.js": 8,
+	"./az": 15,
+	"./az.js": 15,
+	"./be": 16,
+	"./be.js": 16,
+	"./bg": 17,
+	"./bg.js": 17,
+	"./bm": 18,
+	"./bm.js": 18,
+	"./bn": 19,
+	"./bn.js": 19,
+	"./bo": 20,
+	"./bo.js": 20,
+	"./br": 21,
+	"./br.js": 21,
+	"./bs": 22,
+	"./bs.js": 22,
+	"./ca": 23,
+	"./ca.js": 23,
+	"./cs": 24,
+	"./cs.js": 24,
+	"./cv": 25,
+	"./cv.js": 25,
+	"./cy": 26,
+	"./cy.js": 26,
+	"./da": 27,
+	"./da.js": 27,
+	"./de": 28,
+	"./de-at": 29,
+	"./de-at.js": 29,
+	"./de-ch": 30,
+	"./de-ch.js": 30,
+	"./de.js": 28,
+	"./dv": 31,
+	"./dv.js": 31,
+	"./el": 32,
+	"./el.js": 32,
+	"./en-SG": 33,
+	"./en-SG.js": 33,
+	"./en-au": 34,
+	"./en-au.js": 34,
+	"./en-ca": 35,
+	"./en-ca.js": 35,
+	"./en-gb": 36,
+	"./en-gb.js": 36,
+	"./en-ie": 37,
+	"./en-ie.js": 37,
+	"./en-il": 38,
+	"./en-il.js": 38,
+	"./en-nz": 39,
+	"./en-nz.js": 39,
+	"./eo": 40,
+	"./eo.js": 40,
+	"./es": 41,
+	"./es-do": 42,
+	"./es-do.js": 42,
+	"./es-us": 43,
+	"./es-us.js": 43,
+	"./es.js": 41,
+	"./et": 44,
+	"./et.js": 44,
+	"./eu": 45,
+	"./eu.js": 45,
+	"./fa": 46,
+	"./fa.js": 46,
+	"./fi": 47,
+	"./fi.js": 47,
+	"./fo": 48,
+	"./fo.js": 48,
+	"./fr": 49,
+	"./fr-ca": 50,
+	"./fr-ca.js": 50,
+	"./fr-ch": 51,
+	"./fr-ch.js": 51,
+	"./fr.js": 49,
+	"./fy": 52,
+	"./fy.js": 52,
+	"./ga": 53,
+	"./ga.js": 53,
+	"./gd": 54,
+	"./gd.js": 54,
+	"./gl": 55,
+	"./gl.js": 55,
+	"./gom-latn": 56,
+	"./gom-latn.js": 56,
+	"./gu": 57,
+	"./gu.js": 57,
+	"./he": 58,
+	"./he.js": 58,
+	"./hi": 59,
+	"./hi.js": 59,
+	"./hr": 60,
+	"./hr.js": 60,
+	"./hu": 61,
+	"./hu.js": 61,
+	"./hy-am": 62,
+	"./hy-am.js": 62,
+	"./id": 63,
+	"./id.js": 63,
+	"./is": 64,
+	"./is.js": 64,
+	"./it": 65,
+	"./it-ch": 66,
+	"./it-ch.js": 66,
+	"./it.js": 65,
+	"./ja": 67,
+	"./ja.js": 67,
+	"./jv": 68,
+	"./jv.js": 68,
+	"./ka": 69,
+	"./ka.js": 69,
+	"./kk": 70,
+	"./kk.js": 70,
+	"./km": 71,
+	"./km.js": 71,
+	"./kn": 72,
+	"./kn.js": 72,
+	"./ko": 73,
+	"./ko.js": 73,
+	"./ku": 74,
+	"./ku.js": 74,
+	"./ky": 75,
+	"./ky.js": 75,
+	"./lb": 76,
+	"./lb.js": 76,
+	"./lo": 77,
+	"./lo.js": 77,
+	"./lt": 78,
+	"./lt.js": 78,
+	"./lv": 79,
+	"./lv.js": 79,
+	"./me": 80,
+	"./me.js": 80,
+	"./mi": 81,
+	"./mi.js": 81,
+	"./mk": 82,
+	"./mk.js": 82,
+	"./ml": 83,
+	"./ml.js": 83,
+	"./mn": 84,
+	"./mn.js": 84,
+	"./mr": 85,
+	"./mr.js": 85,
+	"./ms": 86,
+	"./ms-my": 87,
+	"./ms-my.js": 87,
+	"./ms.js": 86,
+	"./mt": 88,
+	"./mt.js": 88,
+	"./my": 89,
+	"./my.js": 89,
+	"./nb": 90,
+	"./nb.js": 90,
+	"./ne": 91,
+	"./ne.js": 91,
+	"./nl": 92,
+	"./nl-be": 93,
+	"./nl-be.js": 93,
+	"./nl.js": 92,
+	"./nn": 94,
+	"./nn.js": 94,
+	"./pa-in": 95,
+	"./pa-in.js": 95,
+	"./pl": 96,
+	"./pl.js": 96,
+	"./pt": 97,
+	"./pt-br": 98,
+	"./pt-br.js": 98,
+	"./pt.js": 97,
+	"./ro": 99,
+	"./ro.js": 99,
+	"./ru": 100,
+	"./ru.js": 100,
+	"./sd": 101,
+	"./sd.js": 101,
+	"./se": 102,
+	"./se.js": 102,
+	"./si": 103,
+	"./si.js": 103,
+	"./sk": 104,
+	"./sk.js": 104,
+	"./sl": 105,
+	"./sl.js": 105,
+	"./sq": 106,
+	"./sq.js": 106,
+	"./sr": 107,
+	"./sr-cyrl": 108,
+	"./sr-cyrl.js": 108,
+	"./sr.js": 107,
+	"./ss": 109,
+	"./ss.js": 109,
+	"./sv": 110,
+	"./sv.js": 110,
+	"./sw": 111,
+	"./sw.js": 111,
+	"./ta": 112,
+	"./ta.js": 112,
+	"./te": 113,
+	"./te.js": 113,
+	"./tet": 114,
+	"./tet.js": 114,
+	"./tg": 115,
+	"./tg.js": 115,
+	"./th": 116,
+	"./th.js": 116,
+	"./tl-ph": 117,
+	"./tl-ph.js": 117,
+	"./tlh": 118,
+	"./tlh.js": 118,
+	"./tr": 119,
+	"./tr.js": 119,
+	"./tzl": 120,
+	"./tzl.js": 120,
+	"./tzm": 121,
+	"./tzm-latn": 122,
+	"./tzm-latn.js": 122,
+	"./tzm.js": 121,
+	"./ug-cn": 123,
+	"./ug-cn.js": 123,
+	"./uk": 124,
+	"./uk.js": 124,
+	"./ur": 125,
+	"./ur.js": 125,
+	"./uz": 126,
+	"./uz-latn": 127,
+	"./uz-latn.js": 127,
+	"./uz.js": 126,
+	"./vi": 128,
+	"./vi.js": 128,
+	"./x-pseudo": 129,
+	"./x-pseudo.js": 129,
+	"./yo": 130,
+	"./yo.js": 130,
+	"./zh-cn": 131,
+	"./zh-cn.js": 131,
+	"./zh-hk": 132,
+	"./zh-hk.js": 132,
+	"./zh-tw": 133,
+	"./zh-tw.js": 133
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -17847,10 +18114,10 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 139;
+webpackContext.id = 141;
 
 /***/ }),
-/* 140 */
+/* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17887,7 +18154,7 @@ MiniCal.defaultProps = {
 exports.default = MiniCal;
 
 /***/ }),
-/* 141 */
+/* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17903,7 +18170,7 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(2);
+var _propTypes = __webpack_require__(3);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -17911,31 +18178,39 @@ var _moment = __webpack_require__(0);
 
 var _moment2 = _interopRequireDefault(_moment);
 
-var _constants = __webpack_require__(148);
+var _constants = __webpack_require__(150);
 
-var _HeaderClose = __webpack_require__(134);
+var _HeaderClose = __webpack_require__(135);
 
 var _HeaderClose2 = _interopRequireDefault(_HeaderClose);
 
-var _SurchargeBanner = __webpack_require__(135);
+var _DynamicPriceBanner = __webpack_require__(136);
 
-var _SurchargeBanner2 = _interopRequireDefault(_SurchargeBanner);
+var _DynamicPriceBanner2 = _interopRequireDefault(_DynamicPriceBanner);
 
-var _ChevronRight = __webpack_require__(149);
+var _ChevronRight = __webpack_require__(151);
 
 var _ChevronRight2 = _interopRequireDefault(_ChevronRight);
 
-var _ChevronLeft = __webpack_require__(150);
+var _ChevronLeft = __webpack_require__(152);
 
 var _ChevronLeft2 = _interopRequireDefault(_ChevronLeft);
 
-var _SurchargeArrow = __webpack_require__(4);
+var _SurchargeArrow = __webpack_require__(2);
 
 var _SurchargeArrow2 = _interopRequireDefault(_SurchargeArrow);
 
-var _SurchargeArrowWhite = __webpack_require__(136);
+var _SurchargeArrowWhite = __webpack_require__(137);
 
 var _SurchargeArrowWhite2 = _interopRequireDefault(_SurchargeArrowWhite);
+
+var _RebateArrow = __webpack_require__(5);
+
+var _RebateArrow2 = _interopRequireDefault(_RebateArrow);
+
+var _RebateArrowWhite = __webpack_require__(138);
+
+var _RebateArrowWhite2 = _interopRequireDefault(_RebateArrowWhite);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -17978,11 +18253,12 @@ var DayPicker = function (_Component) {
       }
     };
 
-    _this.handleDateSelect = function (selectedDate, selectedLTPrice) {
+    _this.handleDateSelect = function (selectedDate, selectedLTPrice, selectedTPrice) {
       _this.setState({ selectedDate: selectedDate });
       var selectedObj = {
         date: selectedDate,
-        locTotalPrice: selectedLTPrice
+        locTotalPrice: selectedLTPrice,
+        totalPrice: selectedTPrice
       };
       _this.props.onChange(selectedObj);
     };
@@ -18006,9 +18282,12 @@ var DayPicker = function (_Component) {
       var currentIndex = this.state.currentIndex;
       var _props = this.props,
           bannerText = _props.bannerText,
+          bannerRebateText = _props.bannerRebateText,
+          bannerSurchargeText = _props.bannerSurchargeText,
           calendarMonths = _props.calendarMonths,
           closeDP = _props.closeDP,
           disableBannerIcon = _props.disableBannerIcon,
+          metaRebatable = _props.metaRebatable,
           metaSurchargable = _props.metaSurchargable,
           selectedDate = _props.selectedDate,
           surchargeGif = _props.surchargeGif;
@@ -18041,11 +18320,15 @@ var DayPicker = function (_Component) {
             ),
             _react2.default.createElement(_HeaderClose2.default, { className: 'kld-daypicker__header-close', onClick: closeDP })
           ),
-          metaSurchargable && _react2.default.createElement(
+          (metaSurchargable || metaRebatable) && _react2.default.createElement(
             'div',
             null,
-            _react2.default.createElement(_SurchargeBanner2.default, {
+            _react2.default.createElement(_DynamicPriceBanner2.default, {
+              isSurchargable: metaSurchargable,
+              isRebatable: metaRebatable,
               label: bannerText,
+              rebateLabel: bannerRebateText,
+              surchargeLabel: bannerSurchargeText,
               surchargeGif: surchargeGif,
               disableIcon: disableBannerIcon
             })
@@ -18113,6 +18396,9 @@ var dateItem = function dateItem(dates, selectedDate, handleDateSelect) {
   var surchargeColor = function surchargeColor(dateNow) {
     return colorStyleSelected(dateNow) ? _react2.default.createElement(_SurchargeArrowWhite2.default, null) : _react2.default.createElement(_SurchargeArrow2.default, { className: 'kld-daypicker__date-surcharge-icon' });
   };
+  var rebateColor = function rebateColor(dateNow) {
+    return colorStyleSelected(dateNow) ? _react2.default.createElement(_RebateArrowWhite2.default, null) : _react2.default.createElement(_RebateArrow2.default, { className: 'kld-daypicker__date-surcharge-icon' });
+  };
   return _react2.default.createElement(
     'div',
     { className: 'kld-daypicker__date' },
@@ -18125,7 +18411,7 @@ var dateItem = function dateItem(dates, selectedDate, handleDateSelect) {
           disabled: !d.available,
           key: index,
           onClick: function onClick() {
-            return handleDateSelect(d.value, d.localized_total_price);
+            return handleDateSelect(d.value, d.localized_total_price, d.total_price);
           } },
         _react2.default.createElement(
           'span',
@@ -18135,7 +18421,8 @@ var dateItem = function dateItem(dates, selectedDate, handleDateSelect) {
         d.show_price && _react2.default.createElement(
           'div',
           { className: 'kld-daypicker__date-surcharge' },
-          surchargeColor(cd),
+          d.surchargable && surchargeColor(cd),
+          d.rebatable && rebateColor(cd),
           _react2.default.createElement(
             'span',
             { className: 'kld-daypicker__date-surcharge-price' },
@@ -18149,9 +18436,12 @@ var dateItem = function dateItem(dates, selectedDate, handleDateSelect) {
 
 DayPicker.defaultProps = {
   bannerText: '',
+  bannerRebateText: '',
+  bannerSurchargeText: '',
   calendarMonths: [],
   closeDP: function closeDP() {},
   disableBannerIcon: false,
+  metaRebatable: false,
   metaSurchargable: false,
   onChange: function onChange() {},
   selectedDate: '',
@@ -18160,9 +18450,12 @@ DayPicker.defaultProps = {
 
 DayPicker.propTypes = {
   bannerText: _propTypes2.default.string,
+  bannerRebateText: _propTypes2.default.string,
+  bannerSurchargeText: _propTypes2.default.string,
   calendarMonths: _propTypes2.default.array,
   closeDP: _propTypes2.default.func,
   disableBannerIcon: _propTypes2.default.bool,
+  metaRebatable: _propTypes2.default.bool,
   metaSurchargable: _propTypes2.default.bool,
   onChange: _propTypes2.default.func,
   selectedDate: _propTypes2.default.string,
@@ -18172,7 +18465,7 @@ DayPicker.propTypes = {
 exports.default = DayPicker;
 
 /***/ }),
-/* 142 */
+/* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18194,7 +18487,7 @@ exports.isElement=function(a){return"object"===typeof a&&null!==a&&a.$$typeof===
 
 
 /***/ }),
-/* 143 */
+/* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18435,10 +18728,10 @@ exports.isSuspense = isSuspense;
   })();
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ }),
-/* 144 */
+/* 146 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18451,11 +18744,11 @@ exports.isSuspense = isSuspense;
 
 
 
-var ReactIs = __webpack_require__(133);
-var assign = __webpack_require__(145);
+var ReactIs = __webpack_require__(134);
+var assign = __webpack_require__(147);
 
-var ReactPropTypesSecret = __webpack_require__(5);
-var checkPropTypes = __webpack_require__(146);
+var ReactPropTypesSecret = __webpack_require__(6);
+var checkPropTypes = __webpack_require__(148);
 
 var has = Function.call.bind(Object.prototype.hasOwnProperty);
 var printWarning = function() {};
@@ -19034,10 +19327,10 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
   return ReactPropTypes;
 };
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ }),
-/* 145 */
+/* 147 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19134,7 +19427,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 
 /***/ }),
-/* 146 */
+/* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19150,7 +19443,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 var printWarning = function() {};
 
 if (process.env.NODE_ENV !== 'production') {
-  var ReactPropTypesSecret = __webpack_require__(5);
+  var ReactPropTypesSecret = __webpack_require__(6);
   var loggedTypeFailures = {};
   var has = Function.call.bind(Object.prototype.hasOwnProperty);
 
@@ -19241,10 +19534,10 @@ checkPropTypes.resetWarningCache = function() {
 
 module.exports = checkPropTypes;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ }),
-/* 147 */
+/* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19257,7 +19550,7 @@ module.exports = checkPropTypes;
 
 
 
-var ReactPropTypesSecret = __webpack_require__(5);
+var ReactPropTypesSecret = __webpack_require__(6);
 
 function emptyFunction() {}
 function emptyFunctionWithReset() {}
@@ -19315,7 +19608,7 @@ module.exports = function() {
 
 
 /***/ }),
-/* 148 */
+/* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19327,7 +19620,7 @@ Object.defineProperty(exports, "__esModule", {
 var monthNames = exports.monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
 /***/ }),
-/* 149 */
+/* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19368,7 +19661,7 @@ ChevronRight.defaultProps = {
 exports.default = ChevronRight;
 
 /***/ }),
-/* 150 */
+/* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19409,7 +19702,7 @@ ChevronLeft.defaultProps = {
 exports.default = ChevronLeft;
 
 /***/ }),
-/* 151 */
+/* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19425,7 +19718,7 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(2);
+var _propTypes = __webpack_require__(3);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -19433,15 +19726,15 @@ var _moment = __webpack_require__(0);
 
 var _moment2 = _interopRequireDefault(_moment);
 
-var _HeaderClose = __webpack_require__(134);
+var _HeaderClose = __webpack_require__(135);
 
 var _HeaderClose2 = _interopRequireDefault(_HeaderClose);
 
-var _SurchargeBanner = __webpack_require__(135);
+var _DynamicPriceBanner = __webpack_require__(136);
 
-var _SurchargeBanner2 = _interopRequireDefault(_SurchargeBanner);
+var _DynamicPriceBanner2 = _interopRequireDefault(_DynamicPriceBanner);
 
-var _HourList = __webpack_require__(152);
+var _HourList = __webpack_require__(154);
 
 var _HourList2 = _interopRequireDefault(_HourList);
 
@@ -19462,14 +19755,30 @@ var TimePicker = function (_Component) {
     var _this = _possibleConstructorReturn(this, (TimePicker.__proto__ || Object.getPrototypeOf(TimePicker)).call(this, props));
 
     _this.handleHourChange = function (hour, locTotalPrice, showPrice) {
-      _this.setState({ selectedTime: hour, showPrice: showPrice, totalSurchargePrice: locTotalPrice });
+      var totalPrice = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 0;
+
+      // Check dynamic price type (surcharge/rebate)
+      var dynamicPriceType = '';
+      if (totalPrice > 0) {
+        dynamicPriceType = 'surcharge';
+        _this.setState({ isRebatable: false, isSurchargable: true });
+      } else if (totalPrice < 0) {
+        dynamicPriceType = 'rebate';
+        _this.setState({ isRebatable: true, isSurchargable: false });
+      }
+      _this.setState({
+        selectedTime: hour,
+        showPrice: showPrice,
+        totalPrice: totalPrice,
+        totalSurchargePrice: locTotalPrice
+      });
       if (showPrice) {
         _this.setState({
-          bannerText: (0, _moment2.default)(hour).format('hh:mmA') + ' has a surcharge of ' + locTotalPrice
+          bannerText: (0, _moment2.default)(hour).format('hh:mmA') + ' has a ' + dynamicPriceType + ' of ' + locTotalPrice
         });
       } else {
         _this.setState({
-          bannerText: (0, _moment2.default)(hour).format('DD MMM (ddd)') + ' has a surcharge of ' + locTotalPrice
+          bannerText: (0, _moment2.default)(hour).format('DD MMM (ddd)') + ' has a ' + dynamicPriceType + ' of ' + locTotalPrice
         });
       }
     };
@@ -19477,15 +19786,19 @@ var TimePicker = function (_Component) {
     _this.handleDoneClick = function () {
       var timeObj = {
         date: _this.state.selectedTime,
-        locTotalPrice: _this.state.totalSurchargePrice
+        locTotalPrice: _this.state.totalSurchargePrice,
+        totalPrice: _this.state.totalPrice
       };
       _this.props.onChange(timeObj);
     };
 
     _this.state = {
-      bannerText: _this.props.bannerText,
+      bannerText: '',
+      isRebatable: false,
+      isSurchargable: false,
       selectedTime: '',
       showPrice: false,
+      totalPrice: 0,
       totalSurchargePrice: ''
     };
     return _this;
@@ -19496,6 +19809,8 @@ var TimePicker = function (_Component) {
     value: function render() {
       var _state = this.state,
           bannerText = _state.bannerText,
+          isRebatable = _state.isRebatable,
+          isSurchargable = _state.isSurchargable,
           selectedTime = _state.selectedTime,
           showPrice = _state.showPrice,
           totalSurchargePrice = _state.totalSurchargePrice;
@@ -19503,7 +19818,7 @@ var TimePicker = function (_Component) {
           backTP = _props.backTP,
           bannerPrice = _props.bannerPrice,
           closeTP = _props.closeTP,
-          metaTimeSurchargable = _props.metaTimeSurchargable,
+          rebateGif = _props.rebateGif,
           selectedDate = _props.selectedDate,
           surchargeGif = _props.surchargeGif,
           timeslots = _props.timeslots;
@@ -19524,10 +19839,18 @@ var TimePicker = function (_Component) {
             ),
             _react2.default.createElement(_HeaderClose2.default, { className: 'kld-timepicker__header-close', onClick: closeTP })
           ),
-          metaTimeSurchargable && _react2.default.createElement(
+          (isRebatable || isSurchargable) && _react2.default.createElement(
             'div',
             { className: 'kld-timepicker__banner' },
-            _react2.default.createElement(_SurchargeBanner2.default, { label: bannerText, surchargeGif: surchargeGif })
+            _react2.default.createElement(_DynamicPriceBanner2.default, {
+              isRebatable: isRebatable,
+              isSurchargable: isSurchargable,
+              label: bannerText,
+              rebateGif: rebateGif,
+              rebateLabel: bannerText,
+              surchargeGif: surchargeGif,
+              surchargeLabel: bannerText
+            })
           ),
           _react2.default.createElement(
             'div',
@@ -19568,8 +19891,10 @@ TimePicker.defaultProps = {
   bannerPrice: '',
   bannerText: '',
   closeTP: function closeTP() {},
+  metaTimeRebatable: false,
   metaTimeSurchargable: false,
   onChange: function onChange() {},
+  rebateGif: '',
   selectedDate: '',
   surchargeGif: '',
   timeslots: []
@@ -19580,8 +19905,10 @@ TimePicker.propTypes = {
   bannerPrice: _propTypes2.default.string,
   bannerText: _propTypes2.default.string,
   closeTP: _propTypes2.default.func,
+  metaTimeRebatable: _propTypes2.default.bool,
   metaTimeSurchargable: _propTypes2.default.bool,
   onChange: _propTypes2.default.func,
+  rebateGif: _propTypes2.default.string,
   selectedDate: _propTypes2.default.string,
   surchargeGif: _propTypes2.default.string,
   timeslots: _propTypes2.default.array
@@ -19590,7 +19917,7 @@ TimePicker.propTypes = {
 exports.default = TimePicker;
 
 /***/ }),
-/* 152 */
+/* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19604,11 +19931,11 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(2);
+var _propTypes = __webpack_require__(3);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _HourListItem = __webpack_require__(153);
+var _HourListItem = __webpack_require__(155);
 
 var _HourListItem2 = _interopRequireDefault(_HourListItem);
 
@@ -19667,7 +19994,7 @@ HourList.propTypes = {
 exports.default = HourList;
 
 /***/ }),
-/* 153 */
+/* 155 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19681,7 +20008,7 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(2);
+var _propTypes = __webpack_require__(3);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -19689,13 +20016,21 @@ var _moment = __webpack_require__(0);
 
 var _moment2 = _interopRequireDefault(_moment);
 
-var _SurchargeArrow = __webpack_require__(4);
+var _SurchargeArrow = __webpack_require__(2);
 
 var _SurchargeArrow2 = _interopRequireDefault(_SurchargeArrow);
 
-var _SurchargeArrowWhite = __webpack_require__(136);
+var _SurchargeArrowWhite = __webpack_require__(137);
 
 var _SurchargeArrowWhite2 = _interopRequireDefault(_SurchargeArrowWhite);
+
+var _RebateArrow = __webpack_require__(5);
+
+var _RebateArrow2 = _interopRequireDefault(_RebateArrow);
+
+var _RebateArrowWhite = __webpack_require__(138);
+
+var _RebateArrowWhite2 = _interopRequireDefault(_RebateArrowWhite);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -19714,6 +20049,9 @@ var HourListItem = function HourListItem(_ref) {
   var surchargeArrowStyle = function surchargeArrowStyle(date) {
     return selectedTime === date ? _react2.default.createElement(_SurchargeArrowWhite2.default, null) : _react2.default.createElement(_SurchargeArrow2.default, { className: 'kld-daypicker__date-surcharge-icon' });
   };
+  var rebateArrowStyle = function rebateArrowStyle(date) {
+    return selectedTime === date ? _react2.default.createElement(_RebateArrowWhite2.default, null) : _react2.default.createElement(_RebateArrow2.default, { className: 'kld-daypicker__date-surcharge-icon' });
+  };
   return _react2.default.createElement(
     'div',
     { className: 'kld-hli' },
@@ -19729,6 +20067,7 @@ var HourListItem = function HourListItem(_ref) {
         var date = tsItem.value;
         var localTotalPrice = tsItem.localized_total_price;
         var showPrice = tsItem.show_price;
+        var totalPrice = tsItem.total_price;
         return _react2.default.createElement(
           'button',
           {
@@ -19736,17 +20075,18 @@ var HourListItem = function HourListItem(_ref) {
             disabled: !tsItem.available,
             key: index,
             onClick: function onClick() {
-              return onChangeTime(date, localTotalPrice, showPrice);
+              return onChangeTime(date, localTotalPrice, showPrice, totalPrice);
             } },
           _react2.default.createElement(
             'span',
             null,
             (0, _moment2.default)(date).format('hh:mmA')
           ),
-          tsItem.surchargable && tsItem.show_price && _react2.default.createElement(
+          tsItem.show_price && _react2.default.createElement(
             'div',
             null,
-            surchargeArrowStyle(date),
+            tsItem.surchargable && surchargeArrowStyle(date),
+            tsItem.rebatable && rebateArrowStyle(date),
             _react2.default.createElement(
               'span',
               { className: surchargeTextStyle(date) },
@@ -19776,11 +20116,86 @@ HourListItem.propTypes = {
 exports.default = HourListItem;
 
 /***/ }),
-/* 154 */
+/* 156 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var api = __webpack_require__(155);
-            var content = __webpack_require__(156);
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _SurchargeArrow = __webpack_require__(2);
+
+var _SurchargeArrow2 = _interopRequireDefault(_SurchargeArrow);
+
+var _RebateArrow = __webpack_require__(5);
+
+var _RebateArrow2 = _interopRequireDefault(_RebateArrow);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var DynamicPriceLabel = function DynamicPriceLabel(_ref) {
+  var amount = _ref.amount,
+      locAmount = _ref.locAmount;
+
+  var textColor = '';
+  var dynPriceType = '';
+  var dynIcon = function dynIcon() {};
+  var isNegative = amount < 0;
+  // Check surcharge amount
+  if (!amount || !locAmount) {
+    return null;
+  }
+  // Check dynamic price
+  if (isNegative) {
+    textColor = 'kld-dyn-price__text--green';
+    dynPriceType = 'rebate';
+    dynIcon = function dynIcon() {
+      return _react2.default.createElement(_RebateArrow2.default, { className: 'kld-dyn-price__icon' });
+    };
+  } else if (!isNegative) {
+    textColor = 'kld-dyn-price__text--red';
+    dynPriceType = 'surcharge';
+    dynIcon = function dynIcon() {
+      return _react2.default.createElement(_SurchargeArrow2.default, { className: 'kld-dyn-price__icon' });
+    };
+  }
+  return _react2.default.createElement(
+    'div',
+    { className: 'kld-dyn-price' },
+    dynIcon(),
+    _react2.default.createElement(
+      'span',
+      { className: textColor },
+      locAmount + ' ' + dynPriceType
+    )
+  );
+};
+
+DynamicPriceLabel.defaultProps = {
+  amount: 0,
+  locAmount: ''
+};
+
+DynamicPriceLabel.propTypes = {
+  amount: _react.PropTypes.number,
+  locAmount: _react.PropTypes.string
+};
+
+exports.default = DynamicPriceLabel;
+
+/***/ }),
+/* 157 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var api = __webpack_require__(158);
+            var content = __webpack_require__(159);
 
             content = content.__esModule ? content.default : content;
 
@@ -19802,7 +20217,7 @@ var exported = content.locals ? content.locals : {};
 module.exports = exported;
 
 /***/ }),
-/* 155 */
+/* 158 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20046,20 +20461,20 @@ module.exports = function (moduleId, list, options) {
 };
 
 /***/ }),
-/* 156 */
+/* 159 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(157);
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(160);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".kld-test {\n  height: auto;\n  width: 390px; }\n\n.kld-test-2 {\n  height: auto;\n  width: 740px;\n  border: solid 1px orange; }\n\n.kld {\n  align-items: center;\n  display: flex;\n  position: relative; }\n\n.kld__input {\n  border-radius: 0.25em;\n  border: solid 1px #dddddd;\n  flex-grow: 1;\n  padding: 0.5em 0.5em 0.5em 3em; }\n\n.kld__icon {\n  height: 1.5em;\n  margin-left: 0.5em;\n  position: absolute;\n  width: 1.5em; }\n\n.kld__surcharge {\n  align-items: center;\n  color: #ed193a;\n  display: flex;\n  font-size: 15px;\n  padding-top: 0.5em; }\n\n.kld__surcharge-text {\n  padding-left: 0.5em; }\n\n.kld-daypicker {\n  background-color: white;\n  border-radius: 0.5em;\n  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);\n  display: flex;\n  flex-direction: column;\n  max-width: 390px;\n  min-width: 330px; }\n\n.kld-daypicker__modal {\n  align-items: flex-start;\n  background-color: rgba(0, 0, 0, 0.3);\n  bottom: 0;\n  display: flex;\n  justify-content: center;\n  left: 0;\n  overflow: auto;\n  padding: 2em 0;\n  position: fixed;\n  right: 0;\n  top: 0;\n  z-index: 99; }\n\n.kld-daypicker__header {\n  align-items: center;\n  border-bottom: 1px solid #f2f2f2;\n  display: flex; }\n\n.kld-daypicker__header-title {\n  color: #262626;\n  display: flex;\n  flex-grow: 1;\n  font-size: 20px;\n  font-weight: 600;\n  justify-content: center;\n  padding: 1em 0; }\n\n.kld-daypicker__header-close {\n  cursor: pointer;\n  height: 1.5em;\n  margin-right: 0.5em;\n  width: 1.5em; }\n\n.kld-daypicker__month {\n  align-items: center;\n  display: flex;\n  justify-content: space-between;\n  padding: 1em; }\n\n.kld-daypicker__month-name {\n  color: #6a6a6a;\n  font-size: 1em;\n  font-weight: 500; }\n\n.kld-daypicker__month-chevron {\n  background: transparent;\n  border: none;\n  cursor: pointer;\n  display: flex;\n  margin: 0;\n  padding: 0; }\n  .kld-daypicker__month-chevron:disabled {\n    cursor: not-allowed; }\n\n.kld-daypicker__dow {\n  border-bottom: solid 1px #f2f2f2;\n  display: flex;\n  flex-grow: 1;\n  justify-content: start;\n  margin: 0 1em;\n  padding: 1em 0; }\n\n.kld-daypicker__dow-item {\n  color: #9b9b9b;\n  display: flex;\n  flex-basis: 14%;\n  font-size: 14px;\n  font-weight: 600;\n  justify-content: center; }\n\n.kld-daypicker__date {\n  display: flex;\n  flex-wrap: wrap;\n  padding: 0.5em 1em; }\n\n.kld-daypicker__date-item, .kld-daypicker__date-item-unavailable, .kld-daypicker__date-item-selected {\n  align-items: center;\n  background: transparent;\n  border: none;\n  color: black;\n  cursor: pointer;\n  display: flex;\n  flex-basis: 14%;\n  flex-direction: column;\n  font-size: 1em;\n  font-weight: 500;\n  justify-content: flex-start;\n  min-height: 3em;\n  line-height: inherit;\n  padding: 0.5em; }\n  .kld-daypicker__date-item-unavailable {\n    color: #9b9b9b; }\n  .kld-daypicker__date-item-selected {\n    background: #ed193a;\n    border-radius: 0.5em;\n    color: white; }\n    .kld-daypicker__date-item-selected .kld-daypicker__date-surcharge-price {\n      color: #ffd4e2; }\n\n.kld-daypicker__date-surcharge {\n  display: flex;\n  align-items: center; }\n\n.kld-daypicker__date-surcharge-icon {\n  height: 0.5em;\n  width: 0.5em; }\n\n.kld-daypicker__date-surcharge-price {\n  font-size: 11px;\n  color: #6a6a6a;\n  padding-left: 0.25em; }\n\n.kld-timepicker {\n  background-color: white;\n  border-radius: 0.5em;\n  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);\n  display: flex;\n  flex-direction: column;\n  height: auto;\n  width: 740px;\n  min-width: 730px; }\n\n.kld-timepicker__header {\n  align-items: center;\n  border-bottom: 1px solid #f2f2f2;\n  display: flex;\n  margin-bottom: 1em; }\n\n.kld-timepicker__header-title {\n  color: #262626;\n  display: flex;\n  flex-grow: 1;\n  font-size: 20px;\n  font-weight: 600;\n  justify-content: center;\n  padding: 1em 0; }\n\n.kld-timepicker__header-close {\n  cursor: pointer;\n  height: 1.5em;\n  margin-right: 0.5em;\n  width: 1.5em; }\n\n.kld-timepicker__banner {\n  padding: 0.5em 9em; }\n\n.kld-timepicker__footer {\n  border-top: solid 1px #f2f2f2;\n  display: flex;\n  justify-content: space-between;\n  padding: 1.5em; }\n\n.kld-timepicker__footer-btn, .kld-timepicker__footer-btn-back, .kld-timepicker__footer-btn-done {\n  background: transparent;\n  border: none;\n  border-radius: 0.25em;\n  flex-basis: 25%;\n  font-size: 1em;\n  font-weight: 600;\n  padding: 0.75em 0.75em; }\n  .kld-timepicker__footer-btn-back {\n    background-color: #f2f2f2;\n    color: #4a4a4a; }\n  .kld-timepicker__footer-btn-done {\n    background-color: #ed193a;\n    color: white; }\n    .kld-timepicker__footer-btn-done:disabled {\n      background-color: #f4a3b0;\n      cursor: not-allowed; }\n\n.kld-hourlist {\n  display: flex;\n  flex-direction: column; }\n\n.kld-hli {\n  display: flex;\n  flex-direction: column;\n  padding-bottom: 1.5em;\n  padding-left: 1.5em;\n  padding-right: 1.5em; }\n\n.kld-hli__zone {\n  color: #9b9b9b;\n  font-size: 12px;\n  font-weight: 600;\n  text-align: left;\n  text-transform: uppercase; }\n\n.kld-hli__timeslot {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap; }\n\n.kld-hli__timeslot-item, .kld-hli__timeslot-item-selected {\n  align-items: center;\n  background: transparent;\n  border: solid 1px #e0e0e0;\n  border-radius: 0.25em;\n  color: black;\n  cursor: pointer;\n  display: flex;\n  flex-basis: 13%;\n  flex-direction: column;\n  font-size: 15px;\n  font-weight: 500;\n  justify-content: start;\n  margin-bottom: 0.5em;\n  margin-right: 0.5em;\n  min-height: 3.5em;\n  min-width: 6em;\n  padding: 0.5em 0.25em; }\n  .kld-hli__timeslot-item:disabled, .kld-hli__timeslot-item-selected:disabled {\n    color: #e0e0e0; }\n  .kld-hli__timeslot-item-selected {\n    background-color: #ed193a;\n    border: none;\n    color: white !important; }\n\n.kld-hli__timeslot-surcharge, .kld-hli__timeslot-surcharge-selected {\n  font-size: 11px;\n  color: #6a6a6a;\n  padding-left: 0.25em; }\n  .kld-hli__timeslot-surcharge-selected {\n    color: white !important; }\n\n.kld-surcharge {\n  align-items: center;\n  background-color: #fef6e9;\n  border-left: solid 3px #f5a623;\n  display: flex;\n  justify-content: center;\n  margin: 0.75em 1.5em;\n  padding: 0.5em 0.5em; }\n\n.kld-surcharge__label {\n  color: #8d5c0b;\n  font-size: 15px;\n  padding-left: 0.5em; }\n\n.kld-surcharge__icon {\n  height: 1em;\n  margin-bottom: 0.25em;\n  width: 1em; }\n", ""]);
+exports.push([module.i, ".kld-test {\n  height: auto;\n  width: 390px; }\n\n.kld-test-2 {\n  height: auto;\n  width: 740px;\n  border: solid 1px orange; }\n\n.kld {\n  align-items: center;\n  display: flex;\n  position: relative; }\n\n.kld__input {\n  border-radius: 0.25em;\n  border: solid 1px #dddddd;\n  flex-grow: 1;\n  padding: 0.5em 0.5em 0.5em 3em; }\n\n.kld__icon {\n  height: 1.5em;\n  margin-left: 0.5em;\n  position: absolute;\n  width: 1.5em; }\n\n.kld__surcharge {\n  align-items: center;\n  color: #ed193a;\n  display: flex;\n  font-size: 15px;\n  padding-top: 0.5em; }\n\n.kld__surcharge-text {\n  padding-left: 0.5em; }\n\n.kld-daypicker {\n  background-color: white;\n  border-radius: 0.5em;\n  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);\n  display: flex;\n  flex-direction: column;\n  max-width: 390px;\n  min-width: 330px; }\n\n.kld-daypicker__modal {\n  align-items: flex-start;\n  background-color: rgba(0, 0, 0, 0.3);\n  bottom: 0;\n  display: flex;\n  justify-content: center;\n  left: 0;\n  overflow: auto;\n  padding: 2em 0;\n  position: fixed;\n  right: 0;\n  top: 0;\n  z-index: 99; }\n\n.kld-daypicker__header {\n  align-items: center;\n  border-bottom: 1px solid #f2f2f2;\n  display: flex; }\n\n.kld-daypicker__header-title {\n  color: #262626;\n  display: flex;\n  flex-grow: 1;\n  font-size: 20px;\n  font-weight: 600;\n  justify-content: center;\n  padding: 1em 0; }\n\n.kld-daypicker__header-close {\n  cursor: pointer;\n  height: 1.5em;\n  margin-right: 0.5em;\n  width: 1.5em; }\n\n.kld-daypicker__month {\n  align-items: center;\n  display: flex;\n  justify-content: space-between;\n  padding: 1em; }\n\n.kld-daypicker__month-name {\n  color: #6a6a6a;\n  font-size: 1em;\n  font-weight: 500; }\n\n.kld-daypicker__month-chevron {\n  background: transparent;\n  border: none;\n  cursor: pointer;\n  display: flex;\n  margin: 0;\n  padding: 0; }\n  .kld-daypicker__month-chevron:disabled {\n    cursor: not-allowed; }\n\n.kld-daypicker__dow {\n  border-bottom: solid 1px #f2f2f2;\n  display: flex;\n  flex-grow: 1;\n  justify-content: start;\n  margin: 0 1em;\n  padding: 1em 0; }\n\n.kld-daypicker__dow-item {\n  color: #9b9b9b;\n  display: flex;\n  flex-basis: 14%;\n  font-size: 14px;\n  font-weight: 600;\n  justify-content: center; }\n\n.kld-daypicker__date {\n  display: flex;\n  flex-wrap: wrap;\n  padding: 0.5em 1em; }\n\n.kld-daypicker__date-item, .kld-daypicker__date-item-unavailable, .kld-daypicker__date-item-selected {\n  align-items: center;\n  background: transparent;\n  border: none;\n  color: black;\n  cursor: pointer;\n  display: flex;\n  flex-basis: 14%;\n  flex-direction: column;\n  font-size: 1em;\n  font-weight: 500;\n  justify-content: flex-start;\n  min-height: 3em;\n  line-height: inherit;\n  padding: 0.5em; }\n  .kld-daypicker__date-item-unavailable {\n    color: #9b9b9b; }\n  .kld-daypicker__date-item-selected {\n    background: #ed193a;\n    border-radius: 0.5em;\n    color: white; }\n    .kld-daypicker__date-item-selected .kld-daypicker__date-surcharge-price {\n      color: #ffd4e2; }\n\n.kld-daypicker__date-surcharge {\n  display: flex;\n  align-items: center; }\n\n.kld-daypicker__date-surcharge-icon {\n  height: 0.5em;\n  width: 0.5em; }\n\n.kld-daypicker__date-surcharge-price {\n  font-size: 11px;\n  color: #6a6a6a;\n  padding-left: 0.25em; }\n\n.kld-timepicker {\n  background-color: white;\n  border-radius: 0.5em;\n  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);\n  display: flex;\n  flex-direction: column;\n  height: auto;\n  width: 740px;\n  min-width: 730px; }\n\n.kld-timepicker__header {\n  align-items: center;\n  border-bottom: 1px solid #f2f2f2;\n  display: flex;\n  margin-bottom: 1em; }\n\n.kld-timepicker__header-title {\n  color: #262626;\n  display: flex;\n  flex-grow: 1;\n  font-size: 20px;\n  font-weight: 600;\n  justify-content: center;\n  padding: 1em 0; }\n\n.kld-timepicker__header-close {\n  cursor: pointer;\n  height: 1.5em;\n  margin-right: 0.5em;\n  width: 1.5em; }\n\n.kld-timepicker__banner {\n  padding: 0.5em 9em; }\n\n.kld-timepicker__footer {\n  border-top: solid 1px #f2f2f2;\n  display: flex;\n  justify-content: space-between;\n  padding: 1.5em; }\n\n.kld-timepicker__footer-btn, .kld-timepicker__footer-btn-back, .kld-timepicker__footer-btn-done {\n  background: transparent;\n  border: none;\n  border-radius: 0.25em;\n  flex-basis: 25%;\n  font-size: 1em;\n  font-weight: 600;\n  padding: 0.75em 0.75em; }\n  .kld-timepicker__footer-btn-back {\n    background-color: #f2f2f2;\n    color: #4a4a4a; }\n  .kld-timepicker__footer-btn-done {\n    background-color: #ed193a;\n    color: white; }\n    .kld-timepicker__footer-btn-done:disabled {\n      background-color: #f4a3b0;\n      cursor: not-allowed; }\n\n.kld-hourlist {\n  display: flex;\n  flex-direction: column; }\n\n.kld-hli {\n  display: flex;\n  flex-direction: column;\n  padding-bottom: 1.5em;\n  padding-left: 1.5em;\n  padding-right: 1.5em; }\n\n.kld-hli__zone {\n  color: #9b9b9b;\n  font-size: 12px;\n  font-weight: 600;\n  text-align: left;\n  text-transform: uppercase; }\n\n.kld-hli__timeslot {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap; }\n\n.kld-hli__timeslot-item, .kld-hli__timeslot-item-selected {\n  align-items: center;\n  background: transparent;\n  border: solid 1px #e0e0e0;\n  border-radius: 0.25em;\n  color: black;\n  cursor: pointer;\n  display: flex;\n  flex-basis: 13%;\n  flex-direction: column;\n  font-size: 15px;\n  font-weight: 500;\n  justify-content: start;\n  margin-bottom: 0.5em;\n  margin-right: 0.5em;\n  min-height: 3.5em;\n  min-width: 6em;\n  padding: 0.5em 0.25em; }\n  .kld-hli__timeslot-item:disabled, .kld-hli__timeslot-item-selected:disabled {\n    color: #e0e0e0; }\n  .kld-hli__timeslot-item-selected {\n    background-color: #ed193a;\n    border: none;\n    color: white !important; }\n\n.kld-hli__timeslot-surcharge, .kld-hli__timeslot-surcharge-selected {\n  font-size: 11px;\n  color: #6a6a6a;\n  padding-left: 0.25em; }\n  .kld-hli__timeslot-surcharge-selected {\n    color: white !important; }\n\n.kld-surcharge {\n  align-items: start;\n  background-color: #fef6e9;\n  border-left: solid 3px #f5a623;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  margin: 0.75em 1.5em;\n  padding: 0.5em 0.5em; }\n\n.kld-surcharge__body {\n  display: flex;\n  align-items: center; }\n\n.kld-surcharge__label {\n  color: #8d5c0b;\n  font-size: 15px;\n  padding-left: 0.5em; }\n\n.kld-surcharge__icon {\n  height: 1em;\n  margin-bottom: 0.25em;\n  width: 1em; }\n\n.kld-dyn-price {\n  align-items: center;\n  display: flex;\n  font-size: 15px;\n  padding-top: 0.5em; }\n\n.kld-dyn-price__icon {\n  height: 1em;\n  margin-bottom: 0.25em;\n  width: 1em; }\n\n.kld-dyn-price__text--red {\n  color: #ed193a;\n  padding-left: 0.5em; }\n\n.kld-dyn-price__text--green {\n  color: #11b958;\n  padding-left: 0.5em; }\n", ""]);
 // Exports
 module.exports = exports;
 
 
 /***/ }),
-/* 157 */
+/* 160 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

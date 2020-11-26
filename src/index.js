@@ -123,7 +123,12 @@ class Kaolendar extends Component {
       !userHasCompleted && (dText = '') // Check user has completed selection
       return dText
     }
-    let tpBannerText = dpBannerText
+    let tpBannerText = ''
+    if (metaTimeRebatable && !metaTimeSurchargable) {
+      tpBannerText = dpBannerRebateText
+    } else if (!metaTimeRebatable && metaTimeSurchargable) {
+      tpBannerText = dpBannerSurchargeText
+    }
     let showTotalPriceText = userHasCompleted && !!(totalSurchargeAmountText || totalPrice)
     return (
       <article>
