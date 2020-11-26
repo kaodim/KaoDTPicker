@@ -58,7 +58,11 @@ class Kaolendar extends Component {
       selectedObj.userHasCompleted = false
       // this.handleOnChange(selectedObj, false)
     } else {
-      this.setState({ totalSurchargeAmountText: selectedObj.locTotalPrice, userHasCompleted: true })
+      this.setState({
+        totalPrice: selectedObj.totalPrice,
+        totalSurchargeAmountText: selectedObj.locTotalPrice,
+        userHasCompleted: true
+      })
       this.props.onChange(selectedObj)
       selectedObj.userHasCompleted = true
       // this.handleOnChange(selectedObj, true)

@@ -47,11 +47,12 @@ class DayPicker extends Component {
     }
   }
 
-  handleDateSelect = (selectedDate, selectedLTPrice) => {
+  handleDateSelect = (selectedDate, selectedLTPrice, selectedTPrice) => {
     this.setState({ selectedDate })
     const selectedObj = {
       date: selectedDate,
-      locTotalPrice: selectedLTPrice
+      locTotalPrice: selectedLTPrice,
+      totalPrice: selectedTPrice
     }
     this.props.onChange(selectedObj)
   }
@@ -177,7 +178,7 @@ const dateItem = (dates, selectedDate, handleDateSelect) => {
             className={`${colorStyle(d.available)} ${colorStyleSelected(cd)}`}
             disabled={!d.available}
             key={index}
-            onClick={() => handleDateSelect(d.value, d.localized_total_price)}>
+            onClick={() => handleDateSelect(d.value, d.localized_total_price, d.total_price)}>
             <span>{cd && cd.getDate()}</span>
             {d.show_price && (
               <div className="kld-daypicker__date-surcharge">
