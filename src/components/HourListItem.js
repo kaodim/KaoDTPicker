@@ -38,16 +38,13 @@ const HourListItem = ({ timeslots, label, onChangeTime, selectedTime }) => {
           const date = tsItem.value
           const localTotalPrice = tsItem.localized_total_price
           const showPrice = tsItem.show_price
-          const isRebatable = tsItem.rebatable
-          const isSurchargable = tsItem.surchargable
+          const totalPrice = tsItem.total_price
           return (
             <button
               className={btnStyle(date)}
               disabled={!tsItem.available}
               key={index}
-              onClick={() =>
-                onChangeTime(date, localTotalPrice, showPrice, isRebatable, isSurchargable)
-              }>
+              onClick={() => onChangeTime(date, localTotalPrice, showPrice, totalPrice)}>
               <span>{moment(date).format('hh:mmA')}</span>
               {tsItem.show_price && (
                 <div>

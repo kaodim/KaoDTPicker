@@ -5,6 +5,7 @@ import MiniCal from './components/MiniCal'
 import SurchargeArrow from './components/SurchargeArrow'
 import DayPicker from './components/DayPicker'
 import TimePicker from './components/TimePicker'
+import DynamicPriceLabel from './components/DynamicPriceLabel'
 
 import './styles/styles.scss'
 
@@ -16,6 +17,7 @@ class Kaolendar extends Component {
       isDayPickerOpen: false,
       isTimePickerOpen: false,
       selectedDate: this.props.value,
+      totalPrice: this.props.totalPrice,
       totalSurchargeAmountText: this.props.totalSurchargeAmountText,
       userHasCompleted: true
     }
@@ -73,6 +75,7 @@ class Kaolendar extends Component {
       isDayPickerOpen: false,
       isTimePickerOpen: false,
       selectedDate: dateObj.date,
+      totalPrice: dateObj.totalPrice,
       totalSurchargeAmountText: dateObj.locTotalPrice,
       userHasCompleted: true
     })
@@ -86,6 +89,7 @@ class Kaolendar extends Component {
       isDayPickerOpen,
       isTimePickerOpen,
       selectedDate,
+      totalPrice,
       totalSurchargeAmountText,
       userHasCompleted
     } = this.state
@@ -116,7 +120,7 @@ class Kaolendar extends Component {
       return dText
     }
     let tpBannerText = dpBannerText
-    let showTotalSurchargeText = userHasCompleted && totalSurchargeAmountText
+    let showTotalPriceText = userHasCompleted && !!(totalSurchargeAmountText || totalPrice)
     return (
       <article>
         <section>
@@ -131,11 +135,8 @@ class Kaolendar extends Component {
             <MiniCal className="kld__icon" />
           </div>
         </section>
-        {showTotalSurchargeText && (
-          <section className="kld__surcharge">
-            <SurchargeArrow className="kld-surcharge__icon" />
-            <span className="kld__surcharge-text">{`${totalSurchargeAmountText} surcharge`}</span>
-          </section>
+        {showTotalPriceText && (
+          <DynamicPriceLabel amount={totalPrice} locAmount={totalSurchargeAmountText} />
         )}
         {isDayPickerOpen && (
           <DayPicker
@@ -188,6 +189,7 @@ Kaolendar.defaultProps = {
   rebateGif: '',
   surchargeGif: '',
   timeslots: [],
+  totalPrice: 0,
   totalSurchargeAmountText: '',
   value: ''
 }
@@ -207,6 +209,7 @@ Kaolendar.propTypes = {
   rebateGif: PropTypes.string,
   surchargeGif: PropTypes.string,
   timeslots: PropTypes.array,
+  totalPrice: PropTypes.number,
   totalSurchargeAmountText: PropTypes.string,
   value: PropTypes.string
 }

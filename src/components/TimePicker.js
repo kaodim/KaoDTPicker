@@ -15,29 +15,25 @@ class TimePicker extends Component {
       isSurchargable: this.props.metaTimeSurchargable,
       selectedTime: '',
       showPrice: false,
+      totalPrice: 0,
       totalSurchargePrice: ''
     }
   }
 
-  handleHourChange = (
-    hour,
-    locTotalPrice,
-    showPrice,
-    isRebatable = false,
-    isSurchargable = false
-  ) => {
+  handleHourChange = (hour, locTotalPrice, showPrice, totalPrice = 0) => {
     // Check dynamic price type (surcharge/rebate)
     let dynamicPriceType = ''
-    if (isSurchargable) {
+    if (totalPrice > 0) {
       dynamicPriceType = 'surcharge'
-    } else if (isRebatable) {
+      this.setState({ isRebatable: false, isSurchargable: true })
+    } else if (totalPrice < 0) {
       dynamicPriceType = 'rebate'
+      this.setState({ isRebatable: true, isSurchargable: false })
     }
     this.setState({
-      isRebatable,
-      isSurchargable,
       selectedTime: hour,
       showPrice,
+      totalPrice,
       totalSurchargePrice: locTotalPrice
     })
     if (showPrice) {
@@ -56,7 +52,8 @@ class TimePicker extends Component {
   handleDoneClick = () => {
     const timeObj = {
       date: this.state.selectedTime,
-      locTotalPrice: this.state.totalSurchargePrice
+      locTotalPrice: this.state.totalSurchargePrice,
+      totalPrice: this.state.totalPrice
     }
     this.props.onChange(timeObj)
   }
@@ -135,6 +132,7 @@ TimePicker.defaultProps = {
   metaTimeRebatable: false,
   metaTimeSurchargable: false,
   onChange: () => {},
+  rebateGif: '',
   selectedDate: '',
   surchargeGif: '',
   timeslots: []
@@ -148,6 +146,7 @@ TimePicker.propTypes = {
   metaTimeRebatable: PropTypes.bool,
   metaTimeSurchargable: PropTypes.bool,
   onChange: PropTypes.func,
+  rebateGif: PropTypes.string,
   selectedDate: PropTypes.string,
   surchargeGif: PropTypes.string,
   timeslots: PropTypes.array

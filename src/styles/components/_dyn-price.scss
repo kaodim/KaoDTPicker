@@ -1,0 +1,22 @@
+.kld-dyn-price {
+  align-items: center;
+  display: flex;
+  font-size: $f-sm;
+  padding-top: $s;
+}
+
+.kld-dyn-price__icon {
+  height: $l;
+  margin-bottom: $xs;
+  width: $l;
+}
+
+.kld-dyn-price__text--red {
+  color: $kaodim-brand;
+  padding-left: $s;
+}
+
+.kld-dyn-price__text--green {
+  color: $kaodim-green;
+  padding-left: $s;
+}
