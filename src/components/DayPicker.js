@@ -67,6 +67,7 @@ class DayPicker extends Component {
       disableBannerIcon,
       metaRebatable,
       metaSurchargable,
+      rebateGif,
       selectedDate,
       surchargeGif
     } = this.props
@@ -96,6 +97,7 @@ class DayPicker extends Component {
                 isRebatable={metaRebatable}
                 label={bannerText}
                 rebateLabel={bannerRebateText}
+                rebateGif={rebateGif}
                 surchargeLabel={bannerSurchargeText}
                 surchargeGif={surchargeGif}
                 disableIcon={disableBannerIcon}

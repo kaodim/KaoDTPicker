@@ -18289,6 +18289,7 @@ var DayPicker = function (_Component) {
           disableBannerIcon = _props.disableBannerIcon,
           metaRebatable = _props.metaRebatable,
           metaSurchargable = _props.metaSurchargable,
+          rebateGif = _props.rebateGif,
           selectedDate = _props.selectedDate,
           surchargeGif = _props.surchargeGif;
 
@@ -18328,6 +18329,7 @@ var DayPicker = function (_Component) {
               isRebatable: metaRebatable,
               label: bannerText,
               rebateLabel: bannerRebateText,
+              rebateGif: rebateGif,
               surchargeLabel: bannerSurchargeText,
               surchargeGif: surchargeGif,
               disableIcon: disableBannerIcon
