@@ -1554,11 +1554,11 @@ export const calTimeslots = [
     value: '2020-12-25T16:00:00.000+08:00',
     available: true,
     price: 0,
-    localized_total_price: 'RM100',
+    localized_total_price: '',
     human_readable_price: '',
     show_price: false,
     surchargable: false,
-    total_price: 100,
+    total_price: 0,
     rebatable: false
   },
   {

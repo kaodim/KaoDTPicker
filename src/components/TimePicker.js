@@ -40,6 +40,8 @@ class TimePicker extends Component {
       this.setState({
         bannerText: `${moment(hour).format('hh:mmA')} has a ${dynamicPriceType} of ${locTotalPrice}`
       })
+    } else if (!showPrice && !totalPrice && !locTotalPrice) {
+      this.setState({ isRebatable: false, isSurchargable: false })
     } else {
       this.setState({
         bannerText: `${moment(hour).format(
