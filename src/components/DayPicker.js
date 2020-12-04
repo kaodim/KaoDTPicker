@@ -4,11 +4,13 @@ import moment from 'moment'
 import { monthNames } from '../modules/constants'
 
 import HeaderClose from './HeaderClose'
-import SurchargeBanner from './SurchargeBanner'
+import DynamicPriceBanner from './DynamicPriceBanner'
 import ChevronRight from './ChevronRight'
 import ChevronLeft from './ChevronLeft'
 import SurchargeArrow from './SurchargeArrow'
 import SurchargeArrowWhite from './SurchargeArrowWhite'
+import RebateArrow from './RebateArrow'
+import RebateArrowWhite from './RebateArrowWhite'
 
 class DayPicker extends Component {
   constructor(props) {
@@ -45,11 +47,12 @@ class DayPicker extends Component {
     }
   }
 
-  handleDateSelect = (selectedDate, selectedLTPrice) => {
+  handleDateSelect = (selectedDate, selectedLTPrice, selectedTPrice) => {
     this.setState({ selectedDate })
     const selectedObj = {
       date: selectedDate,
-      locTotalPrice: selectedLTPrice
+      locTotalPrice: selectedLTPrice,
+      totalPrice: selectedTPrice
     }
     this.props.onChange(selectedObj)
   }
@@ -57,10 +60,14 @@ class DayPicker extends Component {
     const { currentIndex } = this.state
     const {
       bannerText,
+      bannerRebateText,
+      bannerSurchargeText,
       calendarMonths,
       closeDP,
       disableBannerIcon,
+      metaRebatable,
       metaSurchargable,
+      rebateGif,
       selectedDate,
       surchargeGif
     } = this.props
@@ -83,10 +90,15 @@ class DayPicker extends Component {
             <label className="kld-daypicker__header-title">Select Date</label>
             <HeaderClose className="kld-daypicker__header-close" onClick={closeDP} />
           </div>
-          {metaSurchargable && (
+          {(metaSurchargable || metaRebatable) && (
             <div>
-              <SurchargeBanner
+              <DynamicPriceBanner
+                isSurchargable={metaSurchargable}
+                isRebatable={metaRebatable}
                 label={bannerText}
+                rebateLabel={bannerRebateText}
+                rebateGif={rebateGif}
+                surchargeLabel={bannerSurchargeText}
                 surchargeGif={surchargeGif}
                 disableIcon={disableBannerIcon}
               />
@@ -152,6 +164,13 @@ const dateItem = (dates, selectedDate, handleDateSelect) => {
       <SurchargeArrow className="kld-daypicker__date-surcharge-icon" />
     )
   }
+  let rebateColor = (dateNow) => {
+    return colorStyleSelected(dateNow) ? (
+      <RebateArrowWhite />
+    ) : (
+      <RebateArrow className="kld-daypicker__date-surcharge-icon" />
+    )
+  }
   return (
     <div className="kld-daypicker__date">
       {concatDays.map((d, index) => {
@@ -161,11 +180,12 @@ const dateItem = (dates, selectedDate, handleDateSelect) => {
             className={`${colorStyle(d.available)} ${colorStyleSelected(cd)}`}
             disabled={!d.available}
             key={index}
-            onClick={() => handleDateSelect(d.value, d.localized_total_price)}>
+            onClick={() => handleDateSelect(d.value, d.localized_total_price, d.total_price)}>
             <span>{cd && cd.getDate()}</span>
             {d.show_price && (
               <div className="kld-daypicker__date-surcharge">
-                {surchargeColor(cd)}
+                {d.surchargable && surchargeColor(cd)}
+                {d.rebatable && rebateColor(cd)}
                 <span className="kld-daypicker__date-surcharge-price">
                   {d.human_readable_price}
                 </span>
@@ -180,9 +200,12 @@ const dateItem = (dates, selectedDate, handleDateSelect) => {
 
 DayPicker.defaultProps = {
   bannerText: '',
+  bannerRebateText: '',
+  bannerSurchargeText: '',
   calendarMonths: [],
   closeDP: () => {},
   disableBannerIcon: false,
+  metaRebatable: false,
   metaSurchargable: false,
   onChange: () => {},
   selectedDate: '',
@@ -191,9 +214,12 @@ DayPicker.defaultProps = {
 
 DayPicker.propTypes = {
   bannerText: PropTypes.string,
+  bannerRebateText: PropTypes.string,
+  bannerSurchargeText: PropTypes.string,
   calendarMonths: PropTypes.array,
   closeDP: PropTypes.func,
   disableBannerIcon: PropTypes.bool,
+  metaRebatable: PropTypes.bool,
   metaSurchargable: PropTypes.bool,
   onChange: PropTypes.func,
   selectedDate: PropTypes.string,

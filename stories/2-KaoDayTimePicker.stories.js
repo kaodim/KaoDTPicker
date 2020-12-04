@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Kaolendar from '../src/index'
-import SurchargeBanner from '../src/components/SurchargeBanner'
+import DynamicPriceBanner from '../src/components/DynamicPriceBanner'
 
 import {
   calendarMonths,
@@ -17,9 +17,13 @@ export default {
 export const dayTimePicker = () => (
   <Kaolendar
     calendarMonths={calendarMonths}
-    dpBannerText={'Indicates high demand fee (RM)'}
+    dpBannerRebateText={'Rebate indication message'}
+    dpBannerSurchargeText={'Surcharge indication message'}
+    dpBannerText={'General message'}
     hasTimePicker
     metaSurchargable={metaCalendarMonths.surchargable}
+    metaRebatable={metaCalendarMonths.rebatable}
+    metaTimeRebatable={metaCalTimeslots.rebatable}
     metaTimeSurchargable={metaCalTimeslots.surchargable}
     timeslots={calTimeslots}
   />
@@ -28,9 +32,13 @@ export const dayTimePicker = () => (
 export const dayTimePickerPreSelected = () => (
   <Kaolendar
     calendarMonths={calendarMonths}
-    dpBannerText={'Indicates high demand fee (RM)'}
+    dpBannerRebateText={'Rebate indication message'}
+    dpBannerSurchargeText={'Surcharge indication message'}
+    dpBannerText={'General message'}
     hasTimePicker
+    metaRebatable={metaCalendarMonths.rebatable}
     metaSurchargable={metaCalendarMonths.surchargable}
+    metaTimeRebatable={metaCalTimeslots.rebatable}
     metaTimeSurchargable={metaCalTimeslots.surchargable}
     timeslots={calTimeslots}
     totalSurchargeAmountText={'RM33'}
@@ -41,7 +49,10 @@ export const dayTimePickerPreSelected = () => (
 export const dayPicker = () => (
   <Kaolendar
     calendarMonths={calendarMonths}
-    dpBannerText={'Indicates high demand fee (RM)'}
+    dpBannerRebateText={'Rebate indication message'}
+    dpBannerSurchargeText={'Surcharge indication message'}
+    dpBannerText={'General message'}
+    metaRebatable={metaCalendarMonths.rebatable}
     metaSurchargable={metaCalendarMonths.surchargable}
   />
 )
@@ -57,10 +68,25 @@ export const vendorDayTimePicker = () => (
   />
 )
 
-export const surchargeBanner = () => <SurchargeBanner label={'This is surcharge banner'} />
+export const surchargeBanner = () => (
+  <DynamicPriceBanner surchargeLabel={'This is surcharge banner'} isSurchargable />
+)
 
-export const surchargeBannerWithoutIcon = () => (
-  <SurchargeBanner disableIcon label={'This is surcharge banner without icon'} />
+export const rebateBanner = () => (
+  <DynamicPriceBanner rebateLabel={'This is rebate banner'} isRebatable />
+)
+
+export const bothSurchageAndRebateBanner = () => (
+  <DynamicPriceBanner
+    isRebatable
+    isSurchargable
+    rebateLabel={'Also have rebate amount'}
+    surchargeLabel={'This is surchage amount &'}
+  />
+)
+
+export const DynamicPriceBannerWithoutIcon = () => (
+  <DynamicPriceBanner disableIcon label={'This is surcharge banner without icon'} />
 )
 
 // import Kaolendar from '../src/index'

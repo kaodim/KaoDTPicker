@@ -5,6 +5,7 @@ import MiniCal from './components/MiniCal'
 import SurchargeArrow from './components/SurchargeArrow'
 import DayPicker from './components/DayPicker'
 import TimePicker from './components/TimePicker'
+import DynamicPriceLabel from './components/DynamicPriceLabel'
 
 import './styles/styles.scss'
 
@@ -16,6 +17,7 @@ class Kaolendar extends Component {
       isDayPickerOpen: false,
       isTimePickerOpen: false,
       selectedDate: this.props.value,
+      totalPrice: this.props.totalPrice,
       totalSurchargeAmountText: this.props.totalSurchargeAmountText,
       userHasCompleted: true
     }
@@ -56,7 +58,11 @@ class Kaolendar extends Component {
       selectedObj.userHasCompleted = false
       // this.handleOnChange(selectedObj, false)
     } else {
-      this.setState({ totalSurchargeAmountText: selectedObj.locTotalPrice, userHasCompleted: true })
+      this.setState({
+        totalPrice: selectedObj.totalPrice,
+        totalSurchargeAmountText: selectedObj.locTotalPrice,
+        userHasCompleted: true
+      })
       this.props.onChange(selectedObj)
       selectedObj.userHasCompleted = true
       // this.handleOnChange(selectedObj, true)
@@ -73,6 +79,7 @@ class Kaolendar extends Component {
       isDayPickerOpen: false,
       isTimePickerOpen: false,
       selectedDate: dateObj.date,
+      totalPrice: dateObj.totalPrice,
       totalSurchargeAmountText: dateObj.locTotalPrice,
       userHasCompleted: true
     })
@@ -86,16 +93,22 @@ class Kaolendar extends Component {
       isDayPickerOpen,
       isTimePickerOpen,
       selectedDate,
+      totalPrice,
       totalSurchargeAmountText,
       userHasCompleted
     } = this.state
     const {
       calendarMonths,
       disableBannerIcon,
+      dpBannerRebateText,
+      dpBannerSurchargeText,
       dpBannerText,
       hasTimePicker,
+      metaRebatable,
       metaSurchargable,
+      metaTimeRebatable,
       metaTimeSurchargable,
+      rebateGif,
       surchargeGif,
       timeslots
     } = this.props
@@ -110,8 +123,13 @@ class Kaolendar extends Component {
       !userHasCompleted && (dText = '') // Check user has completed selection
       return dText
     }
-    let tpBannerText = dpBannerText
-    let showTotalSurchargeText = userHasCompleted && totalSurchargeAmountText
+    let tpBannerText = ''
+    if (metaTimeRebatable && !metaTimeSurchargable) {
+      tpBannerText = dpBannerRebateText
+    } else if (!metaTimeRebatable && metaTimeSurchargable) {
+      tpBannerText = dpBannerSurchargeText
+    }
+    let showTotalPriceText = userHasCompleted && !!(totalSurchargeAmountText || totalPrice)
     return (
       <article>
         <section>
@@ -126,20 +144,21 @@ class Kaolendar extends Component {
             <MiniCal className="kld__icon" />
           </div>
         </section>
-        {showTotalSurchargeText && (
-          <section className="kld__surcharge">
-            <SurchargeArrow className="kld-surcharge__icon" />
-            <span className="kld__surcharge-text">{`${totalSurchargeAmountText} surcharge`}</span>
-          </section>
+        {showTotalPriceText && (
+          <DynamicPriceLabel amount={totalPrice} locAmount={totalSurchargeAmountText} />
         )}
         {isDayPickerOpen && (
           <DayPicker
             bannerText={dpBannerText}
+            bannerRebateText={dpBannerRebateText}
+            bannerSurchargeText={dpBannerSurchargeText}
             calendarMonths={calendarMonths}
             closeDP={this.handleDPClose}
             disableBannerIcon={disableBannerIcon}
+            metaRebatable={metaRebatable}
             metaSurchargable={metaSurchargable}
             onChange={this.handleSelectDay}
+            rebateGif={rebateGif}
             selectedDate={selectedDate}
             surchargeGif={surchargeGif}
           />
@@ -150,8 +169,10 @@ class Kaolendar extends Component {
             bannerText={tpBannerText}
             bannerPrice={daySurchargeLabel}
             closeTP={this.handleTPClose}
+            metaTimeRebatable={metaTimeRebatable}
             metaTimeSurchargable={metaTimeSurchargable}
             onChange={this.handleSelectTime}
+            rebateGif={rebateGif}
             selectedDate={selectedDate}
             surchargeGif={surchargeGif}
             timeslots={timeslots}
@@ -165,13 +186,19 @@ class Kaolendar extends Component {
 Kaolendar.defaultProps = {
   calendarMonths: [],
   disableBannerIcon: false,
+  dpBannerRebateText: '',
+  dpBannerSurchargeText: '',
   dpBannerText: '',
   hasTimePicker: false,
+  metaRebatable: false,
   metaSurchargable: false,
+  metaTimeRebatable: false,
   metaTimeSurchargable: false,
   onChange: () => {},
+  rebateGif: '',
   surchargeGif: '',
   timeslots: [],
+  totalPrice: 0,
   totalSurchargeAmountText: '',
   value: ''
 }
@@ -179,13 +206,19 @@ Kaolendar.defaultProps = {
 Kaolendar.propTypes = {
   calendarMonths: PropTypes.array,
   disableBannerIcon: PropTypes.bool,
+  dpBannerRebateText: PropTypes.string,
+  dpBannerSurchargeText: PropTypes.string,
   dpBannerText: PropTypes.string,
   hasTimePicker: PropTypes.bool,
+  metaRebatable: PropTypes.bool,
   metaSurchargable: PropTypes.bool,
+  metaTimeRebatable: PropTypes.bool,
   metaTimeSurchargable: PropTypes.bool,
   onChange: PropTypes.func,
+  rebateGif: PropTypes.string,
   surchargeGif: PropTypes.string,
   timeslots: PropTypes.array,
+  totalPrice: PropTypes.number,
   totalSurchargeAmountText: PropTypes.string,
   value: PropTypes.string
 }
