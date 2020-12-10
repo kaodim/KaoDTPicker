@@ -138,7 +138,7 @@ class Kaolendar extends Component {
               className="kld__input"
               onChange={() => {}}
               onClick={this.handleInputClick}
-              placeholder={'Select a date'}
+              placeholder={'Say sth here for the examples'}
               value={dateText()}
             />
             <MiniCal className="kld__icon" />

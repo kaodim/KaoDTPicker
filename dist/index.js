@@ -17729,7 +17729,7 @@ var Kaolendar = function (_Component) {
               className: 'kld__input',
               onChange: function onChange() {},
               onClick: this.handleInputClick,
-              placeholder: 'Select a date',
+              placeholder: 'Say sth here for the examples',
               value: dateText()
             }),
             _react2.default.createElement(_MiniCal2.default, { className: 'kld__icon' })
@@ -19776,13 +19776,13 @@ var TimePicker = function (_Component) {
       });
       if (showPrice) {
         _this.setState({
-          bannerText: (0, _moment2.default)(hour).format('hh:mmA') + ' has a ' + dynamicPriceType + ' of ' + locTotalPrice
+          bannerText: (0, _moment2.default)(hour).format('hh:mmA') + ' hasssssss a ' + dynamicPriceType + ' of ' + locTotalPrice
         });
       } else if (!showPrice && !totalPrice && !locTotalPrice) {
         _this.setState({ isRebatable: false, isSurchargable: false });
       } else {
         _this.setState({
-          bannerText: (0, _moment2.default)(hour).format('DD MMM (ddd)') + ' has a ' + dynamicPriceType + ' of ' + locTotalPrice
+          bannerText: (0, _moment2.default)(hour).format('DD MMM (ddd)') + ' hassssssss a ' + dynamicPriceType + ' of ' + locTotalPrice
         });
       }
     };
