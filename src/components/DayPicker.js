@@ -87,7 +87,7 @@ class DayPicker extends Component {
       <section className="kld-daypicker__modal">
         <div className="kld-daypicker">
           <div className="kld-daypicker__header">
-            <label className="kld-daypicker__header-title">Select Date</label>
+            <label className="kld-daypicker__header-title">Select Date for fun</label>
             <HeaderClose className="kld-daypicker__header-close" onClick={closeDP} />
           </div>
           {(metaSurchargable || metaRebatable) && (

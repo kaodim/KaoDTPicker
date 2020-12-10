@@ -18317,7 +18317,7 @@ var DayPicker = function (_Component) {
             _react2.default.createElement(
               'label',
               { className: 'kld-daypicker__header-title' },
-              'Select Date'
+              'Select Date for fun'
             ),
             _react2.default.createElement(_HeaderClose2.default, { className: 'kld-daypicker__header-close', onClick: closeDP })
           ),
