@@ -10,7 +10,7 @@
 [![jest](https://jestjs.io/img/jest-badge.svg)](https://github.com/facebook/jest)
 [![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)]()
 
-React DateTime Picker library
+Kaodim's custom React date and time picker library
 <!-- ![KaoDTPicker](https://user-images.githubusercontent.com/3690421/102041303-09cda800-3e0a-11eb-8175-3e37fc28dfc5.png) -->
 
 
@@ -66,3 +66,7 @@ The following are the descriptions of `npm run <script>`
 │       ├── __mocks__           # Dependencies library mocks 
 │       └── setupTests.js       # Jest unit test setting file
 └── stories                     # Stories for Storybook
+```
+
+## Wikis
+[Read more on wiki](https://github.com/kaodim/KaoDTPicker/wiki)
