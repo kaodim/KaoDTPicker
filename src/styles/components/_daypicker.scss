@@ -5,53 +5,31 @@
   box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
+  margin-bottom: 4em;
   max-width: 390px;
   min-width: 330px;
-  // position: relative;
-  // &::before{
-  //   content: "";
-  //   box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.2);
-  //   border-bottom: .7em solid #2f2f2f;
-	//   border-left: .7em solid transparent;
-	//   border-right: .7em solid transparent;
-  //   height: 0px;
-  //   position: relative;
-  //   bottom: 10px;
-  //   left: 16px;
-  //   width: 0px;
-  //   z-index: -1;
-  // }
   &::before {
     content: "";
     position: absolute;
     width: 0;
     height: 0;
-    // margin-left: -0.5em;
-    // bottom: -2em;
     left: 3em;
-    // box-sizing: border-box;
     border: .5em solid black;
-    // border-color: transparent transparent #bada55 #bada55;
     border-color: white white transparent transparent;
     transform-origin: 0 0;
     transform: rotate(-45deg);
-    box-shadow: 3px -3px 3px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 3px -3px 5px 0 rgba(0, 0, 0, 0.1);
   }
 
 }
 
 .kld-daypicker__modal {
-  // align-items: flex-start;
-  // background-color: rgba(0, 0, 0, 0.3);
   bottom: 0;
-  // display: flex;
-  // justify-content: center;
   left: 0;
-  overflow: auto;
   padding: .7em .5em 2em;
-  // position: fixed;
+  position: absolute;
   right: 0;
-  top: 0;
+  top: 37px;
   z-index: 99;
 }
 
