@@ -131,7 +131,7 @@ class Kaolendar extends Component {
     }
     let showTotalPriceText = userHasCompleted && !!(totalSurchargeAmountText || totalPrice)
     return (
-      <article>
+      <article style={{ position: `relative` }}>
         <section>
           <div className="kld">
             <input

@@ -1,25 +1,35 @@
 .kld-daypicker {
   background-color: white;
+  border: solid 1px rgba(151, 151, 151, 0.24);
   border-radius: $s;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
+  margin-bottom: 4em;
   max-width: 390px;
   min-width: 330px;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 3em;
+    border: .5em solid black;
+    border-color: white white transparent transparent;
+    transform-origin: 0 0;
+    transform: rotate(-45deg);
+    box-shadow: 3px -3px 5px 0 rgba(0, 0, 0, 0.1);
+  }
+
 }
 
 .kld-daypicker__modal {
-  align-items: flex-start;
-  background-color: rgba(0, 0, 0, 0.3);
   bottom: 0;
-  display: flex;
-  justify-content: center;
   left: 0;
-  overflow: auto;
-  padding: 2em 0;
-  position: fixed;
+  padding: .7em .5em 2em;
+  position: absolute;
   right: 0;
-  top: 0;
+  top: 37px;
   z-index: 99;
 }
 
